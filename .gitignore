@@ -1,0 +1,13 @@
+.vscode/
+*test*/
+__pycache__
+*test*
+*~
+*#
+*.exe
+*.out
+*.o
+*.gch
+*.log
+prog.py
+main.c
