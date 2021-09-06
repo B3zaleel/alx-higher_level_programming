@@ -17,7 +17,7 @@ This project contains some introductory tasks for higher level programming.
 + [x] 10\. Linked list cycle<br/>_**[10-check_cycle.c](10-check_cycle.c)**_ contains a function in C that checks if a singly linked list has a cycle in it.
 + [x] 11\. Hello, write<br/>_**[100-write.py](100-write.py)**_ contains a Python script that prints exactly `and that piece of art is useful - Dora Korpar, 2015-10-19`, followed by a new line.
 + [x] 12\. Compile<br/>_**[101-compile](101-compile)**_ contains a Shell script that compiles a Python script file in the environment variable `PYFILE`.
-+ [ ] 13\. ByteCode -> Python #1<br/>_**[102-magic_calculation.py](102-magic_calculation.py)**_ contains a Python script that defines the function `def magic_calculation(a, b):` that does exactly the same as the following Python bytecode:<br/>
++ [x] 13\. ByteCode -> Python #1<br/>_**[102-magic_calculation.py](102-magic_calculation.py)**_ contains a Python script that defines the function `def magic_calculation(a, b):` that does exactly the same as the following Python bytecode:<br/>
   ```c
   3           0 LOAD_CONST               1 (98)
               3 LOAD_FAST                0 (a)
