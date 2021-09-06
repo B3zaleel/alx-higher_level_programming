@@ -13,5 +13,5 @@ This project contains some introductory tasks for higher level programming.
 + [ ] 6\. Play with strings<br/>_**[6-concat.py](6-concat.py)**_ contains a Python script that will print `Welcome to Holberton School!`.
 + [ ] 7\. Copy - Cut - Paste<br/>_**[7-edges.py](7-edges.py)**_ contains a Python script that will extract parts of a `word` variable.
 + [ ] 8\. Create a new sentence<br/>_**[8-concat_edges.py](8-concat_edges.py)**_ contains a Python script that will print `object-oriented programming with Python`, followed by a new line.
-+ [ ] 9\. Easter Egg<br/>_**[9-easter_egg.py](9-easter_egg.py)**_ contains a Python script that prints “The Zen of Python”, by TimPeters, followed by a new line.
++ [x] 9\. Easter Egg<br/>_**[9-easter_egg.py](9-easter_egg.py)**_ contains a Python script that prints “The Zen of Python”, by TimPeters, followed by a new line.
 + [ ] 10\. Linked list cycle<br/>_**[10-check_cycle.c](10-check_cycle.c)**_ contains a function in C that checks if a singly linked list has a cycle in it.
