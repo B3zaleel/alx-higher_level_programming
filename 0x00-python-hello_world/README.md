@@ -15,7 +15,7 @@ This project contains some introductory tasks for higher level programming.
 + [x] 8\. Create a new sentence<br/>_**[8-concat_edges.py](8-concat_edges.py)**_ contains a Python script that will print `object-oriented programming with Python`, followed by a new line.
 + [x] 9\. Easter Egg<br/>_**[9-easter_egg.py](9-easter_egg.py)**_ contains a Python script that prints “The Zen of Python”, by TimPeters, followed by a new line.
 + [x] 10\. Linked list cycle<br/>_**[10-check_cycle.c](10-check_cycle.c)**_ contains a function in C that checks if a singly linked list has a cycle in it.
-+ [ ] 11\. Hello, write<br/>_**[100-write.py](100-write.py)**_ contains a Python script that prints exactly `and that piece of art is useful - Dora Korpar, 2015-10-19`, followed by a new line.
++ [x] 11\. Hello, write<br/>_**[100-write.py](100-write.py)**_ contains a Python script that prints exactly `and that piece of art is useful - Dora Korpar, 2015-10-19`, followed by a new line.
 + [ ] 12\. Compile<br/>_**[101-compile](101-compile)**_ contains a Shell script that compiles a Python script file in the environment variable `PYFILE`.
 + [ ] 13\. ByteCode -> Python #1<br/>_**[102-magic_calculation.py](102-magic_calculation.py)**_ contains a Python script that defines the function `def magic_calculation(a, b):` that does exactly the same as the following Python bytecode:<br/>
   ```c
