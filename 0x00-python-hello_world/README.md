@@ -6,7 +6,7 @@ This project contains some introductory tasks for higher level programming.
 
 + [x] 0\. Run Python file<br/>_**[0-run](0-run)**_ contains a Shell script that runs a Python script that is saved in the environment variable `PYFILE`.
 + [x] 1\. Run inline<br/>_**[1-run_inline](1-run_inline)**_ contains a Shell script that runs Python code that is saved in the environment variable `PYCODE`.
-+ [ ] 2\. Hello, print<br/>_**[2-print.py](2-print.py)**_ contains a Python script that prints exactly `"Programming is like building a multilingual puzzle`, followed by a new line.
++ [x] 2\. Hello, print<br/>_**[2-print.py](2-print.py)**_ contains a Python script that prints exactly `"Programming is like building a multilingual puzzle`, followed by a new line.
 + [ ] 3\. Print integer<br/>_**[3-print_number.py](3-print_number.py)**_ contains a Python script that will print the integer stored in the variable `number`, followed by `Battery street`, followed by a new line.
 + [ ] 4\. Print float<br/>_**[4-print_float.py](4-print_float.py)**_ contains a Python script that will print the float stored in the variable `number` with a precision of 2 digits.
 + [ ] 5\. Print string<br/>_**[5-print_string.py](5-print_string.py)**_ contains a Python script that will print 3 times a string stored in the variable `str`, followed by its first 9 characters.
