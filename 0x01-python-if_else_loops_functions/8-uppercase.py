@@ -11,6 +11,3 @@ def uppercase(str):
         print('{:c}'.format(
             ord(str[i]) - ((1 << 5) if is_lower else 0),
         ), end=('\n' * (i == (len(str) - 1))))
-
-uppercase('Bezaleel')
-uppercase('Bezaleel 867 working\nhj')
