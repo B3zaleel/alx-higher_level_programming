@@ -7,8 +7,7 @@ def uppercase(str):
     str (str): The string to print
     '''
     for i in range(len(str)):
-        is_lower = ((ord(str[i]) >= ord('a')) and (ord(str[i]) <= ord('z')))
-        print('{:s}{:s}'.format(
-            (chr(ord(str[i]) - (1 << 5)) * is_lower),
-            (str[i] * (not is_lower))
-            ), end=('\n' * (i == (len(str) - 1))))
+        is_lower = (ord(str[i]) >= ord('a')) and (ord(str[i]) <= ord('z'))
+        print('{:c}'.format(
+            ord(str[i]) - ((1 << 5) if is_lower else 0)
+        ), end=('\n' * (i == (len(str) - 1))))
