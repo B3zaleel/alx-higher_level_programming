@@ -8,7 +8,6 @@ def uppercase(str):
     '''
     for i in range(len(str)):
         is_lower = (ord(str[i]) >= ord('a')) and (ord(str[i]) <= ord('z'))
-        end_str = '\n' * (i == (len(str) - 1))
-        print('{:c}'.format(
-            ord(str[i]) - ((1 << 5) if is_lower else 0)
-        ), end=end_str)
+        end_str = '\n' if (i == (len(str) - 1)) else ''
+        offset = (1 << 5) if is_lower else 0
+        print('{:c}'.format(ord(str[i]) - offset), end=end_str)
