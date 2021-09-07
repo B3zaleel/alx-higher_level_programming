@@ -6,5 +6,5 @@ def print_last_digit(number):
     Parameters:
     number (int): The number
     '''
-    print('{:s}'.format(str(number)[-1]), end='')
-    return int(str(number)[-1])
+    print('{:c}'.format((abs(int(number)) % 10) + ord('0')), end='')
+    return abs(int(number)) % 10
