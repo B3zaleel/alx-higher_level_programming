@@ -16,7 +16,7 @@ This project contains some tasks for learning about conditionals, loops, and fun
 + [x] 9\. There are only 3 colors, 10 digits, and 7 notes; it's what we do with them that's important <br/>_**[9-print_last_digit.py](9-print_last_digit.py)**_ contains a function that prints the last digit of a number.
 + [x] 10\. a + b <br/>_**[10-add.py](10-add.py)**_ contains a function that adds two integers and returns the result.
 + [x] 11\. a ^ b <br/>_**[11-pow.py](11-pow.py)**_ contains a function that computes `a` to the power of `b` and return the value.
-+ [ ] 12\. Fizz Buzz <br/>_**[12-fizzbuzz.py](12-fizzbuzz.py)**_ contains a function that prints the numbers from 1 to 100 separated by a space.
++ [x] 12\. Fizz Buzz <br/>_**[12-fizzbuzz.py](12-fizzbuzz.py)**_ contains a function that prints the numbers from 1 to 100 separated by a space.
 + [ ] 13\. Insert in sorted linked list <br/>_**[13-insert_number.c](13-insert_number.c)**_ contains a function in C that inserts a number into a sorted singly linked list.
 + [x] 14\. Smile in the mirror <br/>_**[100-print_tebahpla.py](100-print_tebahpla.py)**_ contains a Python script that prints the ASCII alphabet, in reverse order, alternating lowercase and uppercase (`z` in lowercase and `Y` in uppercase) , not followed by a new line.
 + [x] 15\. Remove at position <br/>_**[101-remove_char_at.py](101-remove_char_at.py)**_ contains a function that creates a copy of the string, removing the character at the position `n` (not the Python way, the “C array index”).
