@@ -9,7 +9,7 @@ This project contains some tasks for learning about conditionals, loops, and fun
 + [x] 2\. I sometimes suffer from insomnia. And when I can't fall asleep, I play what I call the alphabet game <br/>_**[2-print_alphabet.py](2-print_alphabet.py)**_ contains a Python script that prints the ASCII alphabet, in lowercase, not followed by a new line.
 + [ ] 3\. When I was having that alphabet soup, I never thought that it would pay off <br/>_**[3-print_alphabt.py](3-print_alphabt.py)**_ contains a Python script that prints the ASCII alphabet (except `q` and `e`), in lowercase, not followed by a new line.
 + [x] 4\. Hexadecimal printing <br/>_**[4-print_hexa.py](4-print_hexa.py)**_ contains a Python script that prints all numbers from `0` to `98` in decimal and in hexadecimal (format: `dec = hex`, e.g.; `2 = 0x2`).
-+ [ ] 5\. 00...99 <br/>_**[5-print_comb2.py](5-print_comb2.py)**_ contains a Python script that prints numbers from `0` to `99` separated by a space and a comma and with a width of 2.
++ [x] 5\. 00...99 <br/>_**[5-print_comb2.py](5-print_comb2.py)**_ contains a Python script that prints numbers from `0` to `99` separated by a space and a comma and with a width of 2.
 + [ ] 6\. Inventing is a combination of brains and materials. The more brains you use, the less material you need <br/>_**[6-print_comb3.py](6-print_comb3.py)**_ contains a Python script that prints all possible different combinations of two digits.
 + [ ] 7\. islower <br/>_**[7-islower.py](7-islower.py)**_ contains a function that checks for lowercase character.
 + [ ] 8\. To uppercase <br/>_**[8-uppercase.py](8-uppercase.py)**_ contains a function that prints a string in uppercase followed by a new line.
