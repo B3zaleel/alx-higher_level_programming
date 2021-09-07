@@ -6,5 +6,5 @@ def print_last_digit(number):
     Parameters:
     number (int): The number
     '''
-    print(str(number)[-1])
+    print('{:s}'.format(str(number)[-1]), end='')
     return int(str(number)[-1])
