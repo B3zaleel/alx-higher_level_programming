@@ -5,7 +5,7 @@ This project contains some tasks for learning about conditionals, loops, and fun
 ## Tasks To Complete
 
 + [x] 0\. Positive anything is better than negative nothing <br/>_**[0-positive_or_negative.py](0-positive_or_negative.py)**_ contains a Python script that will assign a random signed number to the variable `number` each time it is executed and print whether the number stored in the variable `number` is zero, positive or negative.
-+ [ ] 1\. The last digit <br/>_**[1-last_digit.py](1-last_digit.py)**_ contains a Python script that will assign a random signed number to the variable `number` each time it is executed and print the last digit of the number stored in the variable `number`.
++ [x] 1\. The last digit <br/>_**[1-last_digit.py](1-last_digit.py)**_ contains a Python script that will assign a random signed number to the variable `number` each time it is executed and print the last digit of the number stored in the variable `number`.
 + [x] 2\. I sometimes suffer from insomnia. And when I can't fall asleep, I play what I call the alphabet game <br/>_**[2-print_alphabet.py](2-print_alphabet.py)**_ contains a Python script that prints the ASCII alphabet, in lowercase, not followed by a new line.
 + [x] 3\. When I was having that alphabet soup, I never thought that it would pay off <br/>_**[3-print_alphabt.py](3-print_alphabt.py)**_ contains a Python script that prints the ASCII alphabet (except `q` and `e`), in lowercase, not followed by a new line.
 + [x] 4\. Hexadecimal printing <br/>_**[4-print_hexa.py](4-print_hexa.py)**_ contains a Python script that prints all numbers from `0` to `98` in decimal and in hexadecimal (format: `dec = hex`, e.g.; `2 = 0x2`).
