@@ -11,7 +11,7 @@ This project contains some tasks for learning about conditionals, loops, and fun
 + [x] 4\. Hexadecimal printing <br/>_**[4-print_hexa.py](4-print_hexa.py)**_ contains a Python script that prints all numbers from `0` to `98` in decimal and in hexadecimal (format: `dec = hex`, e.g.; `2 = 0x2`).
 + [x] 5\. 00...99 <br/>_**[5-print_comb2.py](5-print_comb2.py)**_ contains a Python script that prints numbers from `0` to `99` separated by a space and a comma and with a width of 2.
 + [ ] 6\. Inventing is a combination of brains and materials. The more brains you use, the less material you need <br/>_**[6-print_comb3.py](6-print_comb3.py)**_ contains a Python script that prints all possible different combinations of two digits.
-+ [ ] 7\. islower <br/>_**[7-islower.py](7-islower.py)**_ contains a function that checks for lowercase character.
++ [x] 7\. islower <br/>_**[7-islower.py](7-islower.py)**_ contains a function that checks for lowercase character.
 + [ ] 8\. To uppercase <br/>_**[8-uppercase.py](8-uppercase.py)**_ contains a function that prints a string in uppercase followed by a new line.
 + [ ] 9\. There are only 3 colors, 10 digits, and 7 notes; it's what we do with them that's important <br/>_**[9-print_last_digit.py](9-print_last_digit.py)**_ contains a function that prints the last digit of a number.
 + [ ] 10\. a + b <br/>_**[10-add.py](10-add.py)**_ contains a function that adds two integers and returns the result.
