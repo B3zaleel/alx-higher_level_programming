@@ -6,9 +6,11 @@ def uppercase(str):
     Parameters:
     str (str): The string to print
     '''
-    for i in range(len(str)):
-        is_lower = ((ord(str[i]) >= ord('a')) and (ord(str[i]) <= ord('z')))
-        print('{:s}{:s}'.format(
-            (chr(ord(str[i]) - (1 << 5)) * is_lower),
-            (str[i] * (not is_lower))
+    i = 0
+    for c in str:
+        is_lower = ((ord(c) >= ord('a')) and (ord(c) <= ord('z')))
+        print('{:c}{:s}'.format(
+            ((ord(c) - (1 << 5)) * is_lower),
+            (c * (not is_lower))
             ), end=('\n' * (i == (len(str) - 1))))
+        i += 1
