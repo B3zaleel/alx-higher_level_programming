@@ -1,16 +1,14 @@
 #!/usr/bin/python3
-def uppercase(txt):
+def uppercase(str):
     '''
     Prints a string, converting lowercase characters to uppercase
 
     Parameters:
-    txt (str): The string to print
+    str (str): The string to print
     '''
-    if isinstance(txt, str):
-        for i in range(len(txt)):
-            is_lower = (ord(txt[i]) >= ord('a')) and (ord(txt[i]) <= ord('z'))
-            print('{:c}{:c}{:c}'.format(
-                (ord(txt[i]) - (1 << 5)) * is_lower,
-                ord(txt[i]) * (not is_lower),
-                ord('\n') * (i == (len(txt) - 1))
-                ), end='')
+    for i in range(len(str)):
+        is_lower = (ord(str[i]) >= ord('a')) and (ord(str[i]) <= ord('z'))
+        print('{:c}{:c}'.format(
+            ord(str[i]) - ((1 << 5) if is_lower else 0),
+            ord('\n') * (i == (len(str) - 1))
+            ), end='')
