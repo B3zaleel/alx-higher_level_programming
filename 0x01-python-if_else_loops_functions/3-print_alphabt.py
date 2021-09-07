@@ -1,3 +1,4 @@
 #!/usr/bin/python3
 for i in range(ord('a'), ord('z') + 1):
-    print(chr(i) * ((i != ord('q')) and (i != ord('e'))), end='')
+    if i != ord('q') and i != ord('e'):
+        print(chr(i), end='')
