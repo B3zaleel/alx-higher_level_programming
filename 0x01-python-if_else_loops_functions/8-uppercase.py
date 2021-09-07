@@ -10,4 +10,4 @@ def uppercase(str):
         is_lower = (ord(str[i]) >= ord('a')) and (ord(str[i]) <= ord('z'))
         offset = (1 << 5) if is_lower else 0
         print('{:c}'.format(ord(str[i]) - offset), end='')
-    print('')
+    print('{:c}'.format(0x0A), end='')
