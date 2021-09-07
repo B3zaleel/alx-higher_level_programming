@@ -19,7 +19,7 @@ This project contains some tasks for learning about conditionals, loops, and fun
 + [ ] 12\. Fizz Buzz <br/>_**[12-fizzbuzz.py](12-fizzbuzz.py)**_ contains a function that prints the numbers from 1 to 100 separated by a space.
 + [ ] 13\. Insert in sorted linked list <br/>_**[13-insert_number.c](13-insert_number.c)**_ contains a function in C that inserts a number into a sorted singly linked list.
 + [ ] 14\. Smile in the mirror <br/>_**[100-print_tebahpla.py](100-print_tebahpla.py)**_ contains a Python script that prints the ASCII alphabet, in reverse order, alternating lowercase and uppercase (`z` in lowercase and `Y` in uppercase) , not followed by a new line.
-+ [ ] 15\. Remove at position <br/>_**[101-remove_char_at.py](101-remove_char_at.py)**_ contains a function that creates a copy of the string, removing the character at the position `n` (not the Python way, the “C array index”).
++ [x] 15\. Remove at position <br/>_**[101-remove_char_at.py](101-remove_char_at.py)**_ contains a function that creates a copy of the string, removing the character at the position `n` (not the Python way, the “C array index”).
 + [ ] 16\. ByteCode -> Python #2 <br/>_**[102-magic_calculation.py](102-magic_calculation.py)**_ contains a function `def magic_calculation(a, b, c):` that does exactly the same as the following Python bytecode:
   ```c
     3           0 LOAD_FAST                0 (a)
