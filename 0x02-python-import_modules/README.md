@@ -4,7 +4,7 @@ This project contains some tasks for learning about imports and modules in **Pyt
 
 ## Tasks To Complete
 
-+ [ ] 0\. Import a simple function from a simple file <br/>_**[0-add.py](0-add.py)**_  imports the function `def add(a, b):` from the file [add_0.py](add_0.py) and prints the result of the addition `1 + 2 = 3`.
++ [x] 0\. Import a simple function from a simple file <br/>_**[0-add.py](0-add.py)**_  imports the function `def add(a, b):` from the file [add_0.py](add_0.py) and prints the result of the addition `1 + 2 = 3`.
 + [ ] 1\. My first toolbox! <br/>_**[1-calculation.py](1-calculation.py)**_ imports functions from the file [calculator_1.py](calculator_1.py), does some Maths, and prints the result.
 + [ ] 2\. How to make a script dynamic! <br/>_**[2-args.py](2-args.py)**_ prints the number of and the list of its arguments.
 + [ ] 3\. Infinite addition <br/>_**[3-infinite_add.py](3-infinite_add.py)**_ prints the result of the addition of all arguments.
