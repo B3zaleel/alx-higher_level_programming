@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-
 if __name__ == '__main__':
     import sys
     from calculator_1 import add, sub, mul, div
-
     if len(sys.argv) == 4:
         funcs = [('+', add), ('-', sub), ('*', mul), ('/', div)]
         for func in funcs:
