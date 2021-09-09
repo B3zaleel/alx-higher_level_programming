@@ -12,7 +12,7 @@ This project contains some tasks for learning about imports and modules in **Pyt
 + [x] 5\. Everything can be imported <br/>_**[5-variable_load.py](5-variable_load.py)**_ imports the variable `a` from the file [variable_load_5.py](variable_load_5.py) and prints its value.
 + [x] 6\. Build my own calculator! <br/>_**[100-my_calculator.py](100-my_calculator.py)**_ imports all functions from the file [calculator_1.py](calculator_1.py) and handles basic operations.
 + [x] 7\. Easy print <br/>_**[101-easy_print.py](101-easy_print.py)**_ prints `#pythoniscool`, followed by a new line, in the standard output.
-+ [ ] 8\. ByteCode -> Python #3 <br/>_**[102-magic_calculation.py](102-magic_calculation.py)**_ contains a Python function def magic_calculation(a, b): that does exactly the same as the following Python bytecode:
++ [x] 8\. ByteCode -> Python #3 <br/>_**[102-magic_calculation.py](102-magic_calculation.py)**_ contains a Python function def magic_calculation(a, b): that does exactly the same as the following Python bytecode:
   ```c
     3           0 LOAD_CONST               1 (0)
                 3 LOAD_CONST               2 (('add', 'sub'))
