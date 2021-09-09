@@ -62,4 +62,4 @@ This project contains some tasks for learning about imports and modules in **Pyt
               107 LOAD_CONST               0 (None)
               110 RETURN_VALUE
   ```
-+ [ ] 9\. Fast alphabet <br/>_**[103-fast_alphabet.py](103-fast_alphabet.py)**_ prints the alphabet in uppercase, followed by a new line.
++ [x] 9\. Fast alphabet <br/>_**[103-fast_alphabet.py](103-fast_alphabet.py)**_ prints the alphabet in uppercase, followed by a new line.
