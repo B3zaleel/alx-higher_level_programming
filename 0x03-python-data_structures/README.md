@@ -16,6 +16,6 @@ This project contains some tasks for learning about list and tuple data structur
 + [x] 9\. Find the max <br/>_**[9-max_integer.py](9-max_integer.py)**_  contains a function that finds the biggest integer of a list.
 + [x] 10\. Only by 2 <br/>_**[10-divisible_by_2.py](10-divisible_by_2.py)**_  contains a function that finds all multiples of 2 in a list.
 + [ ] 11\. Delete at <br/>_**[11-delete_at.py](11-delete_at.py)**_  contains a function that deletes the item at a specific position in a list.
-+ [ ] 12\. Switch <br/>_**[12-switch.py](12-switch.py)**_  switches the value of  two variables `a` and `b`.
++ [x] 12\. Switch <br/>_**[12-switch.py](12-switch.py)**_  switches the value of  two variables `a` and `b`.
 + [ ] 13\. Linked list palindrome <br/>_**[13-is_palindrome.c](13-is_palindrome.c)**_  contains a function in C that checks if a singly linked list is a palindrome.
 + [ ] 14\. CPython #0: Python lists <br/>_**[100-print_python_list_info.c](100-print_python_list_info.c)**_  contains a C function that prints some basic info about Python lists.
