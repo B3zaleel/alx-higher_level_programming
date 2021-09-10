@@ -11,7 +11,7 @@ This project contains some tasks for learning about list and tuple data structur
 + [ ] 4\. Replace in a copy <br/>_**[4-new_in_list.py](4-new_in_list.py)**_  contains a function that replaces an element in a list at a specific position without modifying the original list (like in C).
 + [ ] 5\. Can you C me now? <br/>_**[5-no_c.py](5-no_c.py)**_  contains a function that removes all characters `c` and `C` from a string.
 + [ ] 6\. Lists of lists = Matrix <br/>_**[6-print_matrix_integer.py](6-print_matrix_integer.py)**_  contains a function that prints a matrix of integers.
-+ [ ] 7\. Tuples addition <br/>_**[7-add_tuple.py](7-add_tuple.py)**_  contains a function that adds 2 tuples.
++ [x] 7\. Tuples addition <br/>_**[7-add_tuple.py](7-add_tuple.py)**_  contains a function that adds 2 tuples.
 + [ ] 8\. More returns! <br/>_**[8-multiple_returns.py](8-multiple_returns.py)**_  contains a function that returns a tuple with the length of a string and its first character.
 + [x] 9\. Find the max <br/>_**[9-max_integer.py](9-max_integer.py)**_  contains a function that finds the biggest integer of a list.
 + [x] 10\. Only by 2 <br/>_**[10-divisible_by_2.py](10-divisible_by_2.py)**_  contains a function that finds all multiples of 2 in a list.
