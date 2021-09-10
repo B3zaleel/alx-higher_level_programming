@@ -7,7 +7,7 @@ This project contains some tasks for learning about list and tuple data structur
 + [ ] 0\. Print a list of integers <br/>_**[0-print_list_integer.py](0-print_list_integer.py)**_  contains a function that prints all integers of a list.
 + [ ] 1\. Secure access to an element in a list <br/>_**[1-element_at.py](1-element_at.py)**_  contains a function that retrieves an element from a list like in C.
 + [ ] 2\. Replace element <br/>_**[2-replace_in_list.py](2-replace_in_list.py)**_  contains a function that replaces an element of a list at a specific position (like in C).
-+ [ ] 3\. Print a list of integers... in reverse! <br/>_**[3-print_reversed_list_integer.py](3-print_reversed_list_integer.py)**_  contains a function that prints all integers of a list, in reverse order.
++ [x] 3\. Print a list of integers... in reverse! <br/>_**[3-print_reversed_list_integer.py](3-print_reversed_list_integer.py)**_  contains a function that prints all integers of a list, in reverse order.
 + [x] 4\. Replace in a copy <br/>_**[4-new_in_list.py](4-new_in_list.py)**_  contains a function that replaces an element in a list at a specific position without modifying the original list (like in C).
 + [x] 5\. Can you C me now? <br/>_**[5-no_c.py](5-no_c.py)**_  contains a function that removes all characters `c` and `C` from a string.
 + [x] 6\. Lists of lists = Matrix <br/>_**[6-print_matrix_integer.py](6-print_matrix_integer.py)**_  contains a function that prints a matrix of integers.
