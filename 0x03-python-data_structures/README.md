@@ -13,7 +13,7 @@ This project contains some tasks for learning about list and tuple data structur
 + [ ] 6\. Lists of lists = Matrix <br/>_**[6-print_matrix_integer.py](6-print_matrix_integer.py)**_  contains a function that prints a matrix of integers.
 + [ ] 7\. Tuples addition <br/>_**[7-add_tuple.py](7-add_tuple.py)**_  contains a function that adds 2 tuples.
 + [ ] 8\. More returns! <br/>_**[8-multiple_returns.py](8-multiple_returns.py)**_  contains a function that returns a tuple with the length of a string and its first character.
-+ [ ] 9\. Find the max <br/>_**[9-max_integer.py](9-max_integer.py)**_  contains a function that finds the biggest integer of a list.
++ [x] 9\. Find the max <br/>_**[9-max_integer.py](9-max_integer.py)**_  contains a function that finds the biggest integer of a list.
 + [x] 10\. Only by 2 <br/>_**[10-divisible_by_2.py](10-divisible_by_2.py)**_  contains a function that finds all multiples of 2 in a list.
 + [ ] 11\. Delete at <br/>_**[11-delete_at.py](11-delete_at.py)**_  contains a function that deletes the item at a specific position in a list.
 + [ ] 12\. Switch <br/>_**[12-switch.py](12-switch.py)**_  switches the value of  two variables `a` and `b`.
