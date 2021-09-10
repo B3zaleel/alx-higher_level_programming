@@ -18,4 +18,4 @@ This project contains some tasks for learning about list and tuple data structur
 + [x] 11\. Delete at <br/>_**[11-delete_at.py](11-delete_at.py)**_  contains a function that deletes the item at a specific position in a list.
 + [x] 12\. Switch <br/>_**[12-switch.py](12-switch.py)**_  switches the value of  two variables `a` and `b`.
 + [x] 13\. Linked list palindrome <br/>_**[13-is_palindrome.c](13-is_palindrome.c)**_  contains a function in C that checks if a singly linked list is a palindrome.
-+ [ ] 14\. CPython #0: Python lists <br/>_**[100-print_python_list_info.c](100-print_python_list_info.c)**_  contains a C function that prints some basic info about Python lists.
++ [x] 14\. CPython #0: Python lists <br/>_**[100-print_python_list_info.c](100-print_python_list_info.c)**_  contains a C function that prints some basic info about Python lists.
