@@ -9,30 +9,35 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int *vals = NULL, len = 0, i = 0, j = 0, stop = 0, res = 1;
-	listint_t *node = NULL;
+	int len = 0, i = 0, stop = 0, res = 1;
+	listint_t *node0 = NULL, *node1 = NULL, *next = NULL, *tmp = NULL, *prev = NULL;
 
-	if (head != NULL)
+	if ((head != NULL) && (*head != NULL))
 	{
-		node = *head;
-		while (node != NULL)
-			node = node->next, len++;
-		vals = malloc(sizeof(int) * len);
-		if (vals != NULL)
+		node0 = *head;
+		while (node0 != NULL)
+			node0 = node0->next, len++;
+		node0 = *head, node1 = *head;
+		while ((i < len) && !stop)
 		{
-			node = *head;
-			while (node != NULL)
-				*(vals + i) = node->n, node = node->next, i++;
-			j = len - 1, i = 0;
-			while ((i < len / 2) && !stop)
+			if (i >= len / 2)
 			{
-				if (*(vals + i) == *(vals + j))
-					i++, j--;
-				else
+				if (node0->n != node1->n)
 					res = 0, stop = 1;
+				next = i == len / 2 ? node1 : next;
+				if (node0->n == node1->n)
+					node0 = node0->next, node1 = node1->next, i++;
 			}
-			free(vals);
+			else
+			{
+				node1 = node1->next;
+				next = node0->next, node0->next = prev, prev = node0;
+				node0 = ((i < len / 2 - 1) ? next : node0), tmp = node0;
+				i++;
+			}
 		}
+		for (i = 0; i < len / 2; i++)
+			next = i == 0 ? next : prev, prev = tmp, tmp = tmp->next, prev->next = next;
 	}
 	return (res);
 }
