@@ -9,7 +9,7 @@ def max_integer(my_list=[]):
     Return:
     None if my_list is empty, otherwise the maximum integer in the list
     '''
-    max_num = 0
+    max_num = 0 if len(my_list) == 0 else my_list[0]
     for num in my_list:
         max_num = num if num >= max_num else max_num
     return None if len(my_list) == 0 else max_num
