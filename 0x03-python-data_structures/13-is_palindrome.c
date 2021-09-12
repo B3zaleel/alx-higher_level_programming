@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "lists.h"
 
 /**
@@ -10,8 +11,7 @@
 int is_palindrome(listint_t **head)
 {
 	int len = 0, i = 0, stop = 0, res = 1;
-	listint_t *node0 = NULL, *node1 = NULL;
-	listint_t *next = NULL, *tmp = NULL, *prev = NULL;
+	listint_t *node0 = NULL, *node1 = NULL, *next = NULL, *tmp = NULL, *prev = NULL;
 
 	if ((head != NULL) && (*head != NULL))
 	{
@@ -23,9 +23,14 @@ int is_palindrome(listint_t **head)
 		{
 			if (i >= (len / 2))
 			{
+				next = (i == len / 2 ? node1 : next);
+				if ((len % 2 != 0) && (i == len / 2))
+				{
+					node1 = node1->next, i++;
+					continue;
+				}
 				if (node0->n != node1->n)
 					res = 0, stop = 1;
-				next = (i == len / 2 ? node1 : next);
 				if (node0->n == node1->n)
 					node0 = node0->next, node1 = node1->next, i++;
 			}
@@ -38,10 +43,7 @@ int is_palindrome(listint_t **head)
 			}
 		}
 		for (i = 0; i < (len / 2); i++)
-		{
-			next = i == 0 ? next : prev, prev = tmp;
-			tmp = tmp->next, prev->next = next;
-		}
+			next = i == 0 ? next : prev, prev = tmp, tmp = tmp->next, prev->next = next;
 	}
 	return (res);
 }
