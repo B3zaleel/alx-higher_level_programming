@@ -9,5 +9,3 @@ def print_reversed_list_integer(my_list=[]):
     last_idx = len(my_list) - 1
     for i in range(last_idx + 1):
         print('{:d}'.format(my_list[last_idx - i]))
-    if last_idx < 0:
-        print('')
