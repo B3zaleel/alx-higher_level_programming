@@ -1,7 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <sys/types.h>
+#include <python3.4/Python.h>
 #include <python3.4/object.h>
 #include <python3.4/listobject.h>
+#define PY_SSIZE_T_CLEAN
 // #include </home/b3zaleel/apps/Python-3.4.10/Include/object.h>
 // #include </home/b3zaleel/apps/Python-3.4.10/Include/listobject.h>
 
