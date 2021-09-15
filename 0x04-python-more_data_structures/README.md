@@ -19,5 +19,5 @@ This project contains some tasks for learning about set and dictionary data stru
 + [x] 12\. Roman to Integer <br/>_**[12-roman_to_int.py](12-roman_to_int.py)**_  contains a function that converts a [Roman numeral](https://en.wikipedia.org/wiki/Roman_numerals) to an integer.
 + [x] 13\. Weighted average! <br/>_**[100-weight_average.py](100-weight_average.py)**_  contains a function that returns the weighted average of all integers tuple `(<score>, <weight>)`.
 + [x] 14\. Squared by using map <br/>_**[101-square_matrix_map.py](101-square_matrix_map.py)**_  contains a function that computes the square value of all integers of a matrix using `map`.
-+ [ ] 15\. Delete by value <br/>_**[102-complex_delete.py](102-complex_delete.py)**_  contains a function that deletes keys with a specific value in a dictionary.
++ [x] 15\. Delete by value <br/>_**[102-complex_delete.py](102-complex_delete.py)**_  contains a function that deletes keys with a specific value in a dictionary.
 + [ ] 16\. CPython #1: PyBytesObject <br/>_**[103-python.c](103-python.c)**_  contains two C functions that print some basic info about Python lists and Python bytes objects.
