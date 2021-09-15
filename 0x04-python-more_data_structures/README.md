@@ -13,7 +13,7 @@ This project contains some tasks for learning about set and dictionary data stru
 + [x] 6\. Print sorted dictionary <br/>_**[6-print_sorted_dictionary.py](6-print_sorted_dictionary.py)**_  contains a function that prints a dictionary by ordered keys.
 + [x] 7\. Update dictionary <br/>_**[7-update_dictionary.py](7-update_dictionary.py)**_  contains a function that replaces or adds key/value in a dictionary.
 + [x] 8\. Simple delete by key <br/>_**[8-simple_delete.py](8-simple_delete.py)**_  contains a function that deletes a key in a dictionary.
-+ [ ] 9\. Multiply by 2 <br/>_**[9-multiply_by_2.py](9-multiply_by_2.py)**_  contains a function that returns a new dictionary with all values multiplied by 2.
++ [x] 9\. Multiply by 2 <br/>_**[9-multiply_by_2.py](9-multiply_by_2.py)**_  contains a function that returns a new dictionary with all values multiplied by 2.
 + [ ] 10\. Best score <br/>_**[10-best_score.py](10-best_score.py)**_  contains a function that returns a key with the biggest integer value.
 + [ ] 11\. Multiply by using map <br/>_**[11-multiply_list_map.py](11-multiply_list_map.py)**_  contains a function that returns a list with all values multiplied by a number without using any loops.
 + [ ] 12\. Roman to Integer <br/>_**[12-roman_to_int.py](12-roman_to_int.py)**_  contains a function that converts a [Roman numeral](https://en.wikipedia.org/wiki/Roman_numerals) to an integer.
