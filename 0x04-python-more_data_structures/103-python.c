@@ -32,6 +32,17 @@ void print_python_list(PyObject *p)
         {
             item = (PyObject *)*(((PyListObject *)p)->ob_item + i);
             printf("Element %d: %s\n", i, (item->ob_type)->tp_name);
+			if (item != NULL
+				&& item->ob_type != NULL
+				&& (item->ob_type)->tp_name != NULL
+				&& *((item->ob_type)->tp_name + 0) == 'b'
+				&& *((item->ob_type)->tp_name + 1) == 'y'
+				&& *((item->ob_type)->tp_name + 2) == 't'
+				&& *((item->ob_type)->tp_name + 3) == 'e'
+				&& *((item->ob_type)->tp_name + 4) == 's')
+			{
+				print_python_bytes(item);
+			}
         }
     }
     else
