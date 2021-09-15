@@ -10,7 +10,7 @@ This project contains some tasks for learning about set and dictionary data stru
 + [x] 3\. Present in both <br/>_**[3-common_elements.py](3-common_elements.py)**_  contains a function that returns a set of common elements in two sets.
 + [x] 4\. Only differents <br/>_**[4-only_diff_elements.py](4-only_diff_elements.py)**_  contains a function that returns a set of all elements present in only one set.
 + [x] 5\. Number of keys <br/>_**[5-number_keys.py](5-number_keys.py)**_  contains a function that returns the number of keys in a dictionary.
-+ [ ] 6\. Print sorted dictionary <br/>_**[6-print_sorted_dictionary.py](6-print_sorted_dictionary.py)**_  contains a function that prints a dictionary by ordered keys.
++ [x] 6\. Print sorted dictionary <br/>_**[6-print_sorted_dictionary.py](6-print_sorted_dictionary.py)**_  contains a function that prints a dictionary by ordered keys.
 + [ ] 7\. Update dictionary <br/>_**[7-update_dictionary.py](7-update_dictionary.py)**_  contains a function that replaces or adds key/value in a dictionary.
 + [ ] 8\. Simple delete by key <br/>_**[8-simple_delete.py](8-simple_delete.py)**_  contains a function that deletes a key in a dictionary.
 + [ ] 9\. Multiply by 2 <br/>_**[9-multiply_by_2.py](9-multiply_by_2.py)**_  contains a function that returns a new dictionary with all values multiplied by 2.
