@@ -4,7 +4,7 @@ This project contains some tasks for learning about set and dictionary data stru
 
 ## Tasks To Complete
 
-+ [ ] 0\. Squared simple <br/>_**[0-square_matrix_simple.py](0-square_matrix_simple.py)**_  contains a function that computes the square value of all integers of a matrix.
++ [x] 0\. Squared simple <br/>_**[0-square_matrix_simple.py](0-square_matrix_simple.py)**_  contains a function that computes the square value of all integers of a matrix.
 + [ ] 1\. Search and replace <br/>_**[1-search_replace.py](1-search_replace.py)**_  contains a function that replaces all occurrences of an element by another in a new list.
 + [ ] 2\. Unique addition <br/>_**[2-uniq_add.py](2-uniq_add.py)**_  contains a function that adds all unique integers in a list (only once for each integer).
 + [ ] 3\. Present in both <br/>_**[3-common_elements.py](3-common_elements.py)**_  contains a function that returns a set of common elements in two sets.
