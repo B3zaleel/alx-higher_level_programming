@@ -9,7 +9,7 @@ def best_score(a_dictionary):
     Returns:
     The key with the biggest integer value
     '''
-    if a_dictionary is None:
+    if a_dictionary is None or len(a_dictionary.keys()) == 0:
         return None
     best_score = 0
     res = ''
