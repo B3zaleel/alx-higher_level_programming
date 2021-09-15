@@ -62,12 +62,15 @@ void print_python_bytes(PyObject *p)
         n = bytes_len < 10 ? bytes_len : 9;
         printf("  size: %d\n", bytes_len);
         printf("  trying string: %s\n", ((PyBytesObject *)p)->ob_sval);
-        printf("  first %d bytes:", n + 1);
-        for (i = 0; i < n + 1; i++)
+        if (n > 0)
         {
-            printf(" %02x", (unsigned char)*(((PyBytesObject *)p)->ob_sval + i));
+            printf("  first %d bytes:", n + 1);
+            for (i = 0; i < n + 1; i++)
+            {
+                printf(" %02x", (unsigned char)*(((PyBytesObject *)p)->ob_sval + i));
+            }
+            printf("\n");
         }
-        printf("\n");
     }
     else
     {
