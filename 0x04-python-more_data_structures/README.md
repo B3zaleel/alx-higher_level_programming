@@ -15,7 +15,7 @@ This project contains some tasks for learning about set and dictionary data stru
 + [x] 8\. Simple delete by key <br/>_**[8-simple_delete.py](8-simple_delete.py)**_  contains a function that deletes a key in a dictionary.
 + [x] 9\. Multiply by 2 <br/>_**[9-multiply_by_2.py](9-multiply_by_2.py)**_  contains a function that returns a new dictionary with all values multiplied by 2.
 + [x] 10\. Best score <br/>_**[10-best_score.py](10-best_score.py)**_  contains a function that returns a key with the biggest integer value.
-+ [ ] 11\. Multiply by using map <br/>_**[11-multiply_list_map.py](11-multiply_list_map.py)**_  contains a function that returns a list with all values multiplied by a number without using any loops.
++ [x] 11\. Multiply by using map <br/>_**[11-multiply_list_map.py](11-multiply_list_map.py)**_  contains a function that returns a list with all values multiplied by a number without using any loops.
 + [ ] 12\. Roman to Integer <br/>_**[12-roman_to_int.py](12-roman_to_int.py)**_  contains a function that converts a [Roman numeral](https://en.wikipedia.org/wiki/Roman_numerals) to an integer.
 + [ ] 13\. Weighted average! <br/>_**[100-weight_average.py](100-weight_average.py)**_  contains a function that returns the weighted average of all integers tuple `(<score>, <weight>)`.
 + [ ] 14\. Squared by using map <br/>_**[101-square_matrix_map.py](101-square_matrix_map.py)**_  contains a function that computes the square value of all integers of a matrix using `map`.
