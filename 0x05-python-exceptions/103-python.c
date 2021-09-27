@@ -15,7 +15,7 @@
  */
 void print_python_bytes(PyObject *p)
 {
-	int i, bytes_len, n;
+	int i, bytes_len, n, error = 1;
 
 	fflush(stdout);
 	printf("[.] bytes object info\n");
@@ -33,7 +33,7 @@ void print_python_bytes(PyObject *p)
 		if ((n > 0) && (((PyBytesObject *)p)->ob_sval != NULL))
 		{
 			printf("  first %d bytes:", n + 1);
-			fflush(stdout);
+			fflush(stdout), error = 0;
 			for (i = 0; i < n + 1; i++)
 			{
 				printf(" %02x", (unsigned char)*(((PyBytesObject *)p)->ob_sval + i));
@@ -43,7 +43,7 @@ void print_python_bytes(PyObject *p)
 			fflush(stdout);
 		}
 	}
-	else
+	if (error)
 	{
 		printf("  [ERROR] Invalid Bytes Object\n");
 		fflush(stdout);
@@ -75,7 +75,8 @@ void print_python_float(PyObject *p)
 			if (skip_zeros && ((buf[i] == '0') && (buf[i - 1] != '.')))
 				buf[i] = '\0';
 		}
-		printf("  value: %s\n", buf);
+		/* printf("  value: %s\n", buf); */
+		printf("  value: %f\n", val);
 		fflush(stdout);
 	}
 	else
