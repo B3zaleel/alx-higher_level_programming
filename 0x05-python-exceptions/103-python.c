@@ -75,8 +75,7 @@ void print_python_float(PyObject *p)
 			if (skip_zeros && ((buf[i] == '0') && (buf[i - 1] != '.')))
 				buf[i] = '\0';
 		}
-		/* printf("  value: %s\n", buf); */
-		printf("  value: %f\n", val);
+		printf("  value: %s\n", buf);
 		fflush(stdout);
 	}
 	else
