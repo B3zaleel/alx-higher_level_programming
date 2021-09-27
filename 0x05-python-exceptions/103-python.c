@@ -17,10 +17,10 @@ void print_python_bytes(PyObject *p)
 {
 	int i, bytes_len, n;
 
+	fflush(stdout);
 	printf("[.] bytes object info\n");
 	fflush(stdout);
-	if ((p != NULL)
-		&& (p->ob_type != NULL)
+	if ((p != NULL) && (p->ob_type != NULL)
 		&& ((p->ob_type)->tp_name != NULL)
 		&& (strcmp((p->ob_type)->tp_name, "bytes") == 0))
 	{
@@ -60,9 +60,9 @@ void print_python_float(PyObject *p)
 	char buf[__DBL_DECIMAL_DIG__ + 1023], skip_zeros = 1;
 	int n, i;
 
+	fflush(stdout);
 	printf("[.] float object info\n");
-	if ((p != NULL)
-		&& (p->ob_type != NULL)
+	if ((p != NULL) && (p->ob_type != NULL)
 		&& ((p->ob_type)->tp_name != NULL)
 		&& (strcmp((p->ob_type)->tp_name, "float") == 0))
 	{
@@ -94,10 +94,10 @@ void print_python_list(PyObject *p)
 	int i, list_len;
 	PyObject *item = NULL;
 
+	fflush(stdout);
 	printf("[*] Python list info\n");
 	fflush(stdout);
-	if ((p != NULL)
-		&& (p->ob_type != NULL)
+	if ((p != NULL) && (p->ob_type != NULL)
 		&& ((p->ob_type)->tp_name != NULL)
 		&& (strcmp((p->ob_type)->tp_name, "list") == 0))
 	{
@@ -117,8 +117,7 @@ void print_python_list(PyObject *p)
 			{
 				print_python_bytes(item);
 			}
-			else if ((item != NULL)
-				&& (item->ob_type != NULL)
+			else if ((item != NULL) && (item->ob_type != NULL)
 				&& ((item->ob_type)->tp_name != NULL)
 				&& (strcmp((item->ob_type)->tp_name, "float") == 0))
 			{
