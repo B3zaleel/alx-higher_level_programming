@@ -70,4 +70,4 @@ This project contains some tasks for learning about exceptions in **Python**.
   13    >>  103 LOAD_FAST                2 (result)
             106 RETURN_VALUE
   ```
-+ [ ] 10\. CPython #2: PyFloatObject <br/>_**[103-python.c](103-python.c)**_  contains three C functions that print some basic info about Python lists, Python bytes, and Python float objects.
++ [x] 10\. CPython #2: PyFloatObject <br/>_**[103-python.c](103-python.c)**_  contains three C functions that print some basic info about Python lists, Python bytes, and Python float objects.
