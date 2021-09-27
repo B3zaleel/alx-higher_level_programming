@@ -30,7 +30,7 @@ void print_python_bytes(PyObject *p)
 		fflush(stdout);
 		printf("  trying string: %s\n", ((PyBytesObject *)p)->ob_sval);
 		fflush(stdout);
-		if (n > 0)
+		if ((n > 0) && (((PyBytesObject *)p)->ob_sval != NULL))
 		{
 			printf("  first %d bytes:", n + 1);
 			fflush(stdout);
@@ -106,7 +106,7 @@ void print_python_list(PyObject *p)
 		fflush(stdout);
 		printf("[*] Allocated = %d\n", (int)((PyListObject *)p)->allocated);
 		fflush(stdout);
-		for (i = 0; i < list_len; i++)
+		for (i = 0; (((PyListObject *)p)->ob_item != NULL) && (i < list_len); i++)
 		{
 			item = (PyObject *)*(((PyListObject *)p)->ob_item + i);
 			printf("Element %d: %s\n", i, (item->ob_type)->tp_name);
