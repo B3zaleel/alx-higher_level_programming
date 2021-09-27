@@ -12,7 +12,7 @@ This project contains some tasks for learning about exceptions in **Python**.
 + [x] 5\. Raise exception <br/>_**[5-raise_exception.py](5-raise_exception.py)**_  contains a function that raises a type exception.
 + [x] 6\. Raise a message <br/>_**[6-raise_exception_msg.py](6-raise_exception_msg.py)**_  contains a function that raises a name exception with a message.
 + [x] 7\. Safe integer print with error message <br/>_**[100-safe_print_integer_err.py](100-safe_print_integer_err.py)**_  contains a function that prints an integer.
-+ [ ] 8\. Safe function <br/>_**[101-safe_function.py](101-safe_function.py)**_  contains a function that executes a function safely.
++ [x] 8\. Safe function <br/>_**[101-safe_function.py](101-safe_function.py)**_  contains a function that executes a function safely.
 + [ ] 9\. ByteCode -> Python #4 <br/>_**[102-magic_calculation.py](102-magic_calculation.py)**_ contains a Python function `def magic_calculation(a, b):` that does exactly the same as the following Python bytecode:
   ```c
   3           0 LOAD_CONST               1 (0)
