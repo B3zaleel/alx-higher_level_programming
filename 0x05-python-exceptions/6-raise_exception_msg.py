@@ -5,7 +5,7 @@ def raise_exception_msg(message=""):
 
     Parameters:
     message (str): The exception's message
-    
+
     Returns:
     None
     '''
