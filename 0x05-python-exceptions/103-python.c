@@ -57,8 +57,7 @@ void print_python_bytes(PyObject *p)
 void print_python_float(PyObject *p)
 {
 	double val;
-	char buf[__DBL_DECIMAL_DIG__ + 1023], skip_zeros = 1;
-	int n, i;
+	char *buf = NULL;
 
 	fflush(stdout);
 	printf("[.] float object info\n");
@@ -67,14 +66,7 @@ void print_python_float(PyObject *p)
 		&& (strcmp((p->ob_type)->tp_name, "float") == 0))
 	{
 		val = ((PyFloatObject *)p)->ob_fval;
-		n = snprintf(buf, __DBL_DECIMAL_DIG__ + 1023, "%2.15f", val);
-		for (i = n - 1; i > -1; i--)
-		{
-			if (buf[i] == '.')
-				skip_zeros = 0;
-			if (skip_zeros && ((buf[i] == '0') && (buf[i - 1] != '.')))
-				buf[i] = '\0';
-		}
+		buf = PyOS_double_to_string(val, 'r', 0, Py_DTSF_ADD_DOT_0, NULL);
 		printf("  value: %s\n", buf);
 		fflush(stdout);
 	}
