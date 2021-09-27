@@ -10,7 +10,7 @@ This project contains some tasks for learning about exceptions in **Python**.
 + [x] 3\. Integers division with debug <br/>_**[3-safe_print_division.py](3-safe_print_division.py)**_  contains a function that divides 2 integers and prints the result.
 + [x] 4\. Divide a list <br/>_**[4-list_division.py](4-list_division.py)**_  contains a function that divides element by element 2 lists.
 + [x] 5\. Raise exception <br/>_**[5-raise_exception.py](5-raise_exception.py)**_  contains a function that raises a type exception.
-+ [ ] 6\. Raise a message <br/>_**[6-raise_exception_msg.py](6-raise_exception_msg.py)**_  contains a function that raises a name exception with a message.
++ [x] 6\. Raise a message <br/>_**[6-raise_exception_msg.py](6-raise_exception_msg.py)**_  contains a function that raises a name exception with a message.
 + [ ] 7\. Safe integer print with error message <br/>_**[100-safe_print_integer_err.py](100-safe_print_integer_err.py)**_  contains a function that prints an integer.
 + [ ] 8\. Safe function <br/>_**[101-safe_function.py](101-safe_function.py)**_  contains a function that executes a function safely.
 + [ ] 9\. ByteCode -> Python #4 <br/>_**[102-magic_calculation.py](102-magic_calculation.py)**_ contains a Python function `def magic_calculation(a, b):` that does exactly the same as the following Python bytecode:
