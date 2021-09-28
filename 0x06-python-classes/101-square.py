@@ -99,5 +99,7 @@ class Square:
         else:
             res.append('{}'.format('\n' * self.position[1]))
             for i in range(self.size):
-                res.append('{}{}\n'.format(' ' * self.position[0], '#' * self.size))
+                res.append('{}{}\n'.format(
+                    ' ' * self.position[0],
+                    '#' * self.size))
         return ''.join(res)
