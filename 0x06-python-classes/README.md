@@ -51,7 +51,7 @@ This project contains some tasks for learning about classes and objects in **Pyt
     + Simple instantiation: `def __init__(self):`.
     + Should be printable: Print the entire list in stdout, one node number per line.
     + Public instance method: `def sorted_insert(self, value):` that inserts a new `Node` into the correct sorted position in the list (increasing order).
-+ [ ] 8\. Print Square instance <br/>_**[101-square.py](101-square.py)**_  contains a class `Square` that defines a square by: (based on [`6-square.py`](6-square.py)).
++ [x] 8\. Print Square instance <br/>_**[101-square.py](101-square.py)**_  contains a class `Square` that defines a square by: (based on [`6-square.py`](6-square.py)).
   + Private instance attribute: `size`.
      + Property `def size(self):` to retrieve it.
      + Property setter `def size(self, value):` to set it (`size` must be a number and greater than or equal to 0).
