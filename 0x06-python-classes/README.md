@@ -15,7 +15,7 @@ This project contains some tasks for learning about classes and objects in **Pyt
   + Private instance attribute: `size`.
   + Instantiation with optional `size`: `def __init__(self, size=0):` (`size` must be a number and greater than or equal to 0).
   + Public instance method: `def area(self):` that returns the current square area.
-+ [ ] 4\. Access and update private attribute <br/>_**[4-square.py](4-square.py)**_  contains a class `Square` that defines a square by: (based on [`3-square.py`](3-square.py)).
++ [x] 4\. Access and update private attribute <br/>_**[4-square.py](4-square.py)**_  contains a class `Square` that defines a square by: (based on [`3-square.py`](3-square.py)).
   + Private instance attribute: `size`.
      + Property `def size(self):` to retrieve it.
      + Property setter `def size(self, value):` to set it (`size` must be a number and greater than or equal to 0).
