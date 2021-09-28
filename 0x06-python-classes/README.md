@@ -59,7 +59,7 @@ This project contains some tasks for learning about classes and objects in **Pyt
   + Public instance method: `def area(self):` that returns the current square area.
   + Public instance method: `def my_print(self):` that prints in stdout the square with the character `#`. If `size` is equal to 0, print an empty line. `position` should be used by using space.
   + Printing a Square instance should have the same behavior as `my_print()`.
-+ [ ] 9\. Compare 2 squares <br/>_**[102-square.py](102-square.py)**_  contains a class `Square` that defines a square by: (based on [`4-square.py`](4-square.py)).
++ [x] 9\. Compare 2 squares <br/>_**[102-square.py](102-square.py)**_  contains a class `Square` that defines a square by: (based on [`4-square.py`](4-square.py)).
   + Private instance attribute: `size`.
      + Property `def size(self):` to retrieve it.
      + Property setter `def size(self, value):` to set it (`size` must be a number and greater than or equal to 0).
