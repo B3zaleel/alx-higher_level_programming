@@ -66,7 +66,7 @@ This project contains some tasks for learning about classes and objects in **Pyt
   + Instantiation with `size`: `def __init__(self, size=0):`.
   + Public instance method: `def area(self):` that returns the current square area.
   + `Square` instance can answer to comparators: `==`, `!=`, `>`, `>=`, `<` and `<=` based on the square area.
-+ [ ] 10\. ByteCode -> Python #5 <br/>_**[103-magic_class.py](103-magic_class.py)**_ contains a Python class `MagicClass` that does exactly the same as the following Python bytecode:
++ [x] 10\. ByteCode -> Python #5 <br/>_**[103-magic_class.py](103-magic_class.py)**_ contains a Python class `MagicClass` that does exactly the same as the following Python bytecode:
   ```c
   Disassembly of __init__:
    10           0 LOAD_CONST               1 (0)
