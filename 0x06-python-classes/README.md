@@ -11,7 +11,7 @@ This project contains some tasks for learning about classes and objects in **Pyt
 + [x] 2\. Size validation <br/>_**[2-square.py](2-square.py)**_  contains a class `Square` that defines a square by: (based on [`1-square.py`](1-square.py)).
   + Private instance attribute: `size`.
   + Instantiation with optional `size`: `def __init__(self, size=0):` (`size` must be a number and greater than or equal to 0).
-+ [ ] 3\. Area of a square <br/>_**[3-square.py](3-square.py)**_  contains a class `Square` that defines a square by: (based on [`2-square.py`](2-square.py)).
++ [x] 3\. Area of a square <br/>_**[3-square.py](3-square.py)**_  contains a class `Square` that defines a square by: (based on [`2-square.py`](2-square.py)).
   + Private instance attribute: `size`.
   + Instantiation with optional `size`: `def __init__(self, size=0):` (`size` must be a number and greater than or equal to 0).
   + Public instance method: `def area(self):` that returns the current square area.
