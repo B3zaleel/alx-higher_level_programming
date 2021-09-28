@@ -3,10 +3,10 @@ import math
 
 
 class MagicClass:
-    '''
-    Represents an object for working with circles.
-    '''
+    '''Represents an object for working with circles.'''
     def __init(self, radius):
+        '''Initializes this magic class
+        '''
         self.__radius = 0
         if (type(radius) is not int) or (type(radius) is not float):
             raise TypeError('radius must be a number')
