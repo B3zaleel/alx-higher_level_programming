@@ -38,7 +38,7 @@ This project contains some tasks for learning about classes and objects in **Pyt
   + Instantiation with optional `size` and `position`: `def __init__(self, size=0, position=(0,0)):`.
   + Public instance method: `def area(self):` that returns the current square area.
   + Public instance method: `def my_print(self):` that prints in stdout the square with the character `#`. If `size` is equal to 0, print an empty line. `position` should be used by using space - **Don’t fill lines by spaces** when `position[1] > 0`.
-+ [ ] 7\. Singly linked list <br/>_**[100-singly_linked_list.py](100-singly_linked_list.py)**_  contains a class `Node` that defines a node of a singly linked list by:
++ [x] 7\. Singly linked list <br/>_**[100-singly_linked_list.py](100-singly_linked_list.py)**_  contains a class `Node` that defines a node of a singly linked list by:
   + Private instance attribute: `data`.
      + Property `def data(self):` to retrieve it.
      + Property setter `def data(self, value):` to set it (`data` must be an integer).
