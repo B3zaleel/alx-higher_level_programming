@@ -28,7 +28,7 @@ This project contains some tasks for learning about classes and objects in **Pyt
   + Instantiation with optional `size`: `def __init__(self, size=0):`.
   + Public instance method: `def area(self):` that returns the current square area.
   + Public instance method: `def my_print(self):` that prints in stdout the square with the character `#`. If `size` is equal to 0, print an empty line.
-+ [ ] 6\. Coordinates of a square <br/>_**[6-square.py](6-square.py)**_  contains a class `Square` that defines a square by: (based on [`5-square.py`](5-square.py)).
++ [x] 6\. Coordinates of a square <br/>_**[6-square.py](6-square.py)**_  contains a class `Square` that defines a square by: (based on [`5-square.py`](5-square.py)).
   + Private instance attribute: `size`.
      + Property `def size(self):` to retrieve it.
      + Property setter `def size(self, value):` to set it (`size` must be a number and greater than or equal to 0).
