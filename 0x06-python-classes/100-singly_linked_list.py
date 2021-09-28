@@ -63,8 +63,7 @@ class SinglyLinkedList:
     '''Represents a singly linked list.
     '''
     def __init__(self):
-        '''Initializes a singly linked list.
-        '''
+        '''Initializes a singly linked list.'''
         self.__head = None
 
     def sorted_insert(self, value):
@@ -77,7 +76,7 @@ class SinglyLinkedList:
         if not isinstance(value, int) or value is None:
             raise TypeError('value must be an integer')
         else:
-            if self.__head is None or self.__head.data > value:
+            if self.__head is None or self.__head.data >= value:
                 new_node = Node(value, self.__head)
                 self.__head = new_node
             else:
@@ -100,4 +99,4 @@ class SinglyLinkedList:
         while node_ptr is not None:
             res.append(str(node_ptr.data))
             node_ptr = node_ptr.next_node
-        return '\n'.join(res)
+        return '' if len(res) == 0 else '\n'.join(res)
