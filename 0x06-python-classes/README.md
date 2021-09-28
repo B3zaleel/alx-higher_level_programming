@@ -4,7 +4,7 @@ This project contains some tasks for learning about classes and objects in **Pyt
 
 ## Tasks To Complete
 
-+ [ ] 0\. My first square <br/>_**[0-square.py](0-square.py)**_  contains an empty class `Square` that defines a square.
++ [x] 0\. My first square <br/>_**[0-square.py](0-square.py)**_  contains an empty class `Square` that defines a square.
 + [ ] 1\. Square with size <br/>_**[1-square.py](1-square.py)**_  contains a class `Square` that defines a square by: (based on [`0-square.py`](0-square.py)).
   + Private instance attribute: `size`.
   + Instantiation with `size` (no type/value verification).
