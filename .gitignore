@@ -1,7 +1,6 @@
 .vscode/
-*test*/
 __pycache__
-*test*
+*test*.*
 *~
 *#
 *.exe
