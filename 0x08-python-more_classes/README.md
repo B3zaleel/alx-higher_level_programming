@@ -13,7 +13,7 @@ This project contains some tasks for learning more about classes and objects in 
      + Property `def height(self):` to retrieve it.
      + Property setter `def height(self, value):` to set it (`height` must be an integer and greater than or equal to 0).
   + Instantiation with optional `width` and `height`: `def __init__(self, width=0, height=0):`.
-+ [x] 2\. Area and Perimeter <br/>_**[2-rectangle.py](2-rectangle.py)**_  contains a class `Rectangle` that defines a rectangle by: (based on [`1-rectangle.py`](1-rectangle.py)).
++ [ ] 2\. Area and Perimeter <br/>_**[2-rectangle.py](2-rectangle.py)**_  contains a class `Rectangle` that defines a rectangle by: (based on [`1-rectangle.py`](1-rectangle.py)).
   + Private instance attribute: `width`.
      + Property `def width(self):` to retrieve it.
      + Property setter `def width(self, value):` to set it (`width` must be an integer and greater than or equal to 0).
