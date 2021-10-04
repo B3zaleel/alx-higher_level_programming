@@ -34,7 +34,7 @@ This project contains some tasks for learning more about classes and objects in 
   + Public instance method: `def area(self):` that returns the rectangle area.
   + Public instance method: `def perimeter(self):` that returns the rectangle perimeter.
   + `print()` and `str()` should print the rectangle with the character `#`. (if `width` or `height` is equal to 0, return an empty string).
-+ [ ] 4\. Eval is magic <br/>_**[4-rectangle.py](4-rectangle.py)**_  contains a class `Rectangle` that defines a rectangle by: (based on [`3-rectangle.py`](3-rectangle.py)).
++ [x] 4\. Eval is magic <br/>_**[4-rectangle.py](4-rectangle.py)**_  contains a class `Rectangle` that defines a rectangle by: (based on [`3-rectangle.py`](3-rectangle.py)).
   + Private instance attribute: `width`.
      + Property `def width(self):` to retrieve it.
      + Property setter `def width(self, value):` to set it (`width` must be an integer and greater than or equal to 0).
