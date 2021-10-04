@@ -121,4 +121,4 @@ This project contains some tasks for learning more about classes and objects in 
   + Print the message `Bye rectangle...` (`...` being 3 dots not ellipsis) when an instance of `Rectangle` is deleted.
   + Static method `def bigger_or_equal(rect_1, rect_2):` that returns the biggest rectangle based on the area. Returns `rect_1` if both have the same area value.
   + Class method `def square(cls, size=0):` that returns a new Rectangle instance with `width == height == size`.
-+ [ ] 10\. N queens <br/>_**[101-nqueens.py](101-nqueens.py)**_ contains a program that solves the N queens problem.
++ [x] 10\. N queens <br/>_**[101-nqueens.py](101-nqueens.py)**_ contains a program that solves the N queens problem.
