@@ -23,7 +23,7 @@ This project contains some tasks for learning more about classes and objects in 
   + Instantiation with optional `width` and `height`: `def __init__(self, width=0, height=0):`.
   + Public instance method: `def area(self):` that returns the rectangle area.
   + Public instance method: `def perimeter(self):` that returns the rectangle perimeter.
-+ [ ] 3\. String representation <br/>_**[3-rectangle.py](3-rectangle.py)**_  contains a class `Rectangle` that defines a rectangle by: (based on [`2-rectangle.py`](2-rectangle.py)).
++ [x] 3\. String representation <br/>_**[3-rectangle.py](3-rectangle.py)**_  contains a class `Rectangle` that defines a rectangle by: (based on [`2-rectangle.py`](2-rectangle.py)).
   + Private instance attribute: `width`.
      + Property `def width(self):` to retrieve it.
      + Property setter `def width(self, value):` to set it (`width` must be an integer and greater than or equal to 0).
