@@ -94,11 +94,11 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return ''
         else:
-            res = list(map(
-                lambda x: str(self.print_symbol) * self.width
-                + ('\n' * (x != self.height - 1)),
-                range(self.height)))
-            return ''.join(res)
+            s = str(self.print_symbol)
+            w = self.width
+            h = self.height
+            res = map(lambda x: (s * w) + ('\n' * (x != h - 1)), range(h))
+            return ''.join(list(res))
 
     def __repr__(self):
         '''Returns a representation of this Rectangle's initialization.
