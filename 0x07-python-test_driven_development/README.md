@@ -12,4 +12,4 @@ This project contains some tasks for learning about test-driven development with
 + [x] 5\. Max integer - Unittest <br/>_**[tests/6-max_integer_test.py](tests/6-max_integer_test.py)**_  contains a unittest for the function `def max_integer(list=[]):` in _**[6-max_integer.py](6-max_integer.py)**_, which finds the maximum integer in a list of integers.
 + [x] 6\. Matrix multiplication <br/>_**[100-matrix_mul.py](100-matrix_mul.py)**_  contains a function that multiplies 2 matrices. <br/>_**[tests/100-matrix_mul.txt](tests/100-matrix_mul.txt)**_ contains the doctests.
 + [x] 7\. Lazy matrix multiplication <br/>_**[101-lazy_matrix_mul.py](101-lazy_matrix_mul.py)**_  contains a function that multiplies 2 matrices by using the module `NumPy`. <br/>_**[tests/101-lazy_matrix_mul.txt](tests/101-lazy_matrix_mul.txt)**_ contains the doctests.
-+ [ ] 8\. CPython #3: Python Strings <br/>_**[102-python.c](102-python.c)**_  contains a function that prints Python strings.
++ [x] 8\. CPython #3: Python Strings <br/>_**[102-python.c](102-python.c)**_  contains a function that prints some information about Python strings.
