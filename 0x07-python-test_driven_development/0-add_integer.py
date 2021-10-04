@@ -2,6 +2,7 @@
 '''Contains an add_integer function for a TDD project.
 '''
 
+
 def add_integer(a, b=98):
     '''Computes the sum of two integers.
 
