@@ -4,7 +4,7 @@ This project contains some tasks for learning about test-driven development with
 
 ## Tasks To Complete
 
-+ [ ] 0\. Integers addition <br/>_**[0-add_integer.py](0-add_integer.py)**_  contains a function that adds 2 integers. <br/>_**[tests/0-add_integer.txt](tests/0-add_integer.txt)**_ contains the doctests.
++ [x] 0\. Integers addition <br/>_**[0-add_integer.py](0-add_integer.py)**_  contains a function that adds 2 integers. <br/>_**[tests/0-add_integer.txt](tests/0-add_integer.txt)**_ contains the doctests.
 + [ ] 1\. Divide a matrix <br/>_**[2-matrix_divided.py](2-matrix_divided.py)**_  contains a function that divides all elements of a matrix. <br/>_**[tests/2-matrix_divided.txt](tests/2-matrix_divided.txt)**_ contains the doctests.
 + [ ] 2\. Say my name <br/>_**[3-say_my_name.py](3-say_my_name.py)**_  contains a function that prints `My name is <first name> <last name>`. <br/>_**[tests/3-say_my_name.txt](tests/3-say_my_name.txt)**_ contains the doctests.
 + [ ] 3\. Print square <br/>_**[4-print_square.py](4-print_square.py)**_  contains a function that prints a square with the character `#`. <br/>_**[tests/4-print_square.txt](tests/4-print_square.txt)**_ contains the doctests.
