@@ -104,7 +104,7 @@ This project contains some tasks for learning more about classes and objects in 
   + `repr()` should return a string representation of the rectangle to be able to recreate a new instance by using `eval()`.
   + Print the message `Bye rectangle...` (`...` being 3 dots not ellipsis) when an instance of `Rectangle` is deleted.
   + Static method `def bigger_or_equal(rect_1, rect_2):` that returns the biggest rectangle based on the area. Returns `rect_1` if both have the same area value.
-+ [ ] 9\. A square is a rectangle <br/>_**[9-rectangle.py](9-rectangle.py)**_  contains a class `Rectangle` that defines a rectangle by: (based on [`8-rectangle.py`](8-rectangle.py)).
++ [x] 9\. A square is a rectangle <br/>_**[9-rectangle.py](9-rectangle.py)**_  contains a class `Rectangle` that defines a rectangle by: (based on [`8-rectangle.py`](8-rectangle.py)).
   + Private instance attribute: `width`.
      + Property `def width(self):` to retrieve it.
      + Property setter `def width(self, value):` to set it (`width` must be an integer and greater than or equal to 0).
