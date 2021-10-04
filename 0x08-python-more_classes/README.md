@@ -4,7 +4,7 @@ This project contains some tasks for learning more about classes and objects in 
 
 ## Tasks To Complete
 
-+ [ ] 0\. Simple rectangle <br/>_**[0-rectangle.py](0-rectangle.py)**_  contains an empty class `Rectangle` that defines a rectangle.
++ [x] 0\. Simple rectangle <br/>_**[0-rectangle.py](0-rectangle.py)**_  contains an empty class `Rectangle` that defines a rectangle.
 + [ ] 1\. Real definition of a rectangle <br/>_**[1-rectangle.py](1-rectangle.py)**_  contains a class `Rectangle` that defines a rectangle by: (based on [`0-rectangle.py`](0-rectangle.py)).
   + Private instance attribute: `width`.
      + Property `def width(self):` to retrieve it.
