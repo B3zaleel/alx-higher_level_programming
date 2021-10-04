@@ -73,7 +73,7 @@ This project contains some tasks for learning more about classes and objects in 
   + `print()` and `str()` should print the rectangle with the character `#`. (if `width` or `height` is equal to 0, return an empty string).
   + `repr()` should return a string representation of the rectangle to be able to recreate a new instance by using `eval()`.
   + Print the message `Bye rectangle...` (`...` being 3 dots not ellipsis) when an instance of `Rectangle` is deleted.
-+ [ ] 7\. Change representation <br/>_**[7-rectangle.py](7-rectangle.py)**_  contains a class `Rectangle` that defines a rectangle by: (based on [`6-rectangle.py`](6-rectangle.py)).
++ [x] 7\. Change representation <br/>_**[7-rectangle.py](7-rectangle.py)**_  contains a class `Rectangle` that defines a rectangle by: (based on [`6-rectangle.py`](6-rectangle.py)).
   + Private instance attribute: `width`.
      + Property `def width(self):` to retrieve it.
      + Property setter `def width(self, value):` to set it (`width` must be an integer and greater than or equal to 0).
