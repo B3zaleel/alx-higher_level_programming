@@ -103,8 +103,7 @@ class Rectangle:
         '''
         return 'Rectangle({:d}, {:d})'.format(self.width, self.height)
 
-    @classmethod
-    def __del__(cls):
+    def __del__(self):
         '''Performs some routines after an object is deleted.
         '''
         print('Bye rectangle...')

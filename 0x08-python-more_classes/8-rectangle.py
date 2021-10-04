@@ -94,11 +94,11 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return ''
         else:
-            res = list(map(
-                lambda x: str(self.print_symbol) * self.width
-                + ('\n' * (x != self.height - 1)),
-                range(self.height)))
-            return ''.join(res)
+            s = str(self.print_symbol)
+            w = self.width
+            h = self.height
+            res = map(lambda x: (s * w) + ('\n' * (x != h - 1)), range(h))
+            return ''.join(list(res))
 
     def __repr__(self):
         '''Returns a representation of this Rectangle's initialization.
@@ -108,12 +108,11 @@ class Rectangle:
         '''
         return 'Rectangle({:d}, {:d})'.format(self.width, self.height)
 
-    @classmethod
-    def __del__(cls):
+    def __del__(self):
         '''Performs some routines after an object is deleted.
         '''
         print('Bye rectangle...')
-        cls.number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
