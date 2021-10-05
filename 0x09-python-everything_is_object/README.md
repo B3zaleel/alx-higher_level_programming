@@ -4,91 +4,91 @@ This project contains some tasks for learning about object behaviours in **Pytho
 
 ## Tasks To Complete
 
-+ [ ] 0\. Who am I? <br/>_**[0-answer.txt](0-answer.txt)**_ contains the function I would use to print the type of an object.
-+ [ ] 1\. Where are you? <br/>_**[1-answer.txt](1-answer.txt)**_ contains the function I would use to get the variable identifier (which is the memory address in the CPython implementation).
-+ [ ] 2\. Right count <br/>_**[2-answer.txt](2-answer.txt)**_ contains the answer to if `a` and `b` point to the same object in the following code (`Yes` / `No`).
++ [x] 0\. Who am I? <br/>_**[0-answer.txt](0-answer.txt)**_ contains the function I would use to print the type of an object.
++ [x] 1\. Where are you? <br/>_**[1-answer.txt](1-answer.txt)**_ contains the function I would use to get the variable identifier (which is the memory address in the CPython implementation).
++ [x] 2\. Right count <br/>_**[2-answer.txt](2-answer.txt)**_ contains the answer to if `a` and `b` point to the same object in the following code (`Yes` / `No`).
   ```python
   >>> a = 89
   >>> b = 100
   ```
-+ [ ] 3\. Right count = <br/>_**[3-answer.txt](3-answer.txt)**_ contains the answer to if `a` and `b` point to the same object in the following code (`Yes` / `No`).
++ [x] 3\. Right count = <br/>_**[3-answer.txt](3-answer.txt)**_ contains the answer to if `a` and `b` point to the same object in the following code (`Yes` / `No`).
   ```python
   >>> a = 89
   >>> b = 89
   ```
-+ [ ] 4\. Right count = <br/>_**[4-answer.txt](4-answer.txt)**_ contains the answer to if `a` and `b` point to the same object in the following code (`Yes` / `No`).
++ [x] 4\. Right count = <br/>_**[4-answer.txt](4-answer.txt)**_ contains the answer to if `a` and `b` point to the same object in the following code (`Yes` / `No`).
   ```python
   >>> a = 89
   >>> b = a
   ```
-+ [ ] 5\. Right count =+ <br/>_**[5-answer.txt](5-answer.txt)**_ contains the answer to if `a` and `b` point to the same object in the following code (`Yes` / `No`).
++ [x] 5\. Right count =+ <br/>_**[5-answer.txt](5-answer.txt)**_ contains the answer to if `a` and `b` point to the same object in the following code (`Yes` / `No`).
   ```python
   >>> a = 89
   >>> b = a + 1
   ```
-+ [ ] 6\. Is equal <br/>_**[6-answer.txt](6-answer.txt)**_ contains the output of the following code.
++ [x] 6\. Is equal <br/>_**[6-answer.txt](6-answer.txt)**_ contains the output of the following code.
   ```python
   >>> s1 = "Best School"
   >>> s2 = s1
   >>> print(s1 == s2)
   ```
-+ [ ] 7\. Is the same <br/>_**[7-answer.txt](7-answer.txt)**_ contains the output of the following code.
++ [x] 7\. Is the same <br/>_**[7-answer.txt](7-answer.txt)**_ contains the output of the following code.
   ```python
   >>> s1 = "Best"
   >>> s2 = s1
   >>> print(s1 is s2)
   ```
-+ [ ] 8\. Is really equal <br/>_**[8-answer.txt](8-answer.txt)**_ contains the output of the following code.
++ [x] 8\. Is really equal <br/>_**[8-answer.txt](8-answer.txt)**_ contains the output of the following code.
   ```python
   >>> s1 = "Best School"
   >>> s2 = "Best School"
   >>> print(s1 == s2)
   ```
-+ [ ] 9\. Is really the same <br/>_**[9-answer.txt](9-answer.txt)**_ contains the output of the following code.
++ [x] 9\. Is really the same <br/>_**[9-answer.txt](9-answer.txt)**_ contains the output of the following code.
   ```python
   >>> s1 = "Best School"
   >>> s2 = "Best School"
   >>> print(s1 is s2)
   ```
-+ [ ] 10\. And with a list, is it equal <br/>_**[10-answer.txt](10-answer.txt)**_ contains the output of the following code.
++ [x] 10\. And with a list, is it equal <br/>_**[10-answer.txt](10-answer.txt)**_ contains the output of the following code.
   ```python
   >>> l1 = [1, 2, 3]
   >>> l2 = [1, 2, 3]
   >>> print(l1 == l2)
   ```
-+ [ ] 11\. And with a list, is it the same <br/>_**[11-answer.txt](11-answer.txt)**_ contains the output of the following code.
++ [x] 11\. And with a list, is it the same <br/>_**[11-answer.txt](11-answer.txt)**_ contains the output of the following code.
   ```python
   >>> l1 = [1, 2, 3]
   >>> l2 = [1, 2, 3]
   >>> print(l1 is l2)
   ```
-+ [ ] 12\. And with a list, is it really equal <br/>_**[12-answer.txt](12-answer.txt)**_ contains the output of the following code.
++ [x] 12\. And with a list, is it really equal <br/>_**[12-answer.txt](12-answer.txt)**_ contains the output of the following code.
   ```python
   >>> l1 = [1, 2, 3]
   >>> l2 = l1
   >>> print(l1 == l2)
   ```
-+ [ ] 13\. And with a list, is it really the same <br/>_**[13-answer.txt](13-answer.txt)**_ contains the output of the following code.
++ [x] 13\. And with a list, is it really the same <br/>_**[13-answer.txt](13-answer.txt)**_ contains the output of the following code.
   ```python
   >>> l1 = [1, 2, 3]
   >>> l2 = l1
   >>> print(l1 is l2)
   ```
-+ [ ] 14\. List append <br/>_**[14-answer.txt](14-answer.txt)**_ contains the output of the following code.
++ [x] 14\. List append <br/>_**[14-answer.txt](14-answer.txt)**_ contains the output of the following code.
   ```python
   l1 = [1, 2, 3]
   l2 = l1
   l1.append(4)
   print(l2)
   ```
-+ [ ] 15\. List add <br/>_**[15-answer.txt](15-answer.txt)**_ contains the output of the following code.
++ [x] 15\. List add <br/>_**[15-answer.txt](15-answer.txt)**_ contains the output of the following code.
   ```python
   l1 = [1, 2, 3]
   l2 = l1
   l1 = l1 + [4]
   print(l2)
   ```
-+ [ ] 16\. Integer incrementation <br/>_**[16-answer.txt](16-answer.txt)**_ contains the output of the following code.
++ [x] 16\. Integer incrementation <br/>_**[16-answer.txt](16-answer.txt)**_ contains the output of the following code.
   ```python
   def increment(n):
       n += 1
@@ -97,7 +97,7 @@ This project contains some tasks for learning about object behaviours in **Pytho
   increment(a)
   print(a)
   ```
-+ [ ] 17\. List incrementation <br/>_**[17-answer.txt](17-answer.txt)**_ contains the output of the following code.
++ [x] 17\. List incrementation <br/>_**[17-answer.txt](17-answer.txt)**_ contains the output of the following code.
   ```python
   def increment(n):
       n.append(4)
@@ -106,7 +106,7 @@ This project contains some tasks for learning about object behaviours in **Pytho
   increment(l)
   print(l)
   ```
-+ [ ] 18\. List assignation <br/>_**[18-answer.txt](18-answer.txt)**_ contains the output of the following code.
++ [x] 18\. List assignation <br/>_**[18-answer.txt](18-answer.txt)**_ contains the output of the following code.
   ```python
   def assign_value(n, v):
       n = v
@@ -116,42 +116,42 @@ This project contains some tasks for learning about object behaviours in **Pytho
   assign_value(l1, l2)
   print(l1)
   ```
-+ [ ] 19\. Copy a list object <br/>_**[19-copy_list.py](19-copy_list.py)**_ contains a function that returns a copy of a list.
-+ [ ] 20\. Tuple or not? <br/>_**[20-answer.txt](20-answer.txt)**_ contains the answer to if `a` is a tuple or not (`Yes` / `No`).
++ [x] 19\. Copy a list object <br/>_**[19-copy_list.py](19-copy_list.py)**_ contains a function that returns a copy of a list.
++ [x] 20\. Tuple or not? <br/>_**[20-answer.txt](20-answer.txt)**_ contains the answer to if `a` is a tuple or not (`Yes` / `No`).
   ```python
   a = ()
   ```
-+ [ ] 21\. Tuple or not? <br/>_**[21-answer.txt](21-answer.txt)**_ contains the answer to if `a` is a tuple or not (`Yes` / `No`).
++ [x] 21\. Tuple or not? <br/>_**[21-answer.txt](21-answer.txt)**_ contains the answer to if `a` is a tuple or not (`Yes` / `No`).
   ```python
   a = (1, 2)
   ```
-+ [ ] 22\. Tuple or not? <br/>_**[22-answer.txt](22-answer.txt)**_ contains the answer to if `a` is a tuple or not (`Yes` / `No`).
++ [x] 22\. Tuple or not? <br/>_**[22-answer.txt](22-answer.txt)**_ contains the answer to if `a` is a tuple or not (`Yes` / `No`).
   ```python
   a = (1)
   ```
-+ [ ] 23\. Tuple or not? <br/>_**[23-answer.txt](23-answer.txt)**_ contains the answer to if `a` is a tuple or not (`Yes` / `No`).
++ [x] 23\. Tuple or not? <br/>_**[23-answer.txt](23-answer.txt)**_ contains the answer to if `a` is a tuple or not (`Yes` / `No`).
   ```python
   a = (1, )
   ```
-+ [ ] 24\. Who I am? <br/>_**[24-answer.txt](24-answer.txt)**_ contains the output of the following code.
++ [x] 24\. Who I am? <br/>_**[24-answer.txt](24-answer.txt)**_ contains the output of the following code.
   ```python
   a = (1)
   b = (1)
   a is b
   ```
-+ [ ] 25\. Tuple or not <br/>_**[25-answer.txt](25-answer.txt)**_ contains the output of the following code.
++ [x] 25\. Tuple or not <br/>_**[25-answer.txt](25-answer.txt)**_ contains the output of the following code.
   ```python
   a = (1, 2)
   b = (1, 2)
   a is b
   ```
-+ [ ] 26\. Empty is not empty <br/>_**[26-answer.txt](26-answer.txt)**_ contains the output of the following code.
++ [x] 26\. Empty is not empty <br/>_**[26-answer.txt](26-answer.txt)**_ contains the output of the following code.
   ```python
   a = ()
   b = ()
   a is b
   ```
-+ [ ] 27\. Still the same? <br/>_**[27-answer.txt](27-answer.txt)**_ contains the answer to if the last line of the following script will print `139926795932424` (`Yes` / `No`).
++ [x] 27\. Still the same? <br/>_**[27-answer.txt](27-answer.txt)**_ contains the answer to if the last line of the following script will print `139926795932424` (`Yes` / `No`).
   ```python
   >>> id(a)
   139926795932424
@@ -160,7 +160,7 @@ This project contains some tasks for learning about object behaviours in **Pytho
   >>> a = a + [5]
   >>> id(a)
   ```
-+ [ ] 28\. Same or not? <br/>_**[28-answer.txt](28-answer.txt)**_ contains the answer to if the last line of the following script will print `139926795932424` (`Yes` / `No`).
++ [x] 28\. Same or not? <br/>_**[28-answer.txt](28-answer.txt)**_ contains the answer to if the last line of the following script will print `139926795932424` (`Yes` / `No`).
   ```python
   >>> a
   [1, 2, 3]
