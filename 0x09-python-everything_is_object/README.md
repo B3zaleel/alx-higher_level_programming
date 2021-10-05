@@ -191,7 +191,7 @@ This project contains some tasks for learning about object behaviours in **Pytho
   + _**[104-line3.txt](104-line3.txt)**_ Contains the answer to if the int object pointed by `a` is deleted after the execution of line 3 in the script (`Yes` / `No`).
   + _**[104-line4.txt](104-line4.txt)**_ Contains the answer to if the int object pointed by `b` is deleted after the execution of line 4 in the script (`Yes` / `No`).
   + _**[104-line5.txt](104-line5.txt)**_ Contains the answer to how many int objects are created by the execution of the last line of the script.
-+ [ ] 33\. int 3/3 <br/>Considering the script below and assuming we are using a CPython implementation of Python3 with default options/configuration:
++ [x] 33\. int 3/3 <br/>Considering the script below and assuming we are using a CPython implementation of Python3 with default options/configuration:
   ```python
   print("I")
   print("Love")
