@@ -178,7 +178,7 @@ This project contains some tasks for learning about object behaviours in **Pytho
   ```
   + _**[103-line1.txt](103-line1.txt)**_ Contains the answer to how many int objects are created by the execution of the first line of the script.
   + _**[103-line2.txt](103-line2.txt)**_ Contains the answer to how many int objects are created by the execution of the second line of the script.
-+ [ ] 32\. int 2/3 <br/>Considering the script below and assuming we are using a CPython implementation of Python3 with default options/configuration:
++ [x] 32\. int 2/3 <br/>Considering the script below and assuming we are using a CPython implementation of Python3 with default options/configuration:
   ```python
   a = 1024
   b = 1024
