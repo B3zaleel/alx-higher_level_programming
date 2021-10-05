@@ -171,7 +171,7 @@ This project contains some tasks for learning about object behaviours in **Pytho
   ```
 + [x] 29\. #pythonic <br/>_**[100-magic_string.py](100-magic_string.py)**_ contains a function that returns a string “BestSchool” n times the number of the iteration.
 + [x] 30\. Low memory cost <br/>_**[101-locked_class.py](101-locked_class.py)**_ contains a class `LockedClass` with no class or object attribute, that prevents the user from dynamically creating new instance attributes, except if the new instance attribute is called `first_name`.
-+ [ ] 31\. int 1/3 <br/>Considering the script below and assuming we are using a CPython implementation of Python3 with default options/configuration:
++ [x] 31\. int 1/3 <br/>Considering the script below and assuming we are using a CPython implementation of Python3 with default options/configuration:
   ```python
   a = 1
   b = 1
