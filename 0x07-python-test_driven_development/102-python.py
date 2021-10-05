@@ -12,8 +12,8 @@ lib.print_python_string.argtypes = [ctypes.py_object]
 lib.print_python_string('English: I do not know what you mean')
 lib.print_python_string('Russian: Я не знаю, что вы имеете в виду')
 lib.print_python_string('French: je ne sais pas ce que tu veux dire')
-lib.print_python_string("French: L'huile et l'eau "
-                        + "ne peuvent pas être mélangées")
+s = "French: L'huile et l'eau ne peuvent pas être mélangées"
+lib.print_python_string(s)
 lib.print_python_string('Chinese: 我不知道你想表达什么意思')
 lib.print_python_string('Korean: 난 당신이 무슨 뜻인지 모르겠어요')
 lib.print_python_string('Japanese: 意味が分からない')
