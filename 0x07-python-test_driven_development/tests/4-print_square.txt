@@ -38,5 +38,10 @@ size must be an integer
 ... except ValueError as ex:
 ...     print(ex.args[0])
 size must be >= 0
+>>> try:
+...     print_square()
+... except Exception as ex:
+...     print(ex.args[0])
+print_square() missing 1 required positional argument: 'size'
 
 '''
