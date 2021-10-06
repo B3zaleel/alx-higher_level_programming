@@ -10,6 +10,8 @@
 [[16.0, 28.0]]
 >>> matrix_divided([[12, 7], [21, 23]], 13)
 [[0.92, 0.54], [1.62, 1.77]]
+>>> matrix_divided([[4, 5], [6, 8]], float('inf'))
+[[0.0, 0.0], [0.0, 0.0]]
 
 # Invalid arguments
 >>> try:
@@ -67,5 +69,15 @@ div must be a number
 ... except ZeroDivisionError as ex:
 ...     print(ex.args[0])
 division by zero
+>>> try:
+...     matrix_divided([[4, 7]])
+... except Exception as ex:
+...     print(ex.args[0])
+matrix_divided() missing 1 required positional argument: 'div'
+>>> try:
+...     matrix_divided()
+... except Exception as ex:
+...     print(ex.args[0])
+matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
 
 '''
