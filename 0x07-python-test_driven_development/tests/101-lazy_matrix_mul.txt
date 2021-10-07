@@ -29,7 +29,7 @@ matmul: Input operand 1 does not have enough dimensions (has 0, gufunc core with
 ...     print(lazy_matrix_mul(['[4, 6]'], 12))
 ... except ValueError as ex:
 ...     print(ex.args[0])
-matmul: Input operand 1 does not have enough dimensions (has 0, gufunc core with signature (n?,k),(k,m?)->(n?,m?) requires 1)
+invalid literal for int() with base 10: '[4, 6]'
 >>> try:
 ...     print(lazy_matrix_mul([(4, 6)], [12]))
 ... except ValueError as ex:
@@ -79,27 +79,27 @@ matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc sign
 ...     print(lazy_matrix_mul([[4, 6, 8], []], [[(12, )]]))
 ... except ValueError as ex:
 ...     print(ex.args[0])
-matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 1 is different from 2)
+setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
 >>> try:
 ...     print(lazy_matrix_mul([[4, 6, 8], []], [[12, 3]]))
 ... except ValueError as ex:
 ...     print(ex.args[0])
-matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 1 is different from 2)
+setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
 >>> try:
 ...     print(lazy_matrix_mul([[4, 6, 8], [1, 2, 3]], [[12, 3], []]))
 ... except ValueError as ex:
 ...     print(ex.args[0])
-matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 2 is different from 3)
+setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
 >>> try:
 ...     print(lazy_matrix_mul([[4, 6, 8], [1]], [[12, 3]]))
 ... except ValueError as ex:
 ...     print(ex.args[0])
-matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 1 is different from 2)
+setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
 >>> try:
 ...     print(lazy_matrix_mul([[4, 6, 8], [4, 4, 4]], [[12, 3], [7]]))
 ... except ValueError as ex:
 ...     print(ex.args[0])
-matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 2 is different from 3)
+setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
 >>> try:
 ...     print(lazy_matrix_mul([[4, 6, 8], [1, 3, 7]], [[12, 3]]))
 ... except ValueError as ex:
