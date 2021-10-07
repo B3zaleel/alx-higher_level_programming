@@ -14,6 +14,6 @@ def lazy_matrix_mul(m_a, m_b):
     Returns:
         list: A list of lists of the products of the two given matrices.
     '''
-    a = np.array(m_a, dtype=(int, float))
-    b = np.array(m_b, dtype=(int, float))
+    a = np.array(m_a)
+    b = np.array(m_b)
     return np.matmul(a, b)
