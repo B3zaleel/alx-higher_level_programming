@@ -15,6 +15,7 @@ void print_python_string(PyObject *p)
 {
 	Py_ssize_t str_len;
 	Py_UNICODE *str = NULL;
+	char *fmt_str = "  value: %ls\n";
 
 	fflush(stdout);
 	printf("[.] string object info\n");
@@ -30,7 +31,7 @@ void print_python_string(PyObject *p)
 		fflush(stdout);
 		printf("  length: %d\n", (int)str_len);
 		fflush(stdout);
-		printf("  value: %ls\n", str);
+		printf(fmt_str, str);
 		fflush(stdout);
 		PyMem_Free(str);
 	}
