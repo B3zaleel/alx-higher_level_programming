@@ -75,6 +75,6 @@
 ...     BaseGeometry().integer_validator('foo', 2, 5)
 ... except Exception as ex:
 ...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
-[TypeError] integer_validator() integer_validator() takes 3 positional arguments but 4 were given
+[TypeError] integer_validator() takes 3 positional arguments but 4 were given
 
 '''
