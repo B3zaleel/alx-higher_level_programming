@@ -29,5 +29,5 @@ This project contains some tasks for learning about inheritance in **Python**.
   + Instantiation with `size`: `def __init__(self, size):`.
   + the `area()` method must be implemented.
   + `print()` should print, and `str()` should return, the square description: `[Square] <width>/<height>`.
-+ [ ] 12\. My integer <br/>_**[100-my_int.py](100-my_int.py)**_ contains a class `MyInt` that inherits from `int` and switches the `==` and `!=` operators.
++ [x] 12\. My integer <br/>_**[100-my_int.py](100-my_int.py)**_ contains a class `MyInt` that inherits from `int` and switches the `==` and `!=` operators.
 + [ ] 13\. Can I? <br/>_**[101-add_attribute.py](101-add_attribute.py)**_ contains a function that adds a new attribute to an object if it’s possible.
