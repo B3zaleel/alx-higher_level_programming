@@ -25,7 +25,7 @@ This project contains some tasks for learning about inheritance in **Python**.
 + [x] 10\. Square #1 <br/>_**[10-square.py](10-square.py)**_ contains a class `Square` that inherits from `Rectangle` ([9-rectangle.py](9-rectangle.py)).
   + Instantiation with `size`: `def __init__(self, size):`.
   + the `area()` method must be implemented.
-+ [ ] 11\. Square #2 <br/>_**[11-square.py](11-square.py)**_ contains a class `Square` that inherits from `Rectangle` ([9-rectangle.py](9-rectangle.py)).
++ [x] 11\. Square #2 <br/>_**[11-square.py](11-square.py)**_ contains a class `Square` that inherits from `Rectangle` ([9-rectangle.py](9-rectangle.py)).
   + Instantiation with `size`: `def __init__(self, size):`.
   + the `area()` method must be implemented.
   + `print()` should print, and `str()` should return, the square description: `[Square] <width>/<height>`.
