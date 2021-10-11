@@ -18,7 +18,7 @@ This project contains some tasks for learning about inheritance in **Python**.
   + Public instance method: `def integer_validator(self, name, value):` that validates `value`.
 + [x] 8\. Rectangle <br/>_**[8-rectangle.py](8-rectangle.py)**_ contains a class `Rectangle` that inherits from `BaseGeometry` ([7-base_geometry.py](7-base_geometry.py)).
   + Instantiation with `width` and `height`: `def __init__(self, width, height):`.
-+ [ ] 9\. Full rectangle <br/>_**[9-rectangle.py](9-rectangle.py)**_ contains a class `Rectangle` that inherits from `BaseGeometry` ([7-base_geometry.py](7-base_geometry.py)). (task based on [8-rectangle.py](8-rectangle.py)).
++ [x] 9\. Full rectangle <br/>_**[9-rectangle.py](9-rectangle.py)**_ contains a class `Rectangle` that inherits from `BaseGeometry` ([7-base_geometry.py](7-base_geometry.py)). (task based on [8-rectangle.py](8-rectangle.py)).
   + Instantiation with `width` and `height`: `def __init__(self, width, height):`.
   + the `area()` method must be implemented.
   + `print()` should print, and `str()` should return, the following rectangle description: `[Rectangle] <width>/<height>`.
