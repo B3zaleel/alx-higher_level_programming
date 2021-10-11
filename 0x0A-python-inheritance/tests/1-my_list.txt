@@ -1,0 +1,24 @@
+'''
+# Import the required class
+>>> from importlib import import_module
+>>> MyList = import_module('1-my_list').MyList
+
+>>> MyList().print_sorted()
+[]
+>>> MyList([7]).print_sorted()
+[7]
+>>> MyList((2, 3)).print_sorted()
+[2, 3]
+>>> MyList(b'78531').print_sorted()
+[49, 51, 53, 55, 56]
+>>> MyList([2, 3, 5]).print_sorted()
+[2, 3, 5]
+>>> MyList([17, 13, 9, 5, 1]).print_sorted()
+[1, 5, 9, 13, 17]
+>>> l = MyList([7, 12, 5, 2, 9, 129, 50, 35])
+>>> l.print_sorted()
+[2, 5, 7, 9, 12, 35, 50, 129]
+>>> l
+[7, 12, 5, 2, 9, 129, 50, 35]
+
+'''
