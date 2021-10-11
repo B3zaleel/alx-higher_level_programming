@@ -33,6 +33,12 @@ True
 [2, 5, 7, 9, 12, 35, 50, 129]
 >>> l
 [7, 12, 5, 2, 9, 129, 50, 35]
+>>> l = MyList([-7, -8, -2, -19])
+>>> l.print_sorted()
+[-19, -8, -7, -2]
+>>> l = MyList([-7, -8, -2, 6])
+>>> l.print_sorted()
+[-8, -7, -2, 6]
 >>> try:
 ...     l = MyList(4, 7)
 ... except Exception as ex:
