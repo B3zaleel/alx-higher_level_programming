@@ -40,6 +40,12 @@ True
 [TypeError] area() takes 1 positional argument but 2 were given
 >>> try:
 ...     g = BaseGeometry()
+...     g.area(g)
+... except Exception as ex:
+...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
+[TypeError] area() takes 1 positional argument but 2 were given
+>>> try:
+...     g = BaseGeometry()
 ...     g.area(None)
 ... except Exception as ex:
 ...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
@@ -182,6 +188,12 @@ True
 [TypeError] integer_validator() takes 3 positional arguments but 4 were given
 >>> try:
 ...     g = BaseGeometry(7)
+...     g.integer_validator('foo', 5)
+... except Exception as ex:
+...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
+[TypeError] BaseGeometry() takes no arguments
+>>> try:
+...     g = BaseGeometry(None)
 ...     g.integer_validator('foo', 5)
 ... except Exception as ex:
 ...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
