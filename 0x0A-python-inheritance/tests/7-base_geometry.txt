@@ -61,5 +61,20 @@
 ... except Exception as ex:
 ...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
 [ValueError] foo must be greater than 0
+>>> try:
+...     BaseGeometry().integer_validator('foo')
+... except Exception as ex:
+...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
+[TypeError] integer_validator() missing 1 required positional argument: 'value'
+>>> try:
+...     BaseGeometry().integer_validator()
+... except Exception as ex:
+...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
+[TypeError] integer_validator() missing 2 required positional arguments: 'name' and 'value'
+>>> try:
+...     BaseGeometry().integer_validator('foo', 2, 5)
+... except Exception as ex:
+...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
+[TypeError] integer_validator() integer_validator() takes 3 positional arguments but 4 were given
 
 '''
