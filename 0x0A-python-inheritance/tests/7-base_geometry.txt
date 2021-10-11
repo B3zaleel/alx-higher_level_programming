@@ -3,6 +3,8 @@
 >>> from importlib import import_module
 >>> BaseGeometry = import_module('7-base_geometry').BaseGeometry
 
+>>> class TestInt(int):
+...     pass
 >>> g = BaseGeometry()
 >>> type(g)
 <class '7-base_geometry.BaseGeometry'>
@@ -95,6 +97,25 @@ True
 ... except Exception as ex:
 ...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
 [TypeError] foo must be an integer
+>>> try:
+...     g = BaseGeometry()
+...     n = TestInt(34)
+...     g.integer_validator('foo', n)
+... except Exception as ex:
+...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
+[TypeError] foo must be an integer
+>>> try:
+...     g = BaseGeometry()
+...     g.integer_validator('foo', g)
+... except Exception as ex:
+...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
+[TypeError] foo must be an integer
+>>> try:
+...     g = BaseGeometry()
+...     g.integer_validator('angle', complex(2, 3))
+... except Exception as ex:
+...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
+[TypeError] angle must be an integer
 
 >>> try:
 ...     g = BaseGeometry()
