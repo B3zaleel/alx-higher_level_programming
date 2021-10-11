@@ -3,6 +3,13 @@
 >>> from importlib import import_module
 >>> MyList = import_module('1-my_list').MyList
 
+>>> l = MyList()
+>>> type(l)
+<class '1-my_list.MyList'>
+>>> isinstance(MyList, list)
+False
+>>> issubclass(MyList, list)
+True
 >>> MyList().print_sorted()
 []
 >>> MyList([7]).print_sorted()
