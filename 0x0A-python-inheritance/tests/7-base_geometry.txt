@@ -20,6 +20,8 @@ True
 <class 'method'>
 >>> g.integer_validator('foo', 2)
 >>> g.integer_validator('foo', 278)
+>>> g.integer_validator('foo', int('278'))
+>>> g.integer_validator('foo', int('bead', 16))
 >>> g.integer_validator(b'foo', 278)
 >>> g.integer_validator(0x666f6f, 278)
 >>> g.integer_validator([0x666f6f], 278)
@@ -55,6 +57,12 @@ True
 ... except Exception as ex:
 ...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
 [TypeError] None must be an integer
+>>> try:
+...     g = BaseGeometry()
+...     g.integer_validator('height', int)
+... except Exception as ex:
+...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
+[TypeError] height must be an integer
 >>> try:
 ...     g = BaseGeometry()
 ...     g.integer_validator('foo', '23')
