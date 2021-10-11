@@ -11,7 +11,7 @@ This project contains some tasks for learning about inheritance in **Python**.
 + [x] 3\. Same class or inherit from <br/>_**[3-is_kind_of_class.py](3-is_kind_of_class.py)**_ contains a function that returns `True` if the object is an instance of, or if the object is an instance of a class that inherited from, the specified class; otherwise `False`.
 + [x] 4\. Only sub class of <br/>_**[4-inherits_from.py](4-inherits_from.py)**_ contains a function that returns `True` if the object is an instance of a class that inherited (directly or indirectly) from the specified class; otherwise `False`.
 + [x] 5\. Geometry module <br/>_**[5-base_geometry.py](5-base_geometry.py)**_ contains an empty class `BaseGeometry`.
-+ [ ] 6\. Improve Geometry <br/>_**[6-base_geometry.py](6-base_geometry.py)**_ contains a class `BaseGeometry` (based on [5-base_geometry.py](5-base_geometry.py)).
++ [x] 6\. Improve Geometry <br/>_**[6-base_geometry.py](6-base_geometry.py)**_ contains a class `BaseGeometry` (based on [5-base_geometry.py](5-base_geometry.py)).
   + Public instance method: `def area(self):` that raises an `Exception` with the message `area() is not implemented`.
 + [ ] 7\. Integer validator <br/>_**[7-base_geometry.py](7-base_geometry.py)**_ contains a class BaseGeometry (based on [6-base_geometry.py](6-base_geometry.py)).
   + Public instance method: `def area(self):` that raises an `Exception` with the message `area() is not implemented`.
