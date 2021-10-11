@@ -4,6 +4,8 @@
 >>> BaseGeometry = import_module('7-base_geometry').BaseGeometry
 
 >>> g = BaseGeometry()
+>>> type(g)
+<class '7-base_geometry.BaseGeometry'>
 >>> 'integer_validator' in dir(g)
 True
 >>> 'area' in dir(g)
@@ -14,6 +16,9 @@ True
 <class 'method'>
 >>> g.integer_validator('foo', 2)
 >>> g.integer_validator('foo', 278)
+>>> g.integer_validator(b'foo', 278)
+>>> g.integer_validator(0x666f6f, 278)
+>>> g.integer_validator([0x666f6f], 278)
 
 >>> try:
 ...     g = BaseGeometry()
