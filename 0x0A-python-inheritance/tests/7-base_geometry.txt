@@ -36,7 +36,25 @@ True
 ... except Exception as ex:
 ...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
 [TypeError] area() takes 1 positional argument but 2 were given
+>>> try:
+...     g = BaseGeometry()
+...     g.area(None)
+... except Exception as ex:
+...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
+[TypeError] area() takes 1 positional argument but 2 were given
 
+>>> try:
+...     g = BaseGeometry()
+...     g.integer_validator('size', None)
+... except Exception as ex:
+...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
+[TypeError] size must be an integer
+>>> try:
+...     g = BaseGeometry()
+...     g.integer_validator(None, None)
+... except Exception as ex:
+...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
+[TypeError] size must be an integer
 >>> try:
 ...     g = BaseGeometry()
 ...     g.integer_validator('foo', '23')
@@ -113,6 +131,12 @@ True
 >>> try:
 ...     g = BaseGeometry()
 ...     g.integer_validator('angle', complex(2, 3))
+... except Exception as ex:
+...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
+[TypeError] angle must be an integer
+>>> try:
+...     g = BaseGeometry()
+...     g.integer_validator('angle', 0.0)
 ... except Exception as ex:
 ...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
 [TypeError] angle must be an integer
