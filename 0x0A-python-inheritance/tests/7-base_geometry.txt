@@ -54,7 +54,7 @@ True
 ...     g.integer_validator(None, None)
 ... except Exception as ex:
 ...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
-[TypeError] size must be an integer
+[TypeError] None must be an integer
 >>> try:
 ...     g = BaseGeometry()
 ...     g.integer_validator('foo', '23')
