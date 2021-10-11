@@ -6,6 +6,8 @@
 >>> g = BaseGeometry()
 >>> type(g)
 <class '7-base_geometry.BaseGeometry'>
+>>> g.__class__.__name__
+'BaseGeometry'
 >>> 'integer_validator' in dir(g)
 True
 >>> 'area' in dir(g)
@@ -47,6 +49,12 @@ True
 [TypeError] foo must be an integer
 >>> try:
 ...     g = BaseGeometry()
+...     g.integer_validator('foo', False)
+... except Exception as ex:
+...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
+[TypeError] foo must be an integer
+>>> try:
+...     g = BaseGeometry()
 ...     g.integer_validator('foo', b'2')
 ... except Exception as ex:
 ...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
@@ -78,6 +86,12 @@ True
 >>> try:
 ...     g = BaseGeometry()
 ...     g.integer_validator('foo', float('nan'))
+... except Exception as ex:
+...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
+[TypeError] foo must be an integer
+>>> try:
+...     g = BaseGeometry()
+...     g.integer_validator('foo', [5])
 ... except Exception as ex:
 ...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
 [TypeError] foo must be an integer
