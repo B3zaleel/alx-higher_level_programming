@@ -62,7 +62,7 @@ True
 ...     g.integer_validator(None, None)
 ... except Exception as ex:
 ...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
-[TypeError] None must be an integer
+[TypeError] unsupported format string passed to NoneType.__format__
 >>> try:
 ...     g = BaseGeometry()
 ...     g.integer_validator('height', int)
