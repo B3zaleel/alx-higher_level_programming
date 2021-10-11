@@ -51,6 +51,22 @@ True
 ...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
 [TypeError] list expected at most 1 argument, got 2
 >>> try:
+...     l = MyList()
+...     l.append(78)
+...     l.append(None)
+...     l.print_sorted()
+... except Exception as ex:
+...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
+[TypeError] '<' not supported between instances of 'NoneType' and 'int'
+>>> try:
+...     l = MyList()
+...     l.append(78)
+...     l.append([12])
+...     l.print_sorted()
+... except Exception as ex:
+...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
+[TypeError] '<' not supported between instances of 'list' and 'int'
+>>> try:
 ...     l.print_sorted([5, 2])
 ... except Exception as ex:
 ...     print('[{}] {}'.format(ex.__class__.__name__, ex.args[0]))
