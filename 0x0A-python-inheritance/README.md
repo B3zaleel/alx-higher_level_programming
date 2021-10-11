@@ -4,7 +4,7 @@ This project contains some tasks for learning about inheritance in **Python**.
 
 ## Tasks To Complete
 
-+ [ ] 0\. Lookup <br/>_**[0-lookup.py](0-lookup.py)**_ contains a function that returns the list of available attributes and methods of an object.
++ [x] 0\. Lookup <br/>_**[0-lookup.py](0-lookup.py)**_ contains a function that returns the list of available attributes and methods of an object.
 + [ ] 1\. My list <br/>_**[1-my_list.py](1-my_list.py)**_ contains a class `MyList` that inherits from `list`.
   + Public instance method: `def print_sorted(self):` that prints the list, but sorted (ascending sort).
 + [ ] 2\. Exact same object <br/>_**[2-is_same_class.py](2-is_same_class.py)**_ contains a function that returns `True` if the object is *exactly* an instance of the specified class; otherwise `False`.
