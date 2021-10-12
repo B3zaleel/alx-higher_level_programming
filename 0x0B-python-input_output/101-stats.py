@@ -37,18 +37,12 @@ log_fmt = '{} - \\[{}\\] "{}" {} {}'.format(fp[0], fp[1], fp[2], fp[3], fp[4])
 def print_statistics():
     '''Prints the accumulated statistics of the HTTP log.
     '''
-    global total_file_size
-    global status_codes_stats
-    stats = []
-    # stats.append('File size: {:d}'.format(total_file_size))
     print('File size: {:d}'.format(total_file_size))
     num = 0
     for status_code in sorted(status_codes_stats.keys()):
         num = status_codes_stats.get(status_code, 0)
         if num > 0:
             print('{:s}: {:d}'.format(status_code, num))
-            # stats.append('{:s}: {:d}'.format(status_code, num))
-    # print('\n'.join(stats), flush=True)
 
 
 def get_metrics(line):
