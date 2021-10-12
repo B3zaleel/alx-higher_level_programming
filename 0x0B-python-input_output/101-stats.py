@@ -19,13 +19,12 @@ status_codes_stats = {
 total_file_size = 0
 '''The cummulative sum of the file sizes in each HTTP log.
 '''
-fp = (
-    r'(?P<ip>\d+\.\d+\.\d+\.\d+)',
-    r'(?P<date>\d+\-\d+\-\d+ \d+:\d+:\d+\.\d+)',
-    r'(?P<request>[^"]*)',
-    r'(?P<status_code>\d+)',
-    r'(?P<file_size>\d+)'
-)
+fp = ['', '', '', '', '']
+fp[0] = r'(?P<ip>\d+\.\d+\.\d+\.\d+)'
+fp[1] = r'(?P<date>\d+\-\d+\-\d+ \d+:\d+:\d+\.\d+)'
+fp[2] = r'(?P<request>[^"]*)'
+fp[3] = r'(?P<status_code>\d+)'
+fp[4] = r'(?P<file_size>\d+)'
 '''The pattern for each field in the log.
 '''
 log_fmt = '{} - \\[{}\\] "{}" {} {}'.format(fp[0], fp[1], fp[2], fp[3], fp[4])
@@ -40,7 +39,7 @@ def print_statistics():
     for status_code in sorted(status_codes_stats.keys()):
         num = status_codes_stats.get(status_code, 0)
         if num > 0:
-            print('{}: {:d}'.format(status_code, num))
+            print('{:s}: {:d}'.format(status_code, num))
 
 
 def get_metrics(line):
@@ -64,16 +63,17 @@ def run():
     '''Starts the log parser.
     '''
     line_num = 0
-    try:
-        while True:
+    while True:
+        try:
             line = input()
             get_metrics(line)
             line_num += 1
             if line_num % 10 == 0:
                 print_statistics()
-    except Exception:
-        print_statistics()
+        except (KeyboardInterrupt, EOFError):
+            print_statistics()
+            break
 
 
-if __name__ == '__main__':
-    run()
+# if __name__ == '__main__':
+run()
