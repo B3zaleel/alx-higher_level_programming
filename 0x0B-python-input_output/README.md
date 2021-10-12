@@ -5,7 +5,7 @@ This project contains some tasks for learning about input/output routines in **P
 ## Tasks To Complete
 
 + [x] 0\. Read file <br/>_**[0-read_file.py](0-read_file.py)**_ contains a function that reads a test file (`UTF8`) and prints it to stdout.
-+ [ ] 1\. Write to a file <br/>_**[1-write_file.py](1-write_file.py)**_ contains a function that writes a string to a text file (`UTF8`) and returns the number of characters written.
++ [x] 1\. Write to a file <br/>_**[1-write_file.py](1-write_file.py)**_ contains a function that writes a string to a text file (`UTF8`) and returns the number of characters written.
 + [ ] 2\. Append to a file <br/>_**[2-append_write.py](2-append_write.py)**_ contains a function that appends a string at the end of a text file (`UTF8`) and returns the number of characters added.
 + [ ] 3\. To JSON string <br/>_**[3-to_json_string.py](3-to_json_string.py)**_ contains a function that returns the JSON representation of an object (string).
 + [ ] 4\. From JSON string to Object <br/>_**[4-from_json_string.py](4-from_json_string.py)**_ contains a function that returns an object (Python data structure) represented by a JSON string.
