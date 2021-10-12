@@ -2,7 +2,6 @@
 '''A script for parsing HTTP logs.
 '''
 import re
-import sys
 
 
 status_codes_stats = {
@@ -66,23 +65,15 @@ def run():
     '''
     line_num = 0
     try:
-        if sys.stdin.isatty():
-            while True:
-                line = input()
-                get_metrics(line)
-                line_num += 1
-                if line_num % 10 == 0:
-                    print_statistics()
-        else:
-            for line in sys.stdin:
-                get_metrics(line)
-                line_num += 1
-                if line_num % 10 == 0:
-                    print_statistics()
-            if line_num % 10 != 0:
+        while True:
+            line = input()
+            get_metrics(line)
+            line_num += 1
+            if line_num % 10 == 0:
                 print_statistics()
-    except (KeyboardInterrupt, EOFError):
-        print_statistics()
+    except (KeyboardInterrupt, EOFError) as ex:
+        if ex.__class__.__name__ == 'KeyboardInterrupt':
+            print_statistics()
 
 
 if __name__ == '__main__':
