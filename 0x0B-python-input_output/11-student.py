@@ -38,10 +38,9 @@ class Student:
         key-value pairs in the given dictionary.
 
         Args:
-            json (dict): A dictionary containing the new attributes of
-            this Student instance.
+            json (dict): A dictionary of new attributes for this student.
         '''
         if isinstance(json, dict) and ('__dict__' in dir(self)):
-            self.__dict__.clear()
+            # self.__dict__.clear()
             for key in json.keys():
                 self.__dict__[key] = json[key]
