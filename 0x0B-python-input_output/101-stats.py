@@ -2,6 +2,7 @@
 '''A script for parsing HTTP logs.
 '''
 import re
+import sys
 
 
 status_codes_stats = {
@@ -64,17 +65,15 @@ def run():
     '''Starts the log parser.
     '''
     line_num = 0
-    while True:
-        try:
-            line = input()
+    try:
+        for line in sys.stdin:
             get_metrics(line)
             line_num += 1
             if line_num % 10 == 0:
                 print_statistics()
-        except (KeyboardInterrupt, EOFError):
-            print_statistics()
-            break
+        print_statistics()
+    except (KeyboardInterrupt, EOFError):
+        print_statistics()
 
 
-# if __name__ == '__main__':
 run()
