@@ -28,7 +28,7 @@ This project contains some tasks for learning about input/output routines in **P
   + Public method `def reload_from_json(self, json):` that replaces all attributes of the `Student` instance. `json` is a dictionary whose key-value pairs correspond to the public attribute names and values of the `Student` instance.
 + [x] 12\. Pascal's Triangle <br/>_**[12-pascal_triangle.py](12-pascal_triangle.py)**_ contains a function `def pascal_triangle(n):` that returns a list of lists of integers representing the Pascal’s triangle of `n`.
 + [x] 13\. Search and update <br/>_**[100-append_after.py](100-append_after.py)**_ contains a function that inserts a line of text to a file, after each line containing a specific string.
-+ [ ] 14\. Log parsing <br/>_**[101-stats.py](101-stats.py)**_ contains a script that reads `stdin` line by line and computes metrics:.
++ [x] 14\. Log parsing <br/>_**[101-stats.py](101-stats.py)**_ contains a script that reads `stdin` line by line and computes metrics:.
   + Input format: `<IP Address> - [<date>] "GET /projects/260 HTTP/1.1" <status code> <file size>`.
   + Each 10 lines and after a keyboard interruption (`CTRL + C`), prints those statistics since the beginning according to the following requirements:
     + Total file size: `File size: <total size>`. Where `<total size>` is the sum of all previous `<file size>`.
