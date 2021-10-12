@@ -2,7 +2,6 @@
 '''A script for parsing HTTP logs.
 '''
 import re
-import sys
 
 
 status_codes_stats = {
