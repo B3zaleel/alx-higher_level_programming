@@ -13,7 +13,7 @@ status_codes_stats = {
     '403': 0,
     '404': 0,
     '405': 0,
-    '500': 0,
+    '500': 0
 }
 '''Stats for the supported status codes.
 '''
@@ -57,7 +57,7 @@ def get_metrics(line):
     '''
     global total_file_size
     global status_codes_stats
-    resp_match = re.fullmatch(log_fmt, line.rstrip())
+    resp_match = re.fullmatch(log_fmt, line.rstrip().lstrip())
     if resp_match is not None:
         status_code = resp_match.group('status_code')
         file_size = int(resp_match.group('file_size'))
@@ -82,7 +82,6 @@ def run():
             break
         except KeyboardInterrupt:
             print_statistics()
-            # print('\n', end='', flush=True)
             break
 
 
