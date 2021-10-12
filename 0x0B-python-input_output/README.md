@@ -13,7 +13,7 @@ This project contains some tasks for learning about input/output routines in **P
 + [x] 6\. Create object from a JSON file <br/>_**[6-load_from_json_file.py](6-load_from_json_file.py)**_ contains a function that creates an Object from a “JSON file”.
 + [x] 7\. Load, add, save <br/>_**[7-add_item.py](7-add_item.py)**_ contains a script that adds all arguments to a Python list, and then save them to a file named `add_item.json`.
 + [x] 8\. Class to JSON <br/>_**[8-class_to_json.py](8-class_to_json.py)**_ contains a function that returns the dictionary description with simple data structure (list, dictionary, string, integer and boolean) for JSON serialization of an object.
-+ [ ] 9\. Student to JSON <br/>_**[9-student.py](9-student.py)**_ contains a class `Student` that defines a student by:
++ [x] 9\. Student to JSON <br/>_**[9-student.py](9-student.py)**_ contains a class `Student` that defines a student by:
   + Public instance attributes: `first_name`, `last_name`, and `age`.
   + Instantiation with `first_name`, `last_name`, and `age`: `def __init__(self, first_name, last_name, age):`.
   + Public method `def to_json(self):` that retrieves a dictionary representation of a `Student` instance (same as [8-class_to_json.py](8-class_to_json.py)).
