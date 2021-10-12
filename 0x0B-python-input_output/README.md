@@ -11,7 +11,7 @@ This project contains some tasks for learning about input/output routines in **P
 + [x] 4\. From JSON string to Object <br/>_**[4-from_json_string.py](4-from_json_string.py)**_ contains a function that returns an object (Python data structure) represented by a JSON string.
 + [x] 5\. Save Object to a file <br/>_**[5-save_to_json_file.py](5-save_to_json_file.py)**_ contains a function that writes an Object to a text file, using a JSON representation.
 + [x] 6\. Create object from a JSON file <br/>_**[6-load_from_json_file.py](6-load_from_json_file.py)**_ contains a function that creates an Object from a “JSON file”.
-+ [ ] 7\. Load, add, save <br/>_**[7-add_item.py](7-add_item.py)**_ contains a script that adds all arguments to a Python list, and then save them to a file named `add_item.json`.
++ [x] 7\. Load, add, save <br/>_**[7-add_item.py](7-add_item.py)**_ contains a script that adds all arguments to a Python list, and then save them to a file named `add_item.json`.
 + [ ] 8\. Class to JSON <br/>_**[8-class_to_json.py](8-class_to_json.py)**_ contains a function that returns the dictionary description with simple data structure (list, dictionary, string, integer and boolean) for JSON serialization of an object.
 + [ ] 9\. Student to JSON <br/>_**[9-student.py](9-student.py)**_ contains a class `Student` that defines a student by:
   + Public instance attributes: `first_name`, `last_name`, and `age`.
