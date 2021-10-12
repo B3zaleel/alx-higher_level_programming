@@ -29,7 +29,7 @@ fp = (
 )
 '''The pattern for each field in the log.
 '''
-log_fmt = '{} - \\[{}\\] "{}" {} {}'.format(fp[0], fp[1], fp[2], fp[3], fp[4])
+log_fmt = f'{fp[0]} \\- \\[{fp[1]}\\] "{fp[2]}" {fp[3]} {fp[4]}'
 '''The regex pattern for the log.
 '''
 
