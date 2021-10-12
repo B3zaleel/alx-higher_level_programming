@@ -3,35 +3,6 @@
 '''
 
 
-def factorial(n):
-    '''Computes the factorial of a number.
-
-    Args:
-        n (int): The number whose factorial is to be computed.
-
-    Returns:
-        int: The factorial of the given number.
-    '''
-    if n <= 0:
-        return 1
-    else:
-        return n * factorial(n - 1)
-
-
-def combination(i, j):
-    '''Computes the number of combinations for a given set.
-
-    Args:
-        i (int): The total number of items in the set.
-        j (int): The number of items to be picked from the set.
-
-    Returns:
-        int: The number ways j items can be picked from a set of
-        i items in any order.
-    '''
-    return factorial(i) / (factorial(j) * factorial(i - j))
-
-
 def pascal_triangle(n):
     '''Generates a list of lists of integers representing the
     Pascal’s triangle of a given integer.
@@ -49,6 +20,12 @@ def pascal_triangle(n):
     for i in range(n):
         row = []
         for j in range(i + 1):
-            row.append(int(combination(i, j)))
-        res.append(row.copy())
+            top_left = 1 if i == 0 else 0
+            top_right = 0
+            if (i > 0) and (j > 0):
+                top_left = res[i - 1][j - 1]
+            if (i > 0) and (j < len(res[i - 1])):
+                top_right = res[i - 1][j]
+            row.append(top_left + top_right)
+        res.append(row)
     return res
