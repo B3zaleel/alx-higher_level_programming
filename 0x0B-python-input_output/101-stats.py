@@ -52,10 +52,18 @@ def get_metrics(line):
         line (str): The line of input from which to retrieve the metrics.
     '''
     global total_file_size, log_fmt, status_codes_stats
+    trimmed_line = line.rstrip().lstrip()
+    trimmed_line_parts = trimmed_line.split()
     resp_match = re.fullmatch(log_fmt, line.rstrip().lstrip())
     if resp_match is not None:
         status_code = resp_match.group('status_code')
         file_size = int(resp_match.group('file_size'))
+        total_file_size += file_size
+        if status_code in status_codes_stats.keys():
+            status_codes_stats[status_code] += 1
+    elif len(trimmed_line_parts) >= 2:
+        status_code = trimmed_line_parts[-2]
+        file_size = int(trimmed_line_parts[-1])
         total_file_size += file_size
         if status_code in status_codes_stats.keys():
             status_codes_stats[status_code] += 1
