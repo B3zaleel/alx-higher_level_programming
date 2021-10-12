@@ -72,7 +72,7 @@ def run():
     line_num = 0
     while True:
         try:
-            line = sys.stdin.readline()
+            line = input()
             get_metrics(line)
             line_num += 1
             if (line_num % 10 == 0) and (line_num > 0):
