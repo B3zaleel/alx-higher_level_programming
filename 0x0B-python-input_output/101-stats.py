@@ -19,12 +19,13 @@ status_codes_stats = {
 total_file_size = 0
 '''The cummulative sum of the file sizes in each HTTP log.
 '''
-fp = ['', '', '', '', '']
-fp[0] = r'(?P<ip>\d+\.\d+\.\d+\.\d+)'
-fp[1] = r'(?P<date>\d+\-\d+\-\d+ \d+:\d+:\d+\.\d+)'
-fp[2] = r'(?P<request>[^"]*)'
-fp[3] = r'(?P<status_code>\d+)'
-fp[4] = r'(?P<file_size>\d+)'
+fp = (
+    r'(?P<ip>\d+\.\d+\.\d+\.\d+)',
+    r'(?P<date>\d+\-\d+\-\d+ \d+:\d+:\d+\.\d+)',
+    r'(?P<request>[^"]*)',
+    r'(?P<status_code>\d+)',
+    r'(?P<file_size>\d+)'
+)
 '''The pattern for each field in the log.
 '''
 log_fmt = '{} - \\[{}\\] "{}" {} {}'.format(fp[0], fp[1], fp[2], fp[3], fp[4])
@@ -35,11 +36,12 @@ log_fmt = '{} - \\[{}\\] "{}" {} {}'.format(fp[0], fp[1], fp[2], fp[3], fp[4])
 def print_statistics():
     '''Prints the accumulated statistics of the HTTP log.
     '''
-    print('File size: {:d}'.format(total_file_size))
+    global total_file_size, status_codes_stats
+    print('File size: {:d}'.format(total_file_size), flush=True)
     for status_code in sorted(status_codes_stats.keys()):
         num = status_codes_stats.get(status_code, 0)
         if num > 0:
-            print('{:s}: {:d}'.format(status_code, num))
+            print('{:s}: {:d}'.format(status_code, num), flush=True)
 
 
 def get_metrics(line):
@@ -48,8 +50,7 @@ def get_metrics(line):
     Args:
         line (str): The line of input from which to retrieve the metrics.
     '''
-    global total_file_size
-    global status_codes_stats
+    global total_file_size, log_fmt, status_codes_stats
     resp_match = re.fullmatch(log_fmt, line.rstrip().lstrip())
     if resp_match is not None:
         status_code = resp_match.group('status_code')
