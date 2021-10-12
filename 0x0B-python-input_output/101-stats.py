@@ -82,7 +82,7 @@ def run():
             break
         except KeyboardInterrupt:
             print_statistics()
-            print('\n', end='', flush=True)
+            # print('\n', end='', flush=True)
             break
 
 
