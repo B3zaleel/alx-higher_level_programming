@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''A script for parsing HTTP logs.
 '''
-import re
+# from re import fullmatch
 
 
 status_codes_stats = {
@@ -51,10 +51,18 @@ def get_metrics(line):
     '''
     global total_file_size
     global status_codes_stats
-    resp_match = re.fullmatch(log_fmt, line.rstrip().lstrip())
-    if resp_match is not None:
-        status_code = resp_match.group('status_code')
-        file_size = int(resp_match.group('file_size'))
+    trimmed_line = line.rstrip().lstrip()
+    trimmed_line_parts = trimmed_line.split(' ')
+    # resp_match = fullmatch(log_fmt, trimmed_line)
+    # if resp_match is not None:
+    #     status_code = resp_match.group('status_code')
+    #     file_size = int(resp_match.group('file_size'))
+    #     if status_code in status_codes_stats.keys():
+    #         status_codes_stats[status_code] += 1
+    #         total_file_size += file_size
+    if len(trimmed_line_parts) >= 2:
+        status_code = trimmed_line_parts[-2]
+        file_size = int(trimmed_line_parts[-1])
         if status_code in status_codes_stats.keys():
             status_codes_stats[status_code] += 1
             total_file_size += file_size
@@ -71,9 +79,8 @@ def run():
             line_num += 1
             if line_num % 10 == 0:
                 print_statistics()
-    except (KeyboardInterrupt, EOFError) as ex:
-        if ex.__class__.__name__ == 'KeyboardInterrupt':
-            print_statistics()
+    except (KeyboardInterrupt, EOFError):
+        print_statistics()
 
 
 if __name__ == '__main__':
