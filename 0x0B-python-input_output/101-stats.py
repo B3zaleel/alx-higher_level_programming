@@ -46,8 +46,7 @@ def print_statistics():
         num = status_codes_stats.get(status_code, 0)
         if num > 0:
             stats.append('{:s}: {:d}'.format(status_code, num))
-    print('\n'.join(stats))
-    sys.stdout.flush()
+    print('\n'.join(stats), flush=True)
 
 
 def get_metrics(line):
@@ -80,9 +79,11 @@ def run():
                 print_statistics()
         except EOFError:
             print_statistics()
+            print('\n', end='', flush=True)
             break
         except KeyboardInterrupt as key_ex:
             print_statistics()
+            print('\n', end='', flush=True)
             break
 
 
