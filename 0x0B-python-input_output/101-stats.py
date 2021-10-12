@@ -79,6 +79,8 @@ def run():
                 line_num += 1
                 if line_num % 10 == 0:
                     print_statistics()
+            if line_num % 10 != 0:
+                print_statistics()
     except (KeyboardInterrupt, EOFError):
         print_statistics()
 
