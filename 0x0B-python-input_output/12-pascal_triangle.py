@@ -37,14 +37,14 @@ def pascal_triangle(n):
     Pascal’s triangle of a given integer.
 
     Args:
-        n (int): The st
+        n (int): The number of rows in the triangle.
 
     Returns:
         list: A list of integers containing the values of their
         respective row in Pascal's triangle for the given number.
     '''
-    if type(n) is not int:
-        raise Exception('n must be an integer')
+    if not isinstance(n, int):
+        raise TypeError('n must be an integer')
     if n <= 0:
         return []
     res = []
