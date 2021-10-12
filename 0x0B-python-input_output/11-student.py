@@ -43,5 +43,5 @@ class Student:
         '''
         if isinstance(json, dict) and ('__dict__' in dir(self)):
             self.__dict__.clear()
-            for key in json:
+            for key in json.keys():
                 self.__dict__[key] = json[key]

@@ -45,6 +45,8 @@ def pascal_triangle(n):
     '''
     if type(n) is not int:
         raise Exception('n must be an integer')
+    if n <= 0:
+        return []
     res = []
     for i in range(n):
         row = []
