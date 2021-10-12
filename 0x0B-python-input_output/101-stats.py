@@ -37,7 +37,6 @@ def print_statistics():
     '''Prints the accumulated statistics of the HTTP log.
     '''
     print('File size: {:d}'.format(total_file_size))
-    num = 0
     for status_code in sorted(status_codes_stats.keys()):
         num = status_codes_stats.get(status_code, 0)
         if num > 0:
@@ -65,17 +64,16 @@ def run():
     '''Starts the log parser.
     '''
     line_num = 0
-    while True:
-        try:
+    try:
+        while True:
             line = input()
             get_metrics(line)
-            if ((line_num % 10) == 0) and (line_num > 0):
-                print_statistics()
             line_num += 1
-        except (KeyboardInterrupt, EOFError):
-            print_statistics()
-            break
+            if line_num % 10 == 0:
+                print_statistics()
+    except (KeyboardInterrupt, EOFError):
+        print_statistics()
 
 
-if __name__ == '__main__':
-    run()
+# if __name__ == '__main__':
+run()
