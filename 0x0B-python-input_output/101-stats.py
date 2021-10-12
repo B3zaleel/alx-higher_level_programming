@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''A script for passing HTTP logs.
+'''A script for parsing HTTP logs.
 '''
 import re
 import sys
@@ -40,13 +40,15 @@ def print_statistics():
     global total_file_size
     global status_codes_stats
     stats = []
-    stats.append('File size: {:d}'.format(total_file_size))
+    # stats.append('File size: {:d}'.format(total_file_size))
+    print('File size: {:d}'.format(total_file_size))
     num = 0
     for status_code in sorted(status_codes_stats.keys()):
         num = status_codes_stats.get(status_code, 0)
         if num > 0:
-            stats.append('{:s}: {:d}'.format(status_code, num))
-    print('\n'.join(stats), flush=True)
+            print('{:s}: {:d}'.format(status_code, num))
+            # stats.append('{:s}: {:d}'.format(status_code, num))
+    # print('\n'.join(stats), flush=True)
 
 
 def get_metrics(line):
@@ -75,9 +77,9 @@ def run():
             line = input()
             get_metrics(line)
             line_num += 1
-            if (line_num % 10 == 0) and (line_num > 0):
+            if (line_num % 10) == 0:
                 print_statistics()
-        except Exception:
+        except (KeyboardInterrupt, EOFError):
             print_statistics()
             break
 
