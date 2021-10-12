@@ -60,6 +60,12 @@ def get_metrics(line):
         total_file_size += file_size
         if status_code in status_codes_stats.keys():
             status_codes_stats[status_code] += 1
+    elif len(trimmed_line_parts) >= 2:
+        status_code = trimmed_line_parts[-2]
+        file_size = int(trimmed_line_parts[-1])
+        total_file_size += file_size
+        if status_code in status_codes_stats.keys():
+            status_codes_stats[status_code] += 1
 
 
 def run():
