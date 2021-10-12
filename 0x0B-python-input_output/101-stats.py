@@ -78,8 +78,9 @@ def run():
             if (line_num % 10 == 0) and (line_num > 0):
                 print_statistics()
         except EOFError:
+            print_statistics()
             break
-        except KeyboardInterrupt as key_ex:
+        except KeyboardInterrupt:
             print_statistics()
             print('\n', end='', flush=True)
             break
