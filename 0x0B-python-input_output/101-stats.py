@@ -69,9 +69,9 @@ def run():
         try:
             line = input()
             get_metrics(line)
-            line_num += 1
-            if (line_num % 10) == 0:
+            if ((line_num % 10) == 0) and (line_num > 0):
                 print_statistics()
+            line_num += 1
         except (KeyboardInterrupt, EOFError):
             print_statistics()
             break
