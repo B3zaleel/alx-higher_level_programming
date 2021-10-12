@@ -56,9 +56,9 @@ def get_metrics(line):
     if resp_match is not None:
         status_code = resp_match.group('status_code')
         file_size = int(resp_match.group('file_size'))
+        total_file_size += file_size
         if status_code in status_codes_stats.keys():
             status_codes_stats[status_code] += 1
-            total_file_size += file_size
 
 
 def run():
