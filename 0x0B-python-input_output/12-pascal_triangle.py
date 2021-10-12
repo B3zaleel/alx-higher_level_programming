@@ -43,14 +43,12 @@ def pascal_triangle(n):
         list: A list of integers containing the values of their
         respective row in Pascal's triangle for the given number.
     '''
-    if not isinstance(n, int):
-        raise TypeError('n must be an integer')
-    if n <= 0:
-        return []
     res = []
+    if n <= 0:
+        return res
     for i in range(n):
         row = []
         for j in range(i + 1):
             row.append(int(combination(i, j)))
-        res.append(row)
+        res.append(row.copy())
     return res
