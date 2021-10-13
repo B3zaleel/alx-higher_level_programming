@@ -20,15 +20,15 @@ total_file_size = 0
 '''The cummulative sum of the file sizes in each HTTP log.
 '''
 fp = (
-    r'(?P<ip>\d+\.\d+\.\d+\.\d+)',
-    r'(?P<date>\d+\-\d+\-\d+ \d+:\d+:\d+\.\d+)',
-    r'(?P<request>[^"]*)',
-    r'(?P<status_code>\d+)',
-    r'(?P<file_size>\d+)'
+    r'\s*(?P<ip>\S+)\s*',
+    r'\s*\[(?P<date>\d+\-\d+\-\d+ \d+:\d+:\d+\.\d+)\]',
+    r'\s*"(?P<request>[^"]*)"\s*',
+    r'\s*(?P<status_code>\S+)',
+    r'\s*(?P<file_size>\d+)'
 )
 '''The pattern for each field in the log.
 '''
-log_fmt = f'\\s*{fp[0]} \\- \\[{fp[1]}\\] "{fp[2]}" {fp[3]} {fp[4]}\\s*'
+log_fmt = f'{fp[0]}\\-{fp[1]}{fp[2]}{fp[3]}{fp[4]}\\s*'
 '''The regex pattern for the log.
 '''
 
@@ -51,18 +51,10 @@ def get_metrics(line):
         line (str): The line of input from which to retrieve the metrics.
     '''
     global total_file_size, log_fmt, status_codes_stats
-    trimmed_line = line.rstrip().lstrip()
-    trimmed_line_parts = trimmed_line.split()
     resp_match = re.fullmatch(log_fmt, line)
     if resp_match is not None:
         status_code = resp_match.group('status_code')
         file_size = int(resp_match.group('file_size'))
-        total_file_size += file_size
-        if status_code in status_codes_stats.keys():
-            status_codes_stats[status_code] += 1
-    elif len(trimmed_line_parts) >= 2:
-        status_code = trimmed_line_parts[-2]
-        file_size = int(trimmed_line_parts[-1])
         total_file_size += file_size
         if status_code in status_codes_stats.keys():
             status_codes_stats[status_code] += 1
