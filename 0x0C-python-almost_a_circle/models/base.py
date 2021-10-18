@@ -49,7 +49,9 @@ class Base:
         file_name = f'{cls.__name__}.json'
         dict_list = []
         if list_objs is not None:
-            dict_list = list(map(lambda x: x.to_dictionary(), list_objs))
+            for obj in list_objs:
+                if type(obj) is cls:
+                    dict_list.append(obj.to_dictionary())
         with open(file_name, mode='w', encoding='utf-8') as file:
             file.write(Base.to_json_string(dict_list))
 
@@ -151,8 +153,8 @@ class Base:
             },
         }
         poly_fmt = {
-            'Rectangle': r'[^,]+,[^,]+,[^,]+,[^,]+,[^,]+',
-            'Square': r'[^,]+,[^,]+,[^,]+,[^,]+',
+            'Rectangle': r'([^,]+,){5,}',
+            'Square': r'([^,]+,){4,}',
         }
         lines = []
         attr_dicts = []

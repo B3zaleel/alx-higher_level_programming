@@ -10,7 +10,7 @@ class Square(Rectangle):
     '''
 
     def __init__(self, size, x=0, y=0, id=None):
-        '''Initializes a new square object with the given id.
+        '''Initializes a new square object.
 
         Args:
             size (int): The width and height of this square.

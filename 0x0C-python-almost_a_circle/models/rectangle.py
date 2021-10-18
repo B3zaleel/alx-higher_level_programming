@@ -10,7 +10,7 @@ class Rectangle(Base):
     '''
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        '''Initializes a new rectangle object with the given id.
+        '''Initializes a new rectangle object.
 
         Args:
             width (int): The width of this rectangle.
