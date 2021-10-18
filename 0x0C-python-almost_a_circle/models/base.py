@@ -1,25 +1,25 @@
 #!/usr/bin/python3
-'''Contains classes for working with Polygons.
-'''
+"""Contains classes for working with Polygons.
+"""
 import os
 import re
+from random import randint
 from importlib import import_module
 from json import JSONDecoder, JSONEncoder
 from turtle import Pen
-from random import randint
 
 
 class Base:
-    '''Represents the base class for all polygon objects.
-    '''
+    """Represents the base class for all polygon objects.
+    """
     __nb_objects = 0
 
     def __init__(self, id=None):
-        '''Initializes a new polygon object with the given id.
+        """Initializes a new polygon object with the given id.
 
         Args:
             id (int): The id of this polygon object.
-        '''
+        """
         if id is not None:
             self.id = id
         else:
@@ -28,25 +28,25 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        '''Creates the JSON representation of a list of dictionaries.
+        """Creates the JSON representation of a list of dictionaries.
 
         Args:
             list_dictionaries (list): A list of dictionaries.
 
         Returns:
             str: A JSON representation of the list of dictionaries.
-        '''
+        """
         if list_dictionaries is None:
             return "[]"
         return JSONEncoder().encode(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        '''Saves a list of polygons to a file in JSON format.
+        """Saves a list of polygons to a file in JSON format.
 
         Args:
             list_objs (list): A list of polygons.
-        '''
+        """
         file_name = f'{cls.__name__}.json'
         dict_list = []
         if list_objs is not None:
@@ -58,14 +58,14 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        '''Creates a list from its JSON representation.
+        """Creates a list from its JSON representation.
 
         Args:
             json_string (str): A JSON string representation of a list.
 
         Returns:
             list: A JSON representation of the list of dictionaries.
-        '''
+        """
         if (json_string is None) or (len(json_string.strip()) == 0):
             return []
         else:
@@ -73,14 +73,14 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        '''Creates a polygon with the given attributes.
+        """Creates a polygon with the given attributes.
 
         Args:
             dictionary (dict): A dictionary of the object's attributes.
 
         Returns:
             Base: A polygon object with the given attributes.
-        '''
+        """
         Rectangle = import_module('.rectangle', package='models').Rectangle
         Square = import_module('.square', package='models').Square
         poly_id = cls.__nb_objects
@@ -95,11 +95,11 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        '''Loads a list of polygons from a file in JSON format.
+        """Loads a list of polygons from a file in JSON format.
 
         Returns:
             list: A list of polygons.
-        '''
+        """
         file_name = f'{cls.__name__}.json'
         lines = []
         if os.path.isfile(file_name):
@@ -113,11 +113,11 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        '''Saves a list of polygons to a file in CSV format.
+        """Saves a list of polygons to a file in CSV format.
 
         Args:
             list_objs (list): A list of polygons.
-        '''
+        """
         file_name = f'{cls.__name__}.csv'
         poly_fmt_fxns = {
             'Rectangle': lambda x: f'{x.id},{x.width},{x.height},{x.x},{x.y}',
@@ -134,11 +134,11 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        '''Loads a list of polygons from a file in CSV format.
+        """Loads a list of polygons from a file in CSV format.
 
         Returns:
             list: A list of polygons.
-        '''
+        """
         poly_name = cls.__name__
         file_name = f'{poly_name}.csv'
         poly_fmt_fxns = {
@@ -174,12 +174,12 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        '''Draws the polygons in each list using Turtle graphics.
+        """Draws the polygons in each list using Turtle graphics.
 
         Args:
             list_rectangles (list): A list of Rectangle objects.
             list_squares (list): A list of Square objects.
-        '''
+        """
         poly_list = []
         funcs = {
             'hex_to_rgb': lambda x: (x >> 16, (x >> 8) % 0xff, x % 0xff)

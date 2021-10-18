@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-'''A unit test module for the polygon models.
-'''
+"""A unit test module for the polygon models.
+"""
 from io import StringIO
 import unittest
 from unittest.mock import patch
@@ -9,12 +9,12 @@ from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
-    '''Tests the Rectangle class and its methods.
-    '''
+    """Tests the Rectangle class and its methods.
+    """
 
     def test_init(self):
-        '''Tests the initialization of the Square class.
-        '''
+        """Tests the initialization of the Square class.
+        """
         polygon = Rectangle(5, 8, 0, 0)
         id_init = polygon.id
         self.assertIsInstance(polygon, Base)
@@ -108,8 +108,8 @@ class TestRectangle(unittest.TestCase):
             polygon = Rectangle(10, 13, 3, 7, 1, 12)
 
     def test_attribute_validation(self):
-        '''Tests the validation of attribute and instantiation.
-        '''
+        """Tests the validation of attribute and instantiation.
+        """
         polygon = Rectangle(12, 3)
         # region the id
         polygon.id = 23
@@ -271,8 +271,8 @@ class TestRectangle(unittest.TestCase):
         # endregion
 
     def test_area(self):
-        '''Tests the area method of this polygon.
-        '''
+        """Tests the area method of this polygon.
+        """
         polygon = Rectangle(12, 3)
         self.assertEqual(polygon.area(), 12 * 3)
         polygon = Rectangle(10, 10)
@@ -291,9 +291,9 @@ class TestRectangle(unittest.TestCase):
             polygon.area(10, 10)
 
     def test_display_0(self):
-        '''Tests the display method for a polygon with all
+        """Tests the display method for a polygon with all
         coordinate values being zero.
-        '''
+        """
         polygon = Rectangle(4, 3)
         with patch('sys.stdout', new=StringIO()) as fake_stdout:
             polygon.display()
@@ -314,9 +314,9 @@ class TestRectangle(unittest.TestCase):
             polygon.display(2)
 
     def test_display_1(self):
-        '''Tests the display method for a polygon with a
+        """Tests the display method for a polygon with a
         non-zero coordinate value.
-        '''
+        """
         polygon = Rectangle(4, 3, 0, 1)
         with patch('sys.stdout', new=StringIO()) as fake_stdout:
             polygon.display()
@@ -341,8 +341,8 @@ class TestRectangle(unittest.TestCase):
             polygon.display(2)
 
     def test_str(self):
-        '''Tests the __str__ method.
-        '''
+        """Tests the __str__ method.
+        """
         polygon = Rectangle(4, 3)
         id_init = getattr(polygon, 'id')
         self.assertEqual(str(polygon), f'[Rectangle] ({id_init}) 0/0 - 4/3')
@@ -358,8 +358,8 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(str(polygon), '[Rectangle] ((7, 6)) 7/12 - 4/3')
 
     def test_update(self):
-        '''Tests the update function.
-        '''
+        """Tests the update function.
+        """
         polygon = Rectangle(5, 9, 0, 0)
         # region valid arguments
         polygon.update(1)
@@ -673,8 +673,8 @@ class TestRectangle(unittest.TestCase):
         # endregion
 
     def test_to_dictionary(self):
-        '''Tests the to_dictionary method.
-        '''
+        """Tests the to_dictionary method.
+        """
         polygon_0 = Rectangle(2, 3)
         id_init = getattr(polygon_0, 'id')
         dict_rect_0 = polygon_0.to_dictionary()
@@ -700,9 +700,9 @@ class TestRectangle(unittest.TestCase):
         self.assertFalse(dict_rect_0 is dict_rect_2)
 
     def test_docs(self):
-        '''Tests the documentation length of the Rectangle
+        """Tests the documentation length of the Rectangle
         and TestRectangle classes.
-        '''
+        """
         rect_attrs = (
             '__init__',
             'width',

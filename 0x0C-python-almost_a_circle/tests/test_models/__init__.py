@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-'''Tests for the polygon models.
-'''
+"""Tests for the polygon models.
+"""

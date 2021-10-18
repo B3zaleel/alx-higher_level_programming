@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-'''A unit test module for the polygon models.
-'''
-import unittest
+"""A unit test module for the polygon models.
+"""
 import os
+import unittest
 from json import JSONDecodeError
 from importlib import import_module
 
@@ -13,9 +13,9 @@ Square = import_module('.square', package='models').Square
 
 
 def remove_files():
-    '''Removes the serialized polygon object files
+    """Removes the serialized polygon object files
     from the current working directory.
-    '''
+    """
     if os.path.isfile('Base.json'):
         os.unlink('Base.json')
     if os.path.isfile('Rectangle.json'):
@@ -31,14 +31,14 @@ def remove_files():
 
 
 def read_text_file(file_name):
-    '''Reads the contents of a given file.
+    """Reads the contents of a given file.
 
     Args:
         file_name (str): The name of the file to read.
 
     Returns:
         str: The contents of the file if it exists.
-    '''
+    """
     lines = []
     if os.path.isfile(file_name):
         with open(file_name, mode='r') as file:
@@ -48,12 +48,12 @@ def read_text_file(file_name):
 
 
 class TestBase(unittest.TestCase):
-    '''Tests the Base class and its methods.
-    '''
+    """Tests the Base class and its methods.
+    """
 
     def test_init(self):
-        '''Tests the initialization of the Base class.
-        '''
+        """Tests the initialization of the Base class.
+        """
         polygon = Base()
         id_init = polygon.id
         polygon = Base()
@@ -79,8 +79,8 @@ class TestBase(unittest.TestCase):
             polygon = Base(1, 2)
 
     def test_to_json_string(self):
-        '''Tests the to_json_string method of the Base class.
-        '''
+        """Tests the to_json_string method of the Base class.
+        """
         self.assertEqual(Base.to_json_string(None),
                          '[]')
         self.assertEqual(Base.to_json_string(
@@ -113,8 +113,8 @@ class TestBase(unittest.TestCase):
                          '"55"')
 
     def test_save_to_file(self):
-        '''Tests the save_to_file function of the Base class.
-        '''
+        """Tests the save_to_file function of the Base class.
+        """
         # region Base
         polygons = None
         remove_files()
@@ -242,8 +242,8 @@ class TestBase(unittest.TestCase):
         remove_files()
 
     def test_from_json_string(self):
-        '''Tests the from_json_string static method of the Base class.
-        '''
+        """Tests the from_json_string static method of the Base class.
+        """
         polygon_list = Base.from_json_string('null')
         self.assertEqual(polygon_list, None)
         polygon_list = Rectangle.from_json_string('34')
@@ -272,8 +272,8 @@ class TestBase(unittest.TestCase):
             polygon_list = Base.from_json_string('[{"id": 45, "x": 3', '34')
 
     def test_create(self):
-        '''Tests the create method of the Base class.
-        '''
+        """Tests the create method of the Base class.
+        """
         polygon = Base.create(**{
             'id': '89',
         })
@@ -326,8 +326,8 @@ class TestBase(unittest.TestCase):
         # endregion
 
     def test_load_from_file(self):
-        '''Tests the load_from_file class method.
-        '''
+        """Tests the load_from_file class method.
+        """
         # region Base
         remove_files()
         polygons = Base.load_from_file()
@@ -373,9 +373,9 @@ class TestBase(unittest.TestCase):
         remove_files()
 
     def test_docs(self):
-        '''Tests the documentation length of the Square
+        """Tests the documentation length of the Square
         and TestSquare classes.
-        '''
+        """
         base_attrs = (
             '__init__',
             'to_json_string',

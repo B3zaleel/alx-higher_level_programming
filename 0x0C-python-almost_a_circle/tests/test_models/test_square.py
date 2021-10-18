@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-'''A unit test module for the polygon models.
-'''
+"""A unit test module for the polygon models.
+"""
 from io import StringIO
 import unittest
 from unittest.mock import patch
@@ -10,12 +10,12 @@ from models.square import Square
 
 
 class TestSquare(unittest.TestCase):
-    '''Tests the Square class and its methods.
-    '''
+    """Tests the Square class and its methods.
+    """
 
     def test_init(self):
-        '''Tests the initialization of the Square class.
-        '''
+        """Tests the initialization of the Square class.
+        """
         polygon = Square(5)
         id_init = polygon.id
         self.assertIsInstance(polygon, Base)
@@ -121,8 +121,8 @@ class TestSquare(unittest.TestCase):
             polygon = Square(10, 13, 3, 7, 12)
 
     def test_attribute_validation(self):
-        '''Tests the validation of attribute and instantiation.
-        '''
+        """Tests the validation of attribute and instantiation.
+        """
         polygon = Square(12, 3)
         # region the id
         polygon.id = 23
@@ -332,8 +332,8 @@ class TestSquare(unittest.TestCase):
         # endregion
 
     def test_size(self):
-        '''Tests the size get or set functions.
-        '''
+        """Tests the size get or set functions.
+        """
         polygon = Square(4)
         self.assertEqual(polygon.size, 4)
         with self.assertRaises(TypeError) as asrt_ctxt:
@@ -365,8 +365,8 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(str(asrt_ctxt.exception), 'width must be > 0')
 
     def test_area(self):
-        '''Tests the area method of this polygon.
-        '''
+        """Tests the area method of this polygon.
+        """
         polygon = Square(12)
         self.assertEqual(polygon.area(), 12 ** 2)
         polygon = Square(10)
@@ -381,9 +381,9 @@ class TestSquare(unittest.TestCase):
             polygon.area(12, 12)
 
     def test_display_0(self):
-        '''Tests the display method for a polygon with all
+        """Tests the display method for a polygon with all
         coordinate values being zero.
-        '''
+        """
         polygon = Square(3)
         with patch('sys.stdout', new=StringIO()) as fake_stdout:
             polygon.display()
@@ -400,9 +400,9 @@ class TestSquare(unittest.TestCase):
             polygon.display(2)
 
     def test_display_1(self):
-        '''Tests the display method for a polygon with a
+        """Tests the display method for a polygon with a
         non-zero coordinate value.
-        '''
+        """
         polygon = Square(3, 0, 1)
         with patch('sys.stdout', new=StringIO()) as fake_stdout:
             polygon.display()
@@ -427,8 +427,8 @@ class TestSquare(unittest.TestCase):
             polygon.display(2)
 
     def test_str(self):
-        '''Tests the __str__ method.
-        '''
+        """Tests the __str__ method.
+        """
         polygon = Square(4)
         id_init = getattr(polygon, 'id')
         self.assertEqual(str(polygon), f'[Square] ({id_init}) 0/0 - 4')
@@ -444,8 +444,8 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(str(polygon), '[Square] ((7, 6)) 7/12 - 4')
 
     def test_update(self):
-        '''Tests the update function.
-        '''
+        """Tests the update function.
+        """
         polygon = Square(5)
         # region valid arguments
         polygon.update(1)
@@ -707,8 +707,8 @@ class TestSquare(unittest.TestCase):
         # endregion
 
     def test_to_dictionary(self):
-        '''Tests the to_dictionary method.
-        '''
+        """Tests the to_dictionary method.
+        """
         polygon_0 = Square(2)
         id_init = polygon_0.id
         dict_square_0 = polygon_0.to_dictionary()
@@ -732,9 +732,9 @@ class TestSquare(unittest.TestCase):
         self.assertFalse(dict_square_0 is dict_square_2)
 
     def test_docs(self):
-        '''Tests the documentation length of the Square
+        """Tests the documentation length of the Square
         and TestSquare classes.
-        '''
+        """
         square_attrs = (
             '__init__',
             'size',
