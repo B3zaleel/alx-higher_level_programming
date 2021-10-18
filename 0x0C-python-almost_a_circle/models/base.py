@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 '''Contains classes for working with Polygons.
 '''
-import models
 import os
 import re
+from importlib import import_module
 from json import JSONDecoder, JSONEncoder
 from turtle import Pen
 from random import randint
@@ -81,10 +81,12 @@ class Base:
         Returns:
             Base: A polygon object with the given attributes.
         '''
+        Rectangle = import_module('.rectangle', package='models').Rectangle
+        Square = import_module('.square', package='models').Square
         poly_id = cls.__nb_objects
         polygons = {
-            'Rectangle': models.rectangle.Rectangle(1, 1, 0, poly_id),
-            'Square': models.square.Square(1, 0, 0, poly_id),
+            'Rectangle': Rectangle(1, 1, 0, poly_id),
+            'Square': Square(1, 0, 0, poly_id),
         }
         if cls.__name__ in polygons.keys():
             polygons[cls.__name__].update(**dictionary)

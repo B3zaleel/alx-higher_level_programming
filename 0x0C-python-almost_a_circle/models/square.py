@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''Contains classes for working with Polygons.
 '''
-from models.rectangle import Rectangle
+from .rectangle import Rectangle
 
 
 class Square(Rectangle):

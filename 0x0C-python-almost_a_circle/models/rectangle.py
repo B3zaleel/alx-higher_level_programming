@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''Contains classes for working with Polygons.
 '''
-from models.base import Base
+from .base import Base
 
 
 class Rectangle(Base):
