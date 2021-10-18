@@ -140,7 +140,7 @@ class Base:
             list: A list of polygons.
         """
         poly_name = cls.__name__
-        file_name = '{poly_name}.csv'.format(poly_name)
+        file_name = '{}.csv'.format(poly_name)
         poly_fmt_fxns = {
             'Rectangle': lambda x: {
                 'id': int(x[0]),
@@ -157,17 +157,17 @@ class Base:
             },
         }
         poly_fmt = {
-            'Rectangle': r'([^,]+,){5,}',
-            'Square': r'([^,]+,){4,}',
+            'Rectangle': r'\s*[^,]+,[^,]+,[^,]+,[^,]+,[^,]+',
+            'Square': r'\s*[^,]+,[^,]+,[^,]+,[^,]+',
         }
         lines = []
         attr_dicts = []
         if os.path.isfile(file_name):
             with open(file_name, mode='r') as file:
                 for line in file.readlines():
-                    attrs_match = re.fullmatch(poly_fmt[poly_name], line)
+                    attrs_match = re.match(poly_fmt[poly_name], line)
                     if attrs_match is not None:
-                        cols = line.split(',')
+                        cols = line.strip().split(',')
                         attr_dicts.append(poly_fmt_fxns[poly_name](cols))
         cls_list = list(map(lambda x: cls.create(**x), attr_dicts))
         return cls_list
