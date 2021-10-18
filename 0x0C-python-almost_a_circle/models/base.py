@@ -81,6 +81,7 @@ class Base:
             Base: A polygon object with the given attributes.
         """
         polygons = {
+            'Base': (None),
             'Rectangle': (1, 1, 1, 0, None),
             'Square': (1, 0, 0, None),
         }
