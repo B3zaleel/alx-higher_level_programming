@@ -150,6 +150,8 @@ class TestBase(unittest.TestCase):
             Base.save_to_file(polygons)
         with self.assertRaises(TypeError):
             Base.save_to_file(polygons, polygons)
+        with self.assertRaises(TypeError):
+            Base.save_to_file()
         # endregion
         # region Rectangle
         polygons = None
@@ -192,6 +194,8 @@ class TestBase(unittest.TestCase):
         self.assertNotIn('"y": 7', contents)
         with self.assertRaises(TypeError):
             Rectangle.save_to_file(polygons, polygons)
+        with self.assertRaises(TypeError):
+            Rectangle.save_to_file()
         # endregion
         # region Square
         polygons = None
@@ -238,6 +242,8 @@ class TestBase(unittest.TestCase):
         self.assertNotIn('"id": 11', contents)
         with self.assertRaises(TypeError):
             Square.save_to_file(polygons, polygons)
+        with self.assertRaises(TypeError):
+            Square.save_to_file()
         # endregion
         remove_files()
 
@@ -335,6 +341,12 @@ class TestBase(unittest.TestCase):
         polygons_list = [Base(3), Base(10)]
         with self.assertRaises(AttributeError):
             Base.save_to_file(polygons_list)
+        with self.assertRaises(TypeError):
+            polygons = Base.load_from_file(None)
+        with self.assertRaises(TypeError):
+            polygons = Base.load_from_file(True)
+        with self.assertRaises(TypeError):
+            polygons = Base.load_from_file('Base.json')
         # endregion
         # region Rectangle
         remove_files()
@@ -352,6 +364,12 @@ class TestBase(unittest.TestCase):
             polygons[1].to_dictionary() == polygons_list[0].to_dictionary() or
             polygons[1].to_dictionary() == polygons_list[1].to_dictionary()
         )
+        with self.assertRaises(TypeError):
+            polygons = Rectangle.load_from_file(None)
+        with self.assertRaises(TypeError):
+            polygons = Rectangle.load_from_file(True)
+        with self.assertRaises(TypeError):
+            polygons = Rectangle.load_from_file('Rectangle.json')
         # endregion
         # region Square
         remove_files()
@@ -369,6 +387,12 @@ class TestBase(unittest.TestCase):
             polygons[1].to_dictionary() == polygons_list[0].to_dictionary() or
             polygons[1].to_dictionary() == polygons_list[1].to_dictionary()
         )
+        with self.assertRaises(TypeError):
+            polygons = Square.load_from_file(None)
+        with self.assertRaises(TypeError):
+            polygons = Square.load_from_file(True)
+        with self.assertRaises(TypeError):
+            polygons = Square.load_from_file('Square.json')
         # endregion
         remove_files()
 
@@ -395,6 +419,8 @@ class TestBase(unittest.TestCase):
             'test_create',
             'test_load_from_file',
             'test_docs',
+            'test_save_to_file_csv',
+            'test_load_from_file_csv',
         )
         min_char_count = 20
         min_word_count = 3
@@ -423,3 +449,162 @@ class TestBase(unittest.TestCase):
             attr_doc_trim = attr_doc.strip()
             self.assertGreater(len(attr_doc_trim), min_char_count)
             self.assertGreater(len(attr_doc_trim.split()), min_word_count)
+
+    def test_save_to_file_csv(self):
+        """Tests the save_to_file_csv function of the Base class.
+        """
+        # region Base
+        polygons = None
+        remove_files()
+        Base.save_to_file_csv(polygons)
+        self.assertEqual(read_text_file('Base.csv'), '')
+        self.assertFalse(os.path.isfile('Rectangle.csv'))
+        self.assertFalse(os.path.isfile('Square.csb'))
+        polygons = []
+        remove_files()
+        Base.save_to_file_csv(polygons)
+        self.assertEqual(read_text_file('Base.csv'), '')
+        self.assertFalse(os.path.isfile('Square.csv'))
+        self.assertFalse(os.path.isfile('Rectangle.csv'))
+        polygons = [Base(3), Base(10)]
+        remove_files()
+        Base.save_to_file_csv(polygons)
+        self.assertEqual(read_text_file('Base.csv'), '')
+        self.assertFalse(os.path.isfile('Square.csv'))
+        self.assertFalse(os.path.isfile('Rectangle.csv'))
+        polygons = [Square(3, 0, 0, 1), Square(10, 9, 7, 8)]
+        remove_files()
+        Base.save_to_file_csv(polygons)
+        self.assertEqual(read_text_file('Base.csv'), '')
+        self.assertFalse(os.path.isfile('Square.csv'))
+        self.assertFalse(os.path.isfile('Rectangle.csv'))
+        polygons = [Rectangle(5, 13, 0, 0, 1), Rectangle(10, 2, 9, 7, 8)]
+        remove_files()
+        Base.save_to_file_csv(polygons)
+        self.assertEqual(read_text_file('Base.csv'), '')
+        self.assertFalse(os.path.isfile('Square.csv'))
+        self.assertFalse(os.path.isfile('Rectangle.csv'))
+        polygons = [Square(3, 0, 0, 1), Rectangle(10, 3, 9, 7, 8), Base(2)]
+        with self.assertRaises(TypeError):
+            Base.save_to_file_csv(polygons, polygons)
+        with self.assertRaises(TypeError):
+            Base.save_to_file_csv()
+        # endregion
+        # region Rectangle
+        polygons = None
+        remove_files()
+        Rectangle.save_to_file_csv(polygons)
+        self.assertEqual(read_text_file('Rectangle.csv'), '')
+        polygons = []
+        remove_files()
+        Rectangle.save_to_file_csv(polygons)
+        self.assertEqual(read_text_file('Rectangle.csv'), '')
+        polygons = [Rectangle(3, 4, 0, 0, 1), Rectangle(10, 4, 9, 7, 8)]
+        remove_files()
+        Rectangle.save_to_file_csv(polygons)
+        contents = read_text_file('Rectangle.csv')
+        self.assertIn('1,3,4,0,0', contents)
+        self.assertIn('8,10,4,9,7', contents)
+        polygons = [Rectangle(3, 5, 0, 0, 1), Base(34), Square(10, 9, 7, 8)]
+        remove_files()
+        Rectangle.save_to_file_csv(polygons)
+        contents = read_text_file('Rectangle.csv')
+        self.assertIn('1,3,5,0,0', contents)
+        self.assertNotIn('34', contents)
+        self.assertNotIn('8,10,9,7', contents)
+        with self.assertRaises(TypeError):
+            Rectangle.save_to_file_csv(polygons, polygons)
+        with self.assertRaises(TypeError):
+            Rectangle.save_to_file_csv()
+        # endregion
+        # region Square
+        polygons = None
+        remove_files()
+        Square.save_to_file_csv(polygons)
+        self.assertEqual(read_text_file('Square.csv'), '')
+        polygons = []
+        remove_files()
+        Square.save_to_file_csv(polygons)
+        self.assertEqual(read_text_file('Square.csv'), '')
+        polygons = [Square(3, 0, 0, 1), Square(10, 9, 7, 8)]
+        remove_files()
+        Square.save_to_file_csv(polygons)
+        contents = read_text_file('Square.csv')
+        self.assertIn('1,3,0,0', contents)
+        self.assertIn('8,10,9,7', contents)
+        polygons = [Square(3, 0, 0, 1), Rectangle(10, 5, 9, 7, 8), Base(11)]
+        remove_files()
+        Square.save_to_file_csv(polygons)
+        contents = read_text_file('Square.csv')
+        self.assertIn('1,3,0,0', contents)
+        self.assertNotIn('8,10,5,9,7', contents)
+        self.assertNotIn('11', contents)
+        with self.assertRaises(TypeError):
+            Square.save_to_file_csv(polygons, polygons)
+        with self.assertRaises(TypeError):
+            Square.save_to_file_csv()
+        # endregion
+        remove_files()
+
+    def test_load_from_file_csv(self):
+        """Tests the load_from_file_csv class method.
+        """
+        # region Base
+        remove_files()
+        polygons = Base.load_from_file_csv()
+        self.assertTrue(len(polygons) == 0)
+        polygons_list = [Base(3), Base(10)]
+        with self.assertRaises(TypeError):
+            polygons = Base.load_from_file_csv(None)
+        with self.assertRaises(TypeError):
+            polygons = Base.load_from_file_csv(True)
+        with self.assertRaises(TypeError):
+            polygons = Base.load_from_file_csv('Base.csv')
+        # endregion
+        # region Rectangle
+        remove_files()
+        polygons = Rectangle.load_from_file_csv()
+        self.assertTrue(len(polygons) == 0)
+        polygons_list = [Rectangle(3, 17, 0, 0, 1), Rectangle(10, 5, 9, 7, 8)]
+        Rectangle.save_to_file_csv(polygons_list)
+        polygons = Rectangle.load_from_file_csv()
+        self.assertTrue(len(polygons) == 2)
+        self.assertTrue(
+            polygons[0].to_dictionary() == polygons_list[0].to_dictionary() or
+            polygons[0].to_dictionary() == polygons_list[1].to_dictionary()
+        )
+        self.assertTrue(
+            polygons[1].to_dictionary() == polygons_list[0].to_dictionary() or
+            polygons[1].to_dictionary() == polygons_list[1].to_dictionary()
+        )
+        with self.assertRaises(TypeError):
+            polygons = Rectangle.load_from_file_csv(None)
+        with self.assertRaises(TypeError):
+            polygons = Rectangle.load_from_file_csv(True)
+        with self.assertRaises(TypeError):
+            polygons = Rectangle.load_from_file_csv('Rectangle.csv')
+        # endregion
+        # region Square
+        remove_files()
+        polygons = Square.load_from_file_csv()
+        self.assertTrue(len(polygons) == 0)
+        polygons_list = [Square(3, 0, 0, 1), Square(10, 9, 7, 8)]
+        Square.save_to_file_csv(polygons_list)
+        polygons = Square.load_from_file_csv()
+        self.assertTrue(len(polygons) == 2)
+        self.assertTrue(
+            polygons[0].to_dictionary() == polygons_list[0].to_dictionary() or
+            polygons[0].to_dictionary() == polygons_list[1].to_dictionary()
+        )
+        self.assertTrue(
+            polygons[1].to_dictionary() == polygons_list[0].to_dictionary() or
+            polygons[1].to_dictionary() == polygons_list[1].to_dictionary()
+        )
+        with self.assertRaises(TypeError):
+            polygons = Square.load_from_file_csv(None)
+        with self.assertRaises(TypeError):
+            polygons = Square.load_from_file_csv(True)
+        with self.assertRaises(TypeError):
+            polygons = Square.load_from_file_csv('Square.csv')
+        # endregion
+        remove_files()

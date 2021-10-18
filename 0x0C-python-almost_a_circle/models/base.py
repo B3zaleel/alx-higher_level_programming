@@ -123,9 +123,9 @@ class Base:
         }
         vals_list = []
         if list_objs is not None:
+            poly_name = cls.__name__
             for obj in list_objs:
-                poly_name = obj.__class__.__name__
-                if poly_name in poly_fmt_fxns:
+                if (type(obj) is cls) and (poly_name in poly_fmt_fxns):
                     vals_list.append('{}\n'.format(
                         poly_fmt_fxns[poly_name](obj)))
         with open(file_name, mode='w', encoding='utf-8') as file:
