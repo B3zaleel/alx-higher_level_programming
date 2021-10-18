@@ -4,7 +4,6 @@
 import os
 import re
 from random import randint
-from importlib import import_module
 from json import JSONDecoder, JSONEncoder
 from turtle import Pen
 
@@ -81,16 +80,14 @@ class Base:
         Returns:
             Base: A polygon object with the given attributes.
         """
-        Rectangle = import_module('.rectangle', package='models').Rectangle
-        Square = import_module('.square', package='models').Square
-        poly_id = cls.__nb_objects
         polygons = {
-            'Rectangle': Rectangle(1, 1, 0, poly_id),
-            'Square': Square(1, 0, 0, poly_id),
+            'Rectangle': (1, 1, 1, 0, None),
+            'Square': (1, 0, 0, None),
         }
         if cls.__name__ in polygons.keys():
-            polygons[cls.__name__].update(**dictionary)
-            return polygons[cls.__name__]
+            polygon = cls(*polygons[cls.__name__])
+            polygon.update(**dictionary)
+            return polygon
         return None
 
     @classmethod
