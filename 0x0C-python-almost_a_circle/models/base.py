@@ -81,15 +81,13 @@ class Base:
             Base: A polygon object with the given attributes.
         """
         polygons = {
-            'Base': (None),
-            'Rectangle': (1, 1, 1, 0, None),
+            'Rectangle': (1, 1, 0, 0, None),
             'Square': (1, 0, 0, None),
         }
         if cls.__name__ in polygons.keys():
             polygon = cls(*polygons[cls.__name__])
             polygon.update(**dictionary)
             return polygon
-        return None
 
     @classmethod
     def load_from_file(cls):
