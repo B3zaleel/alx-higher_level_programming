@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 '''Contains classes for working with Polygons.
 '''
-from json import JSONDecoder, JSONEncoder
+import models
 import os
 import re
+from json import JSONDecoder, JSONEncoder
 from turtle import Pen
 from random import randint
-import models
 
 
 class Base:
@@ -66,7 +66,7 @@ class Base:
         Returns:
             list: A JSON representation of the list of dictionaries.
         '''
-        if (json_string is None) or (len(json_string) == 0):
+        if (json_string is None) or (len(json_string.strip()) == 0):
             return []
         else:
             return JSONDecoder().decode(json_string)
