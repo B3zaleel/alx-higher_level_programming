@@ -4,9 +4,12 @@
 from io import StringIO
 import unittest
 from unittest.mock import patch
-from models.base import Base
-from models.rectangle import Rectangle
-from models.square import Square
+from importlib import import_module
+
+
+Base = import_module('.base', package='models').Base
+Rectangle = import_module('.rectangle', package='models').Rectangle
+Square = import_module('.square', package='models').Square
 
 
 class TestSquare(unittest.TestCase):
@@ -431,13 +434,22 @@ class TestSquare(unittest.TestCase):
         """
         polygon = Square(4)
         id_init = getattr(polygon, 'id')
-        self.assertEqual(str(polygon), f'[Square] ({id_init}) 0/0 - 4')
+        self.assertEqual(
+            str(polygon),
+            '[Square] ({}) 0/0 - 4'.format(id_init)
+        )
         polygon = Square(4, 7, 12)
         id_init += 1
-        self.assertEqual(str(polygon), f'[Square] ({id_init}) 7/12 - 4')
+        self.assertEqual(
+            str(polygon),
+            '[Square] ({}) 7/12 - 4'.format(id_init)
+        )
         polygon = Square(4, 7, 12, None)
         id_init += 1
-        self.assertEqual(str(polygon), f'[Square] ({id_init}) 7/12 - 4')
+        self.assertEqual(
+            str(polygon),
+            '[Square] ({}) 7/12 - 4'.format(id_init)
+        )
         polygon = Square(4, 7, 12, 5.6)
         self.assertEqual(str(polygon), '[Square] (5.6) 7/12 - 4')
         polygon = Square(4, 7, 12, (7, 6))

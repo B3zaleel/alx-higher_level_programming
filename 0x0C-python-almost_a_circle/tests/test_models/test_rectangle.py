@@ -4,8 +4,11 @@
 from io import StringIO
 import unittest
 from unittest.mock import patch
-from models.base import Base
-from models.rectangle import Rectangle
+from importlib import import_module
+
+
+Base = import_module('.base', package='models').Base
+Rectangle = import_module('.rectangle', package='models').Rectangle
 
 
 class TestRectangle(unittest.TestCase):
@@ -345,13 +348,22 @@ class TestRectangle(unittest.TestCase):
         """
         polygon = Rectangle(4, 3)
         id_init = getattr(polygon, 'id')
-        self.assertEqual(str(polygon), f'[Rectangle] ({id_init}) 0/0 - 4/3')
+        self.assertEqual(
+            str(polygon),
+            '[Rectangle] ({}) 0/0 - 4/3'.format(id_init)
+        )
         polygon = Rectangle(4, 3, 7, 12)
         id_init += 1
-        self.assertEqual(str(polygon), f'[Rectangle] ({id_init}) 7/12 - 4/3')
+        self.assertEqual(
+            str(polygon),
+            '[Rectangle] ({}) 7/12 - 4/3'.format(id_init)
+        )
         polygon = Rectangle(4, 3, 7, 12, None)
         id_init += 1
-        self.assertEqual(str(polygon), f'[Rectangle] ({id_init}) 7/12 - 4/3')
+        self.assertEqual(
+            str(polygon),
+            '[Rectangle] ({}) 7/12 - 4/3'.format(id_init)
+        )
         polygon = Rectangle(4, 3, 7, 12, 5.6)
         self.assertEqual(str(polygon), '[Rectangle] (5.6) 7/12 - 4/3')
         polygon = Rectangle(4, 3, 7, 12, (7, 6))

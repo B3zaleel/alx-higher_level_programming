@@ -3,7 +3,7 @@
 """
 import os
 import unittest
-from json import JSONDecodeError
+import json
 from importlib import import_module
 
 
@@ -266,7 +266,7 @@ class TestBase(unittest.TestCase):
             polygon_list,
             [{'id': 98, 'size': 30, 'x': 15, 'y': 10}]
         )
-        with self.assertRaises(JSONDecodeError):
+        with self.assertRaises(json.JSONDecodeError):
             polygon_list = Base.from_json_string('[{"id": 45, "x": 3')
         with self.assertRaises(TypeError):
             polygon_list = Base.from_json_string('[{"id": 45, "x": 3', '34')

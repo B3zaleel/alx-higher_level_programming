@@ -47,7 +47,7 @@ class Base:
         Args:
             list_objs (list): A list of polygons.
         """
-        file_name = f'{cls.__name__}.json'
+        file_name = '{}.json'.format(cls.__name__)
         dict_list = []
         if list_objs is not None:
             for obj in list_objs:
@@ -100,7 +100,7 @@ class Base:
         Returns:
             list: A list of polygons.
         """
-        file_name = f'{cls.__name__}.json'
+        file_name = '{}.json'.format(cls.__name__)
         lines = []
         if os.path.isfile(file_name):
             with open(file_name, mode='r') as file:
@@ -118,17 +118,20 @@ class Base:
         Args:
             list_objs (list): A list of polygons.
         """
-        file_name = f'{cls.__name__}.csv'
+        file_name = '{}.csv'.format(cls.__name__)
         poly_fmt_fxns = {
-            'Rectangle': lambda x: f'{x.id},{x.width},{x.height},{x.x},{x.y}',
-            'Square': lambda x: f'{x.id},{x.size},{x.x},{x.y}',
+            'Rectangle': lambda x: '{},{:d},{:d},{:d},{:d}'.format(
+                x.id, x.width, x.height, x.x, x.y),
+            'Square': lambda x: '{},{:d},{:d},{:d}'.format(
+                x.id, x.size, x.x, x.y),
         }
         vals_list = []
         if list_objs is not None:
             for obj in list_objs:
                 poly_name = obj.__class__.__name__
                 if poly_name in poly_fmt_fxns:
-                    vals_list.append(f'{poly_fmt_fxns[poly_name](obj)}\n')
+                    vals_list.append('{}\n'.format(
+                        poly_fmt_fxns[poly_name](obj)))
         with open(file_name, mode='w', encoding='utf-8') as file:
             file.writelines(vals_list)
 
@@ -140,7 +143,7 @@ class Base:
             list: A list of polygons.
         """
         poly_name = cls.__name__
-        file_name = f'{poly_name}.csv'
+        file_name = '{poly_name}.csv'.format(poly_name)
         poly_fmt_fxns = {
             'Rectangle': lambda x: {
                 'id': int(x[0]),
