@@ -4,9 +4,12 @@
 import unittest
 import os
 from json import JSONDecodeError
-from models.base import Base
-from models.rectangle import Rectangle
-from models.square import Square
+from importlib import import_module
+
+
+Base = import_module('.base', package='models').Base
+Rectangle = import_module('.rectangle', package='models').Rectangle
+Square = import_module('.square', package='models').Square
 
 
 def remove_files():
