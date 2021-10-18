@@ -86,18 +86,18 @@ class TestBase(unittest.TestCase):
                 {'id': None, 'width': 2, 'height': 3, 'x': 5, 'y': 0},
                 {'id': 2, 'width': 10, 'height': 3, 'x': 0, 'y': 0}
             ]),
-            '[{"id": 1, "width": 2, "height": 3, "x": 5, "y": 5}, '
-            + '{"id": null, "width": 2, "height": 3, "x": 5, "y": 0}, '
-            + '{"id": 2, "width": 10, "height": 3, "x": 0, "y": 0}]')
+            '[{"id": 1, "width": 2, "height": 3, "x": 5, "y": 5}, ' +
+            '{"id": null, "width": 2, "height": 3, "x": 5, "y": 0}, ' +
+            '{"id": 2, "width": 10, "height": 3, "x": 0, "y": 0}]')
         self.assertEqual(Base.to_json_string(
             [
                 {'id': 1, 'size': 2, 'x': 5, 'y': 5},
                 {'id': '34', 'size':    25, 'x': 5,   'y': 0},
                 {'id': 2, 'size': 10, 'x': 0,   'y': 0}
             ]),
-            '[{"id": 1, "size": 2, "x": 5, "y": 5}, '
-            + '{"id": "34", "size": 25, "x": 5, "y": 0}, '
-            + '{"id": 2, "size": 10, "x": 0, "y": 0}]')
+            '[{"id": 1, "size": 2, "x": 5, "y": 5}, ' +
+            '{"id": "34", "size": 25, "x": 5, "y": 0}, ' +
+            '{"id": 2, "size": 10, "x": 0, "y": 0}]')
         self.assertEqual(Base.to_json_string([None, False, 1]),
                          '[null, false, 1]')
         self.assertEqual(Base.to_json_string(True),
@@ -342,12 +342,12 @@ class TestBase(unittest.TestCase):
         polygons = Rectangle.load_from_file()
         self.assertTrue(len(polygons) == len(polygons_list))
         self.assertTrue(
-            polygons[0].to_dictionary() == polygons_list[0].to_dictionary()
-            or polygons[0].to_dictionary() == polygons_list[1].to_dictionary()
+            polygons[0].to_dictionary() == polygons_list[0].to_dictionary() or
+            polygons[0].to_dictionary() == polygons_list[1].to_dictionary()
         )
         self.assertTrue(
-            polygons[1].to_dictionary() == polygons_list[0].to_dictionary()
-            or polygons[1].to_dictionary() == polygons_list[1].to_dictionary()
+            polygons[1].to_dictionary() == polygons_list[0].to_dictionary() or
+            polygons[1].to_dictionary() == polygons_list[1].to_dictionary()
         )
         # endregion
         # region Square
@@ -359,12 +359,12 @@ class TestBase(unittest.TestCase):
         polygons = Square.load_from_file()
         self.assertTrue(len(polygons) == len(polygons_list))
         self.assertTrue(
-            polygons[0].to_dictionary() == polygons_list[0].to_dictionary()
-            or polygons[0].to_dictionary() == polygons_list[1].to_dictionary()
+            polygons[0].to_dictionary() == polygons_list[0].to_dictionary() or
+            polygons[0].to_dictionary() == polygons_list[1].to_dictionary()
         )
         self.assertTrue(
-            polygons[1].to_dictionary() == polygons_list[0].to_dictionary()
-            or polygons[1].to_dictionary() == polygons_list[1].to_dictionary()
+            polygons[1].to_dictionary() == polygons_list[0].to_dictionary() or
+            polygons[1].to_dictionary() == polygons_list[1].to_dictionary()
         )
         # endregion
         remove_files()
