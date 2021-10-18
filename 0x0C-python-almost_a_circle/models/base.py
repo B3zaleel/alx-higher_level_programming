@@ -2,6 +2,7 @@
 '''Contains classes for working with Polygons.
 '''
 from json import JSONDecoder, JSONEncoder
+import os
 import re
 from turtle import Pen
 from random import randint
@@ -99,9 +100,10 @@ class Base:
         '''
         file_name = f'{cls.__name__}.json'
         lines = []
-        with open(file_name, mode='r') as file:
-            for line in file.readlines():
-                lines.append(line)
+        if os.path.isfile(file_name):
+            with open(file_name, mode='r') as file:
+                for line in file.readlines():
+                    lines.append(line)
         txt = ''.join(lines)
         attr_dicts = cls.from_json_string(txt)
         cls_list = list(map(lambda x: cls.create(**x), attr_dicts))
@@ -158,12 +160,13 @@ class Base:
         }
         lines = []
         attr_dicts = []
-        with open(file_name, mode='r') as file:
-            for line in file.readlines():
-                attrs_match = re.fullmatch(poly_fmt[poly_name], line)
-                if attrs_match is not None:
-                    cols = line.split(',')
-                    attr_dicts.append(poly_fmt_fxns[poly_name](cols))
+        if os.path.isfile(file_name):
+            with open(file_name, mode='r') as file:
+                for line in file.readlines():
+                    attrs_match = re.fullmatch(poly_fmt[poly_name], line)
+                    if attrs_match is not None:
+                        cols = line.split(',')
+                        attr_dicts.append(poly_fmt_fxns[poly_name](cols))
         cls_list = list(map(lambda x: cls.create(**x), attr_dicts))
         return cls_list
 
