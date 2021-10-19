@@ -80,6 +80,8 @@ class TestBase(unittest.TestCase):
         self.assertEqual(Base.to_json_string([]), '[]')
         self.assertEqual(Base.to_json_string([{}]), '[{}]')
         self.assertEqual(Base.to_json_string([{'x': 6}]), '[{"x": 6}]')
+        with self.assertRaises(TypeError):
+            Base.to_json_string()
 
     def test_from_json_string(self):
         """Tests the from_json_string static method of the Base class.
@@ -111,3 +113,42 @@ class TestBase(unittest.TestCase):
             polygon_list = Base.from_json_string('[{"id": 45, "x": 3', '34')
         with self.assertRaises(TypeError):
             polygon_list = Base.from_json_string('[{"id": 45, "x": 3', None)
+
+    def test_create(self):
+        """Tests the create method of the Base class.
+        """
+        self.assertIsNone(Base.create(**{'id': '89'}))
+        self.assertIsNone(Base.create())
+        self.assertIsNotNone(Rectangle.create())
+        self.assertIsNotNone(Square.create())
+        self.assertDictEqual(Rectangle.create(**{
+            'id': 89, 'width': 3, 'height': 5,
+            'x': 8, 'y': 16
+            }).to_dictionary(),
+            {'id': 89, 'width': 3, 'height': 5, 'x': 8, 'y': 16}
+        )
+        self.assertFalse('foo' in dir(Rectangle.create(**{
+            'id': None, 'width': 3, 'height': 5,
+            'x': 8, 'y': 16, 'foo': 23
+        })))
+        self.assertDictEqual(Square.create(**{
+            'id': 89, 'width': 3, 'height': 5,
+            'size': 15, 'x': 8, 'y': 16
+            }).to_dictionary(),
+            {'id': 89, 'size': 15, 'x': 8, 'y': 16}
+        )
+        self.assertDictEqual(Square.create(**{
+            'id': None, 'width': 13, 'height': 25,
+            'x': 8, 'y': 16, 'foo': 34
+            }).to_dictionary(), {
+            'id': None, 'size': 1,
+            'x': 8, 'y': 16,
+        })
+        self.assertFalse('foo' in dir(Square.create(**{
+            'id': None, 'width': 13, 'height': 25,
+            'x': 8, 'y': 16, 'foo': 34
+        })))
+        with self.assertRaises(TypeError):
+            Base.create(None)
+        with self.assertRaises(TypeError):
+            Square.create({'id': 1, 'size': 5})
