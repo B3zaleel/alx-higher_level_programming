@@ -13,97 +13,67 @@ class TestRectangle(unittest.TestCase):
     """
 
     def test_init(self):
-        """Tests the initialization of the Square class.
+        """Tests the initialization of the Rectangle class.
         """
-        polygon = Rectangle(5, 8, 0, 0)
-        id_init = polygon.id
-        self.assertIsInstance(polygon, Base)
-        self.assertEqual(polygon.width, 5)
-        self.assertEqual(polygon.height, 8)
-        self.assertEqual(polygon.x, 0)
-        self.assertEqual(polygon.y, 0)
+        self.assertIsInstance(Rectangle(5, 8), Base)
+        self.assertEqual(Rectangle(5, 8).width, 5)
+        self.assertEqual(Rectangle(5, 8).height, 8)
+        self.assertEqual(Rectangle(5, 8).x, 0)
+        self.assertEqual(Rectangle(5, 8).y, 0)
         with self.assertRaises(TypeError) as asrt_ctxt:
             polygon = Rectangle('10', 13)
-        self.assertEqual(polygon.id, id_init)
-        self.assertEqual(polygon.width, 5)
-        self.assertEqual(polygon.height, 8)
-        self.assertEqual(polygon.x, 0)
-        self.assertEqual(polygon.y, 0)
+        self.assertEqual(str(asrt_ctxt.exception), 'width must be an integer')
+        with self.assertRaises(TypeError) as asrt_ctxt:
+            polygon = Rectangle(None, 13)
+        self.assertEqual(str(asrt_ctxt.exception), 'width must be an integer')
+        with self.assertRaises(TypeError) as asrt_ctxt:
+            polygon = Rectangle(True, 13)
         self.assertEqual(str(asrt_ctxt.exception), 'width must be an integer')
         with self.assertRaises(TypeError) as asrt_ctxt:
             polygon = Rectangle(10, '13')
-        self.assertEqual(polygon.id, id_init)
-        self.assertEqual(polygon.width, 5)
-        self.assertEqual(polygon.height, 8)
-        self.assertEqual(polygon.x, 0)
-        self.assertEqual(polygon.y, 0)
+        self.assertEqual(str(asrt_ctxt.exception), 'height must be an integer')
+        with self.assertRaises(TypeError) as asrt_ctxt:
+            polygon = Rectangle(10, None)
+        self.assertEqual(str(asrt_ctxt.exception), 'height must be an integer')
+        with self.assertRaises(TypeError) as asrt_ctxt:
+            polygon = Rectangle(10, True)
         self.assertEqual(str(asrt_ctxt.exception), 'height must be an integer')
         with self.assertRaises(TypeError) as asrt_ctxt:
             polygon = Rectangle(10, 13, '20')
-        self.assertEqual(polygon.id, id_init)
-        self.assertEqual(polygon.width, 5)
-        self.assertEqual(polygon.height, 8)
-        self.assertEqual(polygon.x, 0)
-        self.assertEqual(polygon.y, 0)
+        self.assertEqual(str(asrt_ctxt.exception), 'x must be an integer')
+        with self.assertRaises(TypeError) as asrt_ctxt:
+            polygon = Rectangle(10, 13, None)
+        self.assertEqual(str(asrt_ctxt.exception), 'x must be an integer')
+        with self.assertRaises(TypeError) as asrt_ctxt:
+            polygon = Rectangle(10, 13, True)
         self.assertEqual(str(asrt_ctxt.exception), 'x must be an integer')
         with self.assertRaises(TypeError) as asrt_ctxt:
             polygon = Rectangle(10, 13, 20, '25')
-        self.assertEqual(polygon.id, id_init)
-        self.assertEqual(polygon.width, 5)
-        self.assertEqual(polygon.height, 8)
-        self.assertEqual(polygon.x, 0)
-        self.assertEqual(polygon.y, 0)
+        self.assertEqual(str(asrt_ctxt.exception), 'y must be an integer')
+        with self.assertRaises(TypeError) as asrt_ctxt:
+            polygon = Rectangle(10, 13, 20, None)
+        self.assertEqual(str(asrt_ctxt.exception), 'y must be an integer')
+        with self.assertRaises(TypeError) as asrt_ctxt:
+            polygon = Rectangle(10, 13, 20, True)
         self.assertEqual(str(asrt_ctxt.exception), 'y must be an integer')
         with self.assertRaises(ValueError) as asrt_ctxt:
             polygon = Rectangle(0, 13)
-        self.assertEqual(polygon.id, id_init)
-        self.assertEqual(polygon.width, 5)
-        self.assertEqual(polygon.height, 8)
-        self.assertEqual(polygon.x, 0)
-        self.assertEqual(polygon.y, 0)
         self.assertEqual(str(asrt_ctxt.exception), 'width must be > 0')
         with self.assertRaises(ValueError) as asrt_ctxt:
             polygon = Rectangle(-10, 13)
-        self.assertEqual(polygon.id, id_init)
-        self.assertEqual(polygon.width, 5)
-        self.assertEqual(polygon.height, 8)
-        self.assertEqual(polygon.x, 0)
-        self.assertEqual(polygon.y, 0)
         self.assertEqual(str(asrt_ctxt.exception), 'width must be > 0')
         with self.assertRaises(ValueError) as asrt_ctxt:
             polygon = Rectangle(10, 0)
-        self.assertEqual(polygon.id, id_init)
-        self.assertEqual(polygon.width, 5)
-        self.assertEqual(polygon.height, 8)
-        self.assertEqual(polygon.x, 0)
-        self.assertEqual(polygon.y, 0)
         self.assertEqual(str(asrt_ctxt.exception), 'height must be > 0')
         with self.assertRaises(ValueError) as asrt_ctxt:
             polygon = Rectangle(10, -13)
-        self.assertEqual(polygon.id, id_init)
-        self.assertEqual(polygon.width, 5)
-        self.assertEqual(polygon.height, 8)
-        self.assertEqual(polygon.x, 0)
-        self.assertEqual(polygon.y, 0)
         self.assertEqual(str(asrt_ctxt.exception), 'height must be > 0')
         with self.assertRaises(ValueError) as asrt_ctxt:
             polygon = Rectangle(6, 9, -3)
-        self.assertEqual(polygon.id, id_init)
-        self.assertEqual(polygon.width, 5)
-        self.assertEqual(polygon.height, 8)
-        self.assertEqual(polygon.x, 0)
-        self.assertEqual(polygon.y, 0)
         self.assertEqual(str(asrt_ctxt.exception), 'x must be >= 0')
         with self.assertRaises(ValueError) as asrt_ctxt:
             polygon = Rectangle(6, 9, 3, -7)
-        self.assertEqual(polygon.id, id_init)
-        self.assertEqual(polygon.width, 5)
-        self.assertEqual(polygon.height, 8)
-        self.assertEqual(polygon.x, 0)
-        self.assertEqual(polygon.y, 0)
         self.assertEqual(str(asrt_ctxt.exception), 'y must be >= 0')
-        with self.assertRaises(AttributeError):
-            polygon.__nb_objects += 1
         with self.assertRaises(TypeError) as asrt_ctxt:
             polygon = Rectangle(10, 13, 3, 7, 1, 12)
 
