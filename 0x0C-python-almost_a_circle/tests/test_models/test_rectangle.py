@@ -215,3 +215,23 @@ class TestRectangle(unittest.TestCase):
             Rectangle(5, 3).y = -5
         self.assertEqual(str(asrt_ctxt.exception), 'y must be >= 0')
         # endregion
+
+    def test_area(self):
+        """Tests the area method of this polygon.
+        """
+        polygon = Rectangle(12, 3)
+        self.assertEqual(Rectangle(12, 3).area(), 12 * 3)
+        self.assertEqual(Rectangle(5, 2).area(), 5 * 2)
+        self.assertEqual(Rectangle(10, 10, 60, 45, 3).area(), 10 * 10)
+        self.assertEqual(Rectangle(10, 10, 60, 45).area(), 10 * 10)
+        self.assertEqual(Rectangle(10, 10, 60).area(), 10 * 10)
+        with self.assertRaises(TypeError):
+            Rectangle(5, 3).area(None)
+        with self.assertRaises(TypeError):
+            Rectangle(5, 3).area(False)
+        with self.assertRaises(TypeError):
+            Rectangle(5, 3).area(12)
+        with self.assertRaises(TypeError):
+            Rectangle(5, 3).area(10, 10)
+        with self.assertRaises(TypeError):
+            Rectangle(5, 3).area((10, 10))
