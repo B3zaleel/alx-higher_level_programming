@@ -77,6 +77,14 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(str(asrt_ctxt.exception), 'y must be >= 0')
         with self.assertRaises(TypeError) as asrt_ctxt:
             polygon = Rectangle(10, 13, 3, 7, 1, 12)
+        with self.assertRaises(OverflowError):
+            polygon = Rectangle(int(float('inf')))
+        with self.assertRaises(OverflowError):
+            polygon = Rectangle(2, int(float('inf')))
+        with self.assertRaises(OverflowError):
+            polygon = Rectangle(2, 4, int(float('inf')))
+        with self.assertRaises(OverflowError):
+            polygon = Rectangle(2, 4, 5, int(float('inf')))
 
     def test_attribute_validation(self):
         """Tests the validation of attribute and instantiation.

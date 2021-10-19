@@ -70,6 +70,8 @@ class TestBase(unittest.TestCase):
         #     polygon.nb_objects += 1
         with self.assertRaises(TypeError):
             polygon = Base(1, 2)
+        with self.assertRaises(OverflowError):
+            polygon = Base(int(float('inf')))
 
     def test_to_json_string(self):
         """Tests the to_json_string method of the Base class.
