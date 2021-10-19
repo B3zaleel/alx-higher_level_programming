@@ -57,13 +57,17 @@ class TestBase(unittest.TestCase):
         self.assertListEqual([1, 5], Base([1, 5]).id)
         self.assertIsNotNone(Base(None).id)
         self.assertNotEqual(None, Base(None).id)
-        self.assertEqual(False, Base(False))
-        self.assertEqual(True, Base(True))
+        self.assertEqual(False, Base(False).id)
+        self.assertEqual(True, Base(True).id)
         self.assertEqual(0, Base(0).id)
         self.assertEqual(-10, Base(-10).id)
         self.assertEqual(10, Base(10).id)
         self.assertFalse('nb_objects' in dir(Base))
         self.assertFalse('__nb_objects' in dir(Base))
+        # with self.assertRaises(AttributeError):
+        #     polygon.__nb_objects += 1
+        # with self.assertRaises(AttributeError):
+        #     polygon.nb_objects += 1
         with self.assertRaises(TypeError):
             polygon = Base(1, 2)
 
