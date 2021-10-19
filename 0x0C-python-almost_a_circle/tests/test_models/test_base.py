@@ -546,3 +546,68 @@ class TestBase(unittest.TestCase):
             Square.save_to_file()
         # endregion
         TestBase.remove_files()
+
+    def test_load_from_file(self):
+        """Tests the load_from_file class method.
+        """
+        # region Base
+        TestBase.remove_files()
+        polygons = Base.load_from_file()
+        self.assertTrue(len(polygons) == 0)
+        polygons_list = [Base(3), Base(10)]
+        with self.assertRaises(AttributeError):
+            Base.save_to_file(polygons_list)
+        with self.assertRaises(TypeError):
+            polygons = Base.load_from_file(None)
+        with self.assertRaises(TypeError):
+            polygons = Base.load_from_file(True)
+        with self.assertRaises(TypeError):
+            polygons = Base.load_from_file('Base.json')
+        # endregion
+        # region Rectangle
+        TestBase.remove_files()
+        polygons = Rectangle.load_from_file()
+        self.assertTrue(len(polygons) == 0)
+        polygons_list = [Rectangle(3, 17, 0, 0, 1), Rectangle(10, 5, 9, 7, 8)]
+        Rectangle.save_to_file(polygons_list)
+        polygons = Rectangle.load_from_file()
+        self.assertTrue(len(polygons) == len(polygons_list))
+        self.assertTrue(
+            polygons[0].to_dictionary() == polygons_list[0].to_dictionary() or
+            polygons[0].to_dictionary() == polygons_list[1].to_dictionary()
+        )
+        self.assertTrue(
+            polygons[1].to_dictionary() == polygons_list[0].to_dictionary() or
+            polygons[1].to_dictionary() == polygons_list[1].to_dictionary()
+        )
+        with self.assertRaises(TypeError):
+            polygons = Rectangle.load_from_file(None)
+        with self.assertRaises(TypeError):
+            polygons = Rectangle.load_from_file(True)
+        with self.assertRaises(TypeError):
+            polygons = Rectangle.load_from_file('Rectangle.json')
+        # endregion
+        # region Square
+        TestBase.remove_files()
+        polygons = Square.load_from_file()
+        self.assertTrue(len(polygons) == 0)
+        polygons_list = [Square(3, 0, 0, 1), Square(10, 9, 7, 8)]
+        Square.save_to_file(polygons_list)
+        polygons = Square.load_from_file()
+        self.assertTrue(len(polygons) == len(polygons_list))
+        self.assertTrue(
+            polygons[0].to_dictionary() == polygons_list[0].to_dictionary() or
+            polygons[0].to_dictionary() == polygons_list[1].to_dictionary()
+        )
+        self.assertTrue(
+            polygons[1].to_dictionary() == polygons_list[0].to_dictionary() or
+            polygons[1].to_dictionary() == polygons_list[1].to_dictionary()
+        )
+        with self.assertRaises(TypeError):
+            polygons = Square.load_from_file(None)
+        with self.assertRaises(TypeError):
+            polygons = Square.load_from_file(True)
+        with self.assertRaises(TypeError):
+            polygons = Square.load_from_file('Square.json')
+        # endregion
+        TestBase.remove_files()
