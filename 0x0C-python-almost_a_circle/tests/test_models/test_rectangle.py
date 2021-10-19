@@ -15,7 +15,7 @@ class TestRectangle(unittest.TestCase):
     def test_init(self):
         """Tests the initialization of the Square class.
         """
-        pass
+        # pass
         polygon = Rectangle(5, 8, 0, 0)
         id_init = polygon.id
         self.assertIsInstance(polygon, Base)
