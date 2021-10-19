@@ -51,29 +51,19 @@ class TestBase(unittest.TestCase):
     def test_init(self):
         """Tests the initialization of the Base class.
         """
-        polygon = Base()
-        id_init = polygon.id
-        polygon = Base()
-        self.assertEqual(polygon.id, id_init + 1)
-        polygon = Base('0x10')
-        self.assertEqual(polygon.id, '0x10')
-        polygon = Base()
-        self.assertEqual(polygon.id, id_init + 2)
-        polygon = Base([1, 5])
-        self.assertListEqual(polygon.id, [1, 5])
-        polygon = Base()
-        self.assertEqual(polygon.id, id_init + 3)
-        polygon = Base(None)
-        self.assertIsNotNone(polygon.id)
-        self.assertEqual(polygon.id, id_init + 4)
-        polygon = Base(False)
-        self.assertEqual(polygon.id, False)
-        polygon = Base(True)
-        self.assertEqual(polygon.id, True)
-        with self.assertRaises(AttributeError):
-            polygon.__nb_objects += 1
-        with self.assertRaises(AttributeError):
-            polygon.nb_objects += 1
+        id_init = Base().id
+        self.assertEqual(id_init + 1, Base().id)
+        self.assertEqual('0x10', Base('0x10').id)
+        self.assertListEqual([1, 5], Base([1, 5]).id)
+        self.assertIsNotNone(Base(None).id)
+        self.assertNotEqual(None, Base(None).id)
+        self.assertEqual(False, Base(False))
+        self.assertEqual(True, Base(True))
+        self.assertEqual(0, Base(0).id)
+        self.assertEqual(-10, Base(-10).id)
+        self.assertEqual(10, Base(10).id)
+        self.assertFalse('nb_objects' in dir(Base))
+        self.assertFalse('__nb_objects' in dir(Base))
         with self.assertRaises(TypeError):
             polygon = Base(1, 2)
 
