@@ -310,3 +310,26 @@ class TestRectangle(unittest.TestCase):
             str(Rectangle(4, 3, 7, 12, (7, 6))),
             '[Rectangle] ((7, 6)) 7/12 - 4/3'
         )
+
+    def test_to_dictionary(self):
+        """Tests the to_dictionary method.
+        """
+        self.assertTrue(type(Rectangle(2, 3, 0, 0).to_dictionary() )is dict)
+        self.assertDictEqual(
+            Rectangle(2, 3, 0, 0, 1).to_dictionary(),
+            {
+                'id': 1,
+                'width': 2,
+                'height': 3,
+                'x': 0,
+                'y': 0
+            })
+        self.assertDictEqual(
+            Rectangle(5, 12, 6, 13, 2).to_dictionary(),
+            {
+                'id': 2,
+                'width': 5,
+                'height': 12,
+                'x': 6,
+                'y': 13
+            })
