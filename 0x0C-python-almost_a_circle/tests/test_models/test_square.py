@@ -68,3 +68,27 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(str(asrt_ctxt.exception), 'y must be >= 0')
         with self.assertRaises(TypeError) as asrt_ctxt:
             polygon = Square(10, 13, 3, 7, 12)
+
+    def test_str(self):
+        """Tests the __str__ method for the Square.
+        """
+        self.assertEqual(
+            str(Square(4, 0, 0, 1)),
+            '[Square] (1) 0/0 - 4'
+        )
+        self.assertEqual(
+            str(Square(4, 7, 12, 2)),
+            '[Square] (2) 7/12 - 4'
+        )
+        self.assertEqual(
+            str(Square(4, 4, 4, 3)),
+            '[Square] (3) 4/4 - 4'
+        )
+        self.assertEqual(
+            str(Square(4, 4, 4, 3.4)),
+            '[Square] (3.4) 4/4 - 4'
+        )
+        self.assertEqual(
+            str(Square(4, 2, 5, (4, 4))),
+            '[Square] ((4, 4)) 2/5 - 4'
+        )
