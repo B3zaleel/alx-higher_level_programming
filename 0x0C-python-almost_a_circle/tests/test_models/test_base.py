@@ -79,5 +79,37 @@ class TestBase(unittest.TestCase):
         self.assertEqual(Base.to_json_string(None), '[]')
         self.assertEqual(Base.to_json_string([]), '[]')
         self.assertEqual(Base.to_json_string([{}]), '[{}]')
-        self.assertEqual(Base.to_json_string([{'key': 'val'}]),
-                         '[{"key": "val"}]')
+        self.assertEqual(Base.to_json_string([{'x': 6}]), '[{"x": 6}]')
+
+    def test_from_json_string(self):
+        """Tests the from_json_string static method of the Base class.
+        """
+        self.assertEqual(Base.from_json_string('null'), None)
+        self.assertEqual(Rectangle.from_json_string('34'), 34)
+        self.assertEqual(Square.from_json_string('"foo_bar"'), 'foo_bar')
+        self.assertEqual(Square.from_json_string(None), [])
+        self.assertEqual(Base.from_json_string(''), [])
+        self.assertEqual(Square.from_json_string('   '), [])
+        self.assertEqual(Rectangle.from_json_string('   \n \t '), [])
+        self.assertEqual(
+            Base.from_json_string('[-4, 1, 2, 5]'),
+            [-4, 1, 2, 5]
+        )
+        self.assertEqual(
+            Rectangle.from_json_string(
+            '[{"y": 8, "id": 89, "width": 10, "x": 4, "height": 4}]'
+        ),
+            [{'id': 89, 'width': 10, 'height': 4, 'x': 4, 'y': 8}]
+        )
+        self.assertEqual(
+            Square.from_json_string(
+                '[{"id": 98, "x": 15, "size": 30, "y": 10}]'
+            ),
+            [{'id': 98, 'size': 30, 'x': 15, 'y': 10}]
+        )
+        with self.assertRaises(json.JSONDecodeError):
+            polygon_list = Base.from_json_string('[{"id": 45, "x": 3')
+        with self.assertRaises(TypeError):
+            polygon_list = Base.from_json_string('[{"id": 45, "x": 3', '34')
+        with self.assertRaises(TypeError):
+            polygon_list = Base.from_json_string('[{"id": 45, "x": 3', None)
