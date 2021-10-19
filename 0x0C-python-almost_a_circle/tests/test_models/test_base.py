@@ -12,44 +12,44 @@ Rectangle = import_module('.rectangle', package='models').Rectangle
 Square = import_module('.square', package='models').Square
 
 
-def remove_files():
-    """Removes the serialized polygon object files
-    from the current working directory.
-    """
-    if os.path.isfile('Base.json'):
-        os.unlink('Base.json')
-    if os.path.isfile('Rectangle.json'):
-        os.unlink('Rectangle.json')
-    if os.path.isfile('Square.json'):
-        os.unlink('Square.json')
-    if os.path.isfile('Base.csv'):
-        os.unlink('Base.csv')
-    if os.path.isfile('Rectangle.csv'):
-        os.unlink('Rectangle.csv')
-    if os.path.isfile('Square.csv'):
-        os.unlink('Square.csv')
-
-
-def read_text_file(file_name):
-    """Reads the contents of a given file.
-
-    Args:
-        file_name (str): The name of the file to read.
-
-    Returns:
-        str: The contents of the file if it exists.
-    """
-    lines = []
-    if os.path.isfile(file_name):
-        with open(file_name, mode='r') as file:
-            for line in file.readlines():
-                lines.append(line)
-    return ''.join(lines)
-
-
 class TestBase(unittest.TestCase):
     """Tests the Base class and its methods.
     """
+
+    @staticmethod
+    def remove_files():
+        """Removes the serialized polygon object files
+        from the current working directory.
+        """
+        if os.path.isfile('Base.json'):
+            os.unlink('Base.json')
+        if os.path.isfile('Rectangle.json'):
+            os.unlink('Rectangle.json')
+        if os.path.isfile('Square.json'):
+            os.unlink('Square.json')
+        if os.path.isfile('Base.csv'):
+            os.unlink('Base.csv')
+        if os.path.isfile('Rectangle.csv'):
+            os.unlink('Rectangle.csv')
+        if os.path.isfile('Square.csv'):
+            os.unlink('Square.csv')
+
+    @staticmethod
+    def read_text_file(file_name):
+        """Reads the contents of a given file.
+
+        Args:
+            file_name (str): The name of the file to read.
+
+        Returns:
+            str: The contents of the file if it exists.
+        """
+        lines = []
+        if os.path.isfile(file_name):
+            with open(file_name, mode='r') as file:
+                for line in file.readlines():
+                    lines.append(line)
+        return ''.join(lines)
 
     def test_init(self):
         """Tests the initialization of the Base class.
