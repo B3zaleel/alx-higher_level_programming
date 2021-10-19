@@ -322,7 +322,7 @@ class TestRectangle(unittest.TestCase):
     def test_to_dictionary(self):
         """Tests the to_dictionary method.
         """
-        self.assertTrue(type(Rectangle(2, 3, 0, 0).to_dictionary())is dict)
+        self.assertTrue(type(Rectangle(2, 3, 0, 0).to_dictionary()) is dict)
         self.assertDictEqual(
             Rectangle(2, 3, 0, 0, 1).to_dictionary(),
             {
