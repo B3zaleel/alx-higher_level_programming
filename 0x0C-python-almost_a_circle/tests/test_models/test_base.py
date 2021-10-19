@@ -4,12 +4,9 @@
 import os
 import unittest
 import json
-from importlib import import_module
-
-
-Base = import_module('.base', package='models').Base
-Rectangle = import_module('.rectangle', package='models').Rectangle
-Square = import_module('.square', package='models').Square
+from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
 
 
 class TestBase(unittest.TestCase):
@@ -54,28 +51,21 @@ class TestBase(unittest.TestCase):
     def test_init(self):
         """Tests the initialization of the Base class.
         """
-        polygon = Base()
-        id_init = polygon.id
-        polygon = Base()
-        self.assertEqual(polygon.id, id_init + 1)
-        # polygon = Base('0x10')
-        # self.assertEqual(polygon.id, '0x10')
-        polygon = Base()
-        self.assertEqual(polygon.id, id_init + 2)
-        # polygon = Base([1, 5])
-        # self.assertListEqual(polygon.id, [1, 5])
-        polygon = Base()
-        self.assertEqual(polygon.id, id_init + 3)
-        polygon = Base(None)
-        self.assertIsNotNone(polygon.id)
-        self.assertEqual(polygon.id, id_init + 4)
-        polygon = Base(False)
-        self.assertEqual(polygon.id, False)
-        polygon = Base(True)
-        self.assertEqual(polygon.id, True)
-        with self.assertRaises(AttributeError):
-            polygon.__nb_objects += 1
-        with self.assertRaises(AttributeError):
-            polygon.nb_objects += 1
-        with self.assertRaises(TypeError):
-            polygon = Base(1, 2)
+        self.assertFalse('nb_objects' in dir(Base))
+        self.assertEqual(Base().id, 1)
+        self.assertEqual(Base().id, 2)
+        self.assertEqual(Base().id, 3)
+        self.assertEqual(Base(0).id, 0)
+        self.assertEqual(Base().id, 4)
+        self.assertEqual(Base(-10).id, -10)
+        self.assertEqual(Base(10).id, 10)
+        self.assertEqual(Base().id, 5)
+
+    def test_to_json_string(self):
+        """Tests the to_json_string method of the Base class.
+        """
+        self.assertEqual(Base.to_json_string(None), '[]')
+        self.assertEqual(Base.to_json_string([]), '[]')
+        self.assertEqual(Base.to_json_string([{}]), '[{}]')
+        self.assertEqual(Base.to_json_string([{'key': 'val'}]),
+                         '[{"key": "val"}]')

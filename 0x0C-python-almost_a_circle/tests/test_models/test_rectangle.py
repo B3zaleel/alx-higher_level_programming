@@ -4,11 +4,8 @@
 from io import StringIO
 import unittest
 from unittest.mock import patch
-from importlib import import_module
-
-
-Base = import_module('.base', package='models').Base
-Rectangle = import_module('.rectangle', package='models').Rectangle
+from models.base import Base
+from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
@@ -18,6 +15,7 @@ class TestRectangle(unittest.TestCase):
     def test_init(self):
         """Tests the initialization of the Square class.
         """
+        pass
         polygon = Rectangle(5, 8, 0, 0)
         id_init = polygon.id
         self.assertIsInstance(polygon, Base)
