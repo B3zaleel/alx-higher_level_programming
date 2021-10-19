@@ -97,8 +97,8 @@ class TestBase(unittest.TestCase):
         )
         self.assertEqual(
             Rectangle.from_json_string(
-            '[{"y": 8, "id": 89, "width": 10, "x": 4, "height": 4}]'
-        ),
+                '[{"y": 8, "id": 89, "width": 10, "x": 4, "height": 4}]'
+            ),
             [{'id': 89, 'width': 10, 'height': 4, 'x': 4, 'y': 8}]
         )
         self.assertEqual(
