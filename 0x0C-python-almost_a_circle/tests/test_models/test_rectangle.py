@@ -331,7 +331,7 @@ class TestRectangle(unittest.TestCase):
                 'height': 3,
                 'x': 0,
                 'y': 0
-            })
+        })
         self.assertDictEqual(
             Rectangle(5, 12, 6, 13, 2).to_dictionary(),
             {
@@ -340,4 +340,4 @@ class TestRectangle(unittest.TestCase):
                 'height': 12,
                 'x': 6,
                 'y': 13
-            })
+        })
