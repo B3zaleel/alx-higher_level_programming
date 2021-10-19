@@ -415,3 +415,134 @@ class TestBase(unittest.TestCase):
             polygon.update(y=-10, id='35')
         self.assertEqual(str(asrt_ctxt.exception), 'y must be >= 0')
         # endregion
+
+    def test_save_to_file(self):
+        """Tests the save_to_file function of the Base class.
+        """
+        # region Base
+        TestBase.remove_files()
+        Base.save_to_file(None)
+        self.assertEqual(TestBase.read_text_file('Base.json'), '[]')
+        self.assertFalse(os.path.isfile('Rectangle.json'))
+        self.assertFalse(os.path.isfile('Square.json'))
+        TestBase.remove_files()
+        Base.save_to_file([])
+        self.assertEqual(TestBase.read_text_file('Base.json'), '[]')
+        self.assertFalse(os.path.isfile('Square.json'))
+        self.assertFalse(os.path.isfile('Rectangle.json'))
+        with self.assertRaises(AttributeError):
+            TestBase.remove_files()
+            Base.save_to_file([Base(3), Base(10)])
+        TestBase.remove_files()
+        Base.save_to_file([Square(3, 0, 0, 1), Square(10, 9, 7, 8)])
+        self.assertEqual(TestBase.read_text_file('Base.json'), '[]')
+        self.assertFalse(os.path.isfile('Square.json'))
+        self.assertFalse(os.path.isfile('Rectangle.json'))
+        polygons = [Rectangle(5, 13, 0, 0, 1), Rectangle(10, 2, 9, 7, 8)]
+        TestBase.remove_files()
+        Base.save_to_file(polygons)
+        self.assertEqual(TestBase.read_text_file('Base.json'), '[]')
+        self.assertFalse(os.path.isfile('Square.json'))
+        self.assertFalse(os.path.isfile('Rectangle.json'))
+        polygons = [Square(3, 0, 0, 1), Rectangle(10, 3, 9, 7, 8), Base(2)]
+        with self.assertRaises(AttributeError):
+            TestBase.remove_files()
+            Base.save_to_file(polygons)
+        with self.assertRaises(TypeError):
+            Base.save_to_file(polygons, polygons)
+        with self.assertRaises(TypeError):
+            Base.save_to_file()
+        # endregion
+        # region Rectangle
+        polygons = None
+        TestBase.remove_files()
+        Rectangle.save_to_file(polygons)
+        self.assertEqual(TestBase.read_text_file('Rectangle.json'), '[]')
+        polygons = []
+        TestBase.remove_files()
+        Rectangle.save_to_file(polygons)
+        self.assertEqual(TestBase.read_text_file('Rectangle.json'), '[]')
+        polygons = [Rectangle(3, 5, 0, 0, 1), Rectangle(10, 4, 9, 7, 8)]
+        TestBase.remove_files()
+        Rectangle.save_to_file(polygons)
+        contents = TestBase.read_text_file('Rectangle.json')
+        self.assertIn('"id": 1', contents)
+        self.assertIn('"width": 3', contents)
+        self.assertIn('"height": 5', contents)
+        self.assertIn('"x": 0', contents)
+        self.assertIn('"y": 0', contents)
+        self.assertIn('"id": 8', contents)
+        self.assertIn('"width": 10', contents)
+        self.assertIn('"height": 4', contents)
+        self.assertIn('"x": 9', contents)
+        self.assertIn('"y": 7', contents)
+        polygons = [Rectangle(3, 5, 0, 0, 1), Base(34), Square(10, 9, 7, 8)]
+        TestBase.remove_files()
+        Rectangle.save_to_file(polygons)
+        contents = TestBase.read_text_file('Rectangle.json')
+        self.assertIn('"id": 1', contents)
+        self.assertIn('"width": 3', contents)
+        self.assertIn('"height": 5', contents)
+        self.assertIn('"x": 0', contents)
+        self.assertIn('"y": 0', contents)
+        self.assertNotIn('"id": 34', contents)
+        self.assertNotIn('"id": 8', contents)
+        self.assertNotIn('"size": 10', contents)
+        self.assertNotIn('"width": 10', contents)
+        self.assertNotIn('"height": 10', contents)
+        self.assertNotIn('"x": 9', contents)
+        self.assertNotIn('"y": 7', contents)
+        with self.assertRaises(TypeError):
+            Rectangle.save_to_file(polygons, polygons)
+        with self.assertRaises(TypeError):
+            Rectangle.save_to_file()
+        # endregion
+        # region Square
+        polygons = None
+        TestBase.remove_files()
+        Square.save_to_file(polygons)
+        self.assertEqual(TestBase.read_text_file('Square.json'), '[]')
+        polygons = []
+        TestBase.remove_files()
+        Square.save_to_file(polygons)
+        self.assertEqual(TestBase.read_text_file('Square.json'), '[]')
+        polygons = [Square(3, 0, 0, 1), Square(10, 9, 7, 8)]
+        TestBase.remove_files()
+        Square.save_to_file(polygons)
+        contents = TestBase.read_text_file('Square.json')
+        self.assertIn('"id": 1', contents)
+        self.assertIn('"size": 3', contents)
+        self.assertNotIn('"width": 3', contents)
+        self.assertNotIn('"height": 3', contents)
+        self.assertIn('"x": 0', contents)
+        self.assertIn('"y": 0', contents)
+        self.assertIn('"id": 8', contents)
+        self.assertIn('"size": 10', contents)
+        self.assertNotIn('"width": 10', contents)
+        self.assertNotIn('"height": 10', contents)
+        self.assertIn('"x": 9', contents)
+        self.assertIn('"y": 7', contents)
+        polygons = [Square(3, 0, 0, 1), Rectangle(10, 5, 9, 7, 8), Base(11)]
+        TestBase.remove_files()
+        Square.save_to_file(polygons)
+        contents = TestBase.read_text_file('Square.json')
+        self.assertIn('"id": 1', contents)
+        self.assertIn('"size": 3', contents)
+        self.assertNotIn('"width": 3', contents)
+        self.assertNotIn('"height": 3', contents)
+        self.assertIn('"x": 0', contents)
+        self.assertIn('"y": 0', contents)
+        self.assertNotIn('"id": 8', contents)
+        self.assertNotIn('"size": 10', contents)
+        self.assertNotIn('"size": 5', contents)
+        self.assertNotIn('"width": 10', contents)
+        self.assertNotIn('"height": 5', contents)
+        self.assertNotIn('"x": 9', contents)
+        self.assertNotIn('"y": 7', contents)
+        self.assertNotIn('"id": 11', contents)
+        with self.assertRaises(TypeError):
+            Square.save_to_file(polygons, polygons)
+        with self.assertRaises(TypeError):
+            Square.save_to_file()
+        # endregion
+        TestBase.remove_files()
