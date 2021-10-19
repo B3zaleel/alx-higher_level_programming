@@ -286,3 +286,27 @@ class TestRectangle(unittest.TestCase):
             self.assertEqual(fake_stdout.getvalue(), '\n\n\n###\n')
         with self.assertRaises(TypeError):
             polygon.display(2)
+
+    def test_str(self):
+        """Tests the __str__ method.
+        """
+        self.assertEqual(
+            str(Rectangle(4, 3, 0, 0, 1)),
+            '[Rectangle] (1) 0/0 - 4/3'
+        )
+        self.assertEqual(
+            str(Rectangle(4, 3, 7, 12, 2)),
+            '[Rectangle] (2) 7/12 - 4/3'
+        )
+        self.assertEqual(
+            str(Rectangle(4, 4, 7, 7, 3)),
+            '[Rectangle] (3) 7/7 - 4/4'
+        )
+        self.assertEqual(
+            str(Rectangle(4, 3, 7, 12, 5.6)),
+            '[Rectangle] (5.6) 7/12 - 4/3'
+        )
+        self.assertEqual(
+            str(Rectangle(4, 3, 7, 12, (7, 6))),
+            '[Rectangle] ((7, 6)) 7/12 - 4/3'
+        )
