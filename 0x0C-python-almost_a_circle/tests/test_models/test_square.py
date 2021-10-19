@@ -16,4 +16,7 @@ class TestSquare(unittest.TestCase):
     def test_init(self):
         """Tests the initialization of the Square class.
         """
-        pass
+        self.assertIsInstance(Square(5), Base)
+        self.assertIsInstance(Square(5), Rectangle)
+        self.assertTrue(issubclass(Square, Rectangle))
+        self.assertTrue(issubclass(Square, Base))

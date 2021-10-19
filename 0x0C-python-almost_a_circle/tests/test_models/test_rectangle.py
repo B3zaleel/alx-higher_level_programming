@@ -16,6 +16,7 @@ class TestRectangle(unittest.TestCase):
         """Tests the initialization of the Rectangle class.
         """
         self.assertIsInstance(Rectangle(5, 8), Base)
+        self.assertTrue(issubclass(Rectangle, Base))
         self.assertEqual(Rectangle(5, 8).width, 5)
         self.assertEqual(Rectangle(5, 8).height, 8)
         self.assertEqual(Rectangle(5, 8, 0, 0).x, 0)
@@ -235,3 +236,53 @@ class TestRectangle(unittest.TestCase):
             Rectangle(5, 3).area(10, 10)
         with self.assertRaises(TypeError):
             Rectangle(5, 3).area((10, 10))
+
+    def test_display_0(self):
+        """Tests the display method for a polygon with all
+        coordinate values being zero.
+        """
+        polygon = Rectangle(4, 3)
+        with patch('sys.stdout', new=StringIO()) as fake_stdout:
+            polygon.display()
+            self.assertEqual(fake_stdout.getvalue(), '####\n####\n####\n')
+        polygon = Rectangle(2, 2)
+        with patch('sys.stdout', new=StringIO()) as fake_stdout:
+            polygon.display()
+            self.assertEqual(fake_stdout.getvalue(), '##\n##\n')
+        polygon = Rectangle(1, 3)
+        with patch('sys.stdout', new=StringIO()) as fake_stdout:
+            polygon.display()
+            self.assertEqual(fake_stdout.getvalue(), '#\n#\n#\n')
+        polygon = Rectangle(3, 1)
+        with patch('sys.stdout', new=StringIO()) as fake_stdout:
+            polygon.display()
+            self.assertEqual(fake_stdout.getvalue(), '###\n')
+        with self.assertRaises(TypeError):
+            polygon.display(2)
+
+    def test_display_1(self):
+        """Tests the display method for a polygon with a
+        non-zero coordinate value.
+        """
+        polygon = Rectangle(4, 3, 0, 1)
+        with patch('sys.stdout', new=StringIO()) as fake_stdout:
+            polygon.display()
+            self.assertEqual(fake_stdout.getvalue(), '\n####\n####\n####\n')
+        polygon = Rectangle(4, 3, 1, 0)
+        with patch('sys.stdout', new=StringIO()) as fake_stdout:
+            polygon.display()
+            self.assertEqual(fake_stdout.getvalue(), ' ####\n ####\n ####\n')
+        polygon = Rectangle(2, 2, 2, 2)
+        with patch('sys.stdout', new=StringIO()) as fake_stdout:
+            polygon.display()
+            self.assertEqual(fake_stdout.getvalue(), '\n\n  ##\n  ##\n')
+        polygon = Rectangle(1, 3, 3, 0)
+        with patch('sys.stdout', new=StringIO()) as fake_stdout:
+            polygon.display()
+            self.assertEqual(fake_stdout.getvalue(), '   #\n   #\n   #\n')
+        polygon = Rectangle(3, 1, 0, 3)
+        with patch('sys.stdout', new=StringIO()) as fake_stdout:
+            polygon.display()
+            self.assertEqual(fake_stdout.getvalue(), '\n\n\n###\n')
+        with self.assertRaises(TypeError):
+            polygon.display(2)
