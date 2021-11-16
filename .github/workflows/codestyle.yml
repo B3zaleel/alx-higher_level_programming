@@ -13,9 +13,29 @@ jobs:
           pip install pycodestyle==2.7.0
       - name: Analyse the code with pycodestyle (PEP8)
         run: |
-          Src_Files="$(find . -type f | grep -oE '^.*\.py$' | tr '\n' ' ')"
-          pycodestyle $Src_Files
-          ~/.local/bin/pep8 $Src_Files
+          Src_Files=()
+          Ignored_Files=()
+          file_ignore=""
+          file_ignore=$file_ignore'./0x02-python-import_modules/magic_calculation_102.py'
+          file_ignore=$file_ignore"\n"'./0x05-python-exceptions/102-magic_calculation.py'
+          file_ignore=$file_ignore"\n"'./0x09-python-everything_is_object/19-copy_list.py'
+          readarray -t Src_Files < <(find . -type f | grep -oE '^.*\.py$')
+          readarray -t Ignored_Files < <(echo -e $file_ignore)
+          for ((i = 0; i < "${#Src_Files[@]}"; i++)) do
+            file="${Src_Files[i]}"
+            skip="0"
+            for ((j = 0; j < "${#Ignored_Files[@]}"; j++)) do
+              if [[ "${Ignored_Files[j]}" == $file ]]; then
+                skip="1"
+                break
+              fi
+            done
+            if [[ "$skip" == "0" ]]; then
+              echo -e "\n========== $file =========="
+              pycodestyle $file
+              ~/.local/bin/pep8 $file
+            fi
+          done
       - run: echo "This job's status is ${{ job.status }}."
   C-Code-Styling:
     runs-on: ubuntu-latest
@@ -30,12 +50,11 @@ jobs:
           [ -d ~/tmp/Betty ] && cd "$main_dir"
       - name: Analyse the code with Betty style
         run: |
-          # Src_Files="$(find . -type f | grep -oE '^.*\.(c|h)$' | tr '\n' ' ')"]
           Src_Files=()
           readarray -t Src_Files < <(find . -type f | grep -oE '^.*\.(c|h)$')
           for ((i = 0; i < "${#Src_Files[@]}"; i++)) do
-              file="${Src_Files[i]}"
-              echo -e "\n========== $file =========="
-              ~/tmp/Betty/betty-style.pl "$file"
-              ~/tmp/Betty/betty-doc.pl "$file"
+            file="${Src_Files[i]}"
+            echo -e "\n========== $file =========="
+            ~/tmp/Betty/betty-style.pl "$file"
+            ~/tmp/Betty/betty-doc.pl "$file"
           done
