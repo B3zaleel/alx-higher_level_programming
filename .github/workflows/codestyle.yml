@@ -15,12 +15,8 @@ jobs:
         run: |
           Src_Files=()
           Ignored_Files=()
-          file_ignore=""
-          file_ignore=$file_ignore'./0x02-python-import_modules/magic_calculation_102.py'
-          file_ignore=$file_ignore"\n"'./0x05-python-exceptions/102-magic_calculation.py'
-          file_ignore=$file_ignore"\n"'./0x09-python-everything_is_object/19-copy_list.py'
           readarray -t Src_Files < <(find . -type f | grep -oE '^.*\.py$')
-          readarray -t Ignored_Files < <(echo -e $file_ignore)
+          readarray -t Ignored_Files < <([ -f '.gh_style_ignore' ] && cat '.gh_style_ignore')
           for ((i = 0; i < "${#Src_Files[@]}"; i++)) do
             file="${Src_Files[i]}"
             skip="0"
