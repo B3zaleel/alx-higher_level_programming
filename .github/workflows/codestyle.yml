@@ -26,7 +26,7 @@ jobs:
         run: |
           main_dir="$PWD"
           which betty || cd /tmp/ && git clone https://github.com/holbertonschool/Betty.git
-          [ "$(echo -n $?)" == "0" ] && [ cd Betty ] && ./install.sh
+          [ "$(echo -n $?)" == "0" ] && cd Betty && ./install.sh
           [ "$PWD" == "/tmp/Betty" ] && cd .. && rm -rf Betty
           which betty && cd "$main_dir"
       - name: Analyse the code with Betty style
