@@ -4,3 +4,8 @@ ALTER DATABASE hbtn_0c_0
 -- Changes the properties of a table in the database
 ALTER TABLE first_table
     CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+-- Changes the properties of a column in a table in the database
+ALTER TABLE first_table CHANGE
+    name VARCHAR(256)
+    CHARACTER SET utf8mb4
+    COLLATE utf8mb4_unicode_ci;
