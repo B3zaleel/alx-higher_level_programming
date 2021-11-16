@@ -1,0 +1,35 @@
+name: CodeStyle
+on: [push]
+jobs:
+  Python-Code-Styling:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install pep8==1.7.0
+          pip install pycodestyle=2.7.0
+      - name: Analyse the code with pycodestyle (PEP8)
+        run: |
+          Src_Files="$(find . -type f | grep -oE '^.*\.py$' | tr '\n' ' ')"
+          pycodestyle $Src_Files
+          ~/.local/bin/pep8 $Src_Files
+      - run: echo "This job's status is ${{ job.status }}."
+  C-Code-Styling:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          main_dir="$PWD"
+          which betty || cd /tmp/ && git clone https://github.com/holbertonschool/Betty.git
+          [ "$(echo -n $?)" == "0" ] && [ cd Betty ] && ./install.sh
+          [ "$PWD" == "/tmp/Betty" ] && cd .. && rm -rf Betty
+          which betty && cd "$main_dir"
+      - name: Analyse the code with Betty style
+        run: |
+          Src_Files="$(find . -type f | grep -oE '^.*\.(c|h)$' | tr '\n' ' ')"
+          betty $Src_Files
