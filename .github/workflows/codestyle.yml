@@ -10,7 +10,7 @@ jobs:
         run: |
           python3 -m pip install --upgrade pip
           pip install pep8==1.7.0
-          pip install pycodestyle=2.7.0
+          pip install pycodestyle==2.7.0
       - name: Analyse the code with pycodestyle (PEP8)
         run: |
           Src_Files="$(find . -type f | grep -oE '^.*\.py$' | tr '\n' ' ')"
