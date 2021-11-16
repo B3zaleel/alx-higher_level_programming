@@ -30,5 +30,12 @@ jobs:
           [ -d ~/tmp/Betty ] && cd "$main_dir"
       - name: Analyse the code with Betty style
         run: |
-          Src_Files="$(find . -type f | grep -oE '^.*\.(c|h)$' | tr '\n' ' ')"
-          ~/tmp/Betty/betty.sh $Src_Files
+          # Src_Files="$(find . -type f | grep -oE '^.*\.(c|h)$' | tr '\n' ' ')"]
+          Src_Files=()
+          readarray -t Src_Files < <(find . -type f | grep -oE '^.*\.(c|h)$')
+          for ((i = 0; i < "${#Src_Files[@]}"; i++)) do
+              file="${Src_Files[i]}"
+              echo -e "\n========== $file =========="
+              ~/tmp/Betty/betty-style.pl "$file"
+              ~/tmp/Betty/betty-doc.pl "$file"
+          done
