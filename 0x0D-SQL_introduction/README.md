@@ -51,6 +51,6 @@ This project contains some tasks for learning the basics about **SQL** using the
   + Database `hbtn_0c_0`
   + Table `first_table` in database `hbtn_0c_0`
   + Field `name` in `first_table`
-+ [x] 18\. Temperatures #0 <br/>_**[101-square.sql](101-square.sql)**_ contains a script that displays the average temperature (Fahrenheit) by city ordered by temperature (descending). The table in [temperatures.sql](temperatures.sql) is used for this task.
-+ [x] 19\. Temperatures #1 <br/>_**[102-square.sql](102-square.sql)**_ contains a script that displays the top 3 of cities temperature during July and August ordered by temperature (descending). The table in [temperatures.sql](temperatures.sql) is used for this task.
++ [x] 18\. Temperatures #0 <br/>_**[101-avg_temperatures.sql](101-avg_temperatures.sql)**_ contains a script that displays the average temperature (Fahrenheit) by city ordered by temperature (descending). The table in [temperatures.sql](temperatures.sql) is used for this task.
++ [x] 19\. Temperatures #1 <br/>_**[102-top_city.sql](102-top_city.sql)**_ contains a script that displays the top 3 of cities temperature during July and August ordered by temperature (descending). The table in [temperatures.sql](temperatures.sql) is used for this task.
 + [x] 20\. Temperatures #2 <br/>_**[103-max_state.sql](103-max_state.sql)**_ contains a script that displays the max temperature of each state (ordered by State name). The table in [temperatures.sql](temperatures.sql) is used for this task.
