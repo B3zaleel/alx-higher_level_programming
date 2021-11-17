@@ -1,6 +1,6 @@
 -- Selects records from one table (cities) with a
 -- column value that can be found in another set
-SELECT * FROM cities
+SELECT id, name FROM cities
     WHERE state_id IN
     (
         SELECT id FROM states
