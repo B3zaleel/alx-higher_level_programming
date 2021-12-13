@@ -4,7 +4,6 @@ const myObject = {
   value: 12
 };
 console.log(myObject);
-Function.prototype.toString = () => '[foo]';
 myObject.incr = new Function('this.value++;');
 myObject.incr();
 console.log(myObject);
