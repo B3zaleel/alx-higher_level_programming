@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-"""
-Prints all State objects and their City objects in a database.
-"""
+'''Prints all State objects and their City objects in a database.
+'''
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from relationship_state import Base, State
+from relationship_state import State, Base
 from relationship_city import City
 
 
@@ -21,7 +20,9 @@ if __name__ == '__main__':
         engine = create_engine(DATABASE_URL)
         Base.metadata.create_all(engine)
         session = sessionmaker(bind=engine)()
-        result = session.query(State).all()
+        result = session.query(State).join(City).order_by(
+            State.id.asc(), City.id.asc()
+        ).all()
         for state in result:
             print('{}: {}'.format(state.id, state.name))
             for city in state.cities:
