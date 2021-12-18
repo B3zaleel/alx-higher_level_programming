@@ -18,7 +18,7 @@ if __name__ == '__main__':
         cursor = db_connection.cursor()
         cursor.execute(
             'SELECT * FROM states WHERE name IS NOT NULL AND' +
-            ' name LIKE "N%" ORDER BY id ASC;'
+            ' LEFT(LTRIM(name), 1) = "N" ORDER BY states.id ASC;'
         )
         results = cursor.fetchall()
         for result in results:
