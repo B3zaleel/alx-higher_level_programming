@@ -18,7 +18,7 @@ if __name__ == '__main__':
         cursor = db_connection.cursor()
         cursor.execute(
             'SELECT * FROM states WHERE name IS NOT NULL AND' +
-            ' LEFT(LTRIM(name), 1) = "N" ORDER BY states.id ASC;'
+            ' LEFT(CAST(name AS BINARY), 1) = "N" ORDER BY states.id ASC;'
         )
         results = cursor.fetchall()
         for result in results:
