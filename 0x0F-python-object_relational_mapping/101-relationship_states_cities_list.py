@@ -14,7 +14,7 @@ if __name__ == '__main__':
         user = sys.argv[1]
         pword = sys.argv[2]
         db_name = sys.argv[3]
-        DATABASE_URL = 'mysql://{}:{}@localhost:3306/{}'.format(
+        DATABASE_URL = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
             user, pword, db_name
         )
         engine = create_engine(DATABASE_URL)
