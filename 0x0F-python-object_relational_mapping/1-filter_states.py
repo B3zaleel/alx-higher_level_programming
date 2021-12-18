@@ -21,6 +21,7 @@ if __name__ == '__main__':
             ' name LIKE "N%" ORDER BY id ASC;'
         )
         results = cursor.fetchall()
-        for result in results:
-            print(result)
+        if results is not None:
+            for result in results:
+                print(result)
         db_connection.close()
