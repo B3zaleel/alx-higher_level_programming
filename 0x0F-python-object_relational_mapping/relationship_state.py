@@ -26,4 +26,8 @@ class State(Base):
         String(length=128),
         nullable=False
     )
-    cities = []
+    cities = relationship(
+        "City",
+        cascade="all, delete, delete-orphan",
+        backref="cities.id"
+    )
