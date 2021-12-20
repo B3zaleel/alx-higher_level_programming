@@ -27,4 +27,4 @@ class City(Base):
         ForeignKey('states.id'),
         nullable=False
     )
-    state = relationship('State', back_populates='cities')
+    state = relationship('State', backref='states.id')

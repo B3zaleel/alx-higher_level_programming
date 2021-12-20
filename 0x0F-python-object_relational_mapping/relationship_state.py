@@ -26,8 +26,4 @@ class State(Base):
         String(length=128),
         nullable=False
     )
-    cities = relationship(
-        "City",
-        cascade="all, delete, delete-orphan",
-        back_populates="state"
-    )
+    cities = []
