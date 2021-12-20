@@ -14,16 +14,14 @@ if __name__ == '__main__':
         user = sys.argv[1]
         pword = sys.argv[2]
         db_name = sys.argv[3]
-        DATABASE_URL = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+        DATABASE_URL = 'mysql://{}:{}@localhost:3306/{}'.format(
             user, pword, db_name
         )
-        engine = create_engine(DATABASE_URL, pool_pre_ping=True)
+        engine = create_engine(DATABASE_URL)
         Base.metadata.create_all(engine)
         session = sessionmaker(bind=engine)()
-        states = session.query(State).order_by(State.id).all()
-        for state in states:
+        result = session.query(State).order_by(State.id.asc()).all()
+        for state in result:
             print('{}: {}'.format(state.id, state.name))
             for city in state.cities:
                 print('\t{}: {}'.format(city.id, city.name))
-        session.commit()
-        session.close()
