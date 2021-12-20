@@ -14,10 +14,10 @@ if __name__ == '__main__':
         user = sys.argv[1]
         pword = sys.argv[2]
         db_name = sys.argv[3]
-        DATABASE_URL = 'mysql://{}:{}@localhost:3306/{}'.format(
+        DATABASE_URL = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
             user, pword, db_name
         )
-        engine = create_engine(DATABASE_URL)
+        engine = create_engine(DATABASE_URL, pool_pre_ping=True)
         Base.metadata.create_all(engine)
         session = sessionmaker(bind=engine)()
         result = session.query(State).order_by(State.id.asc()).all()
@@ -25,3 +25,4 @@ if __name__ == '__main__':
             print('{}: {}'.format(state.id, state.name))
             for city in state.cities:
                 print('\t{}: {}'.format(city.id, city.name))
+        session.close()
