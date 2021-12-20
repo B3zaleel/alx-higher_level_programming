@@ -20,9 +20,10 @@ if __name__ == '__main__':
         engine = create_engine(DATABASE_URL, pool_pre_ping=True)
         Base.metadata.create_all(engine)
         session = sessionmaker(bind=engine)()
-        result = session.query(State).order_by(State.id).all()
-        for state in result:
+        states = session.query(State).order_by(State.id).all()
+        for state in states:
             print('{}: {}'.format(state.id, state.name))
             for city in state.cities:
                 print('\t{}: {}'.format(city.id, city.name))
+        session.commit()
         session.close()
