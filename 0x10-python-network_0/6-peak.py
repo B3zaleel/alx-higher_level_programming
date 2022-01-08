@@ -10,8 +10,8 @@ def find_peak(list_of_integers):
         n = len(list_of_integers)
         mid = n // 2
         if mid > 0 and list_of_integers[mid] < list_of_integers[mid - 1]:
-            return find_peak(list_of_integers[0 : mid - 1])
+            return find_peak(list_of_integers[0:mid - 1])
         elif mid + 1 < n and list_of_integers[mid] < list_of_integers[mid + 1]:
-            return find_peak(list_of_integers[mid : n])
+            return find_peak(list_of_integers[mid:n])
         else:
             return list_of_integers[mid]
