@@ -10,4 +10,4 @@ if __name__ == '__main__':
         email = sys.argv[2]
         form_data = bytes(parse.urlencode([('email', email)]), 'utf-8')
         with request.urlopen(sys.argv[1], data=form_data) as response:
-            print(response.read())
+            print(response.read().decode('utf-8'))
