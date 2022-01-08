@@ -1,3 +1,3 @@
 #!/bin/bash
-# Follows a URL and its redirects for a non-redirect response
-curl -L --max-redirs '-1' "$1"
+# Follows a URL for it to respond with "You got me!"
+curl -X PUT -H 'Origin: HolbertonSchool' -L -d "user_id=98" "0.0.0.0:5000/catch_me"
