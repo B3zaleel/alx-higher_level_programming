@@ -9,6 +9,6 @@ if __name__ == '__main__':
         if response.readable():
             data = response.read()
             print('Body response:')
-            print('\ttype: {}'.format(type(data)))
-            print('\tcontent: {}'.format(data))
-            print('\tutf-8 content: {}'.format(data.decode('utf-8')))
+            print('\t-type: {}'.format(type(data)))
+            print('\t-content: {}'.format(data))
+            print('\t-utf8 content: {}'.format(data.decode('utf-8')))
