@@ -19,7 +19,7 @@ This project contains some tasks for learning how to perform web scraping with *
     + The content of the file must be written in `utf-8`.
     + If an error occurred during while writing, print the error object.
 
-+ [ ] 2. Status code<br/>_**[2-statuscode.js](2-statuscode.js)**_ contains a script that displays the status code of a `GET` request.
++ [x] 2. Status code<br/>_**[2-statuscode.js](2-statuscode.js)**_ contains a script that displays the status code of a `GET` request.
   + Requirements:
     + The first argument is the URL to request (`GET`).
     + The status code must be printed like this: `code: <status code>`.
