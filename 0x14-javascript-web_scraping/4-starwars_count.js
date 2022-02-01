@@ -7,10 +7,11 @@ if (process.argv.length > 2) {
   request(`${process.argv[2]}`, (err, res, body) => {
     if (err) {
       console.log(err);
-    }
-    const films = JSON.parse(body).results;
-    const charFilms = films.filter(x => x.characters.includes(charId));
+    } else if (body) {
+      const films = JSON.parse(body).results;
+      const charFilms = films.filter(x => x.characters.includes(charId));
 
-    console.log(charFilms.length);
+      console.log(charFilms.length);
+    }
   });
 }
