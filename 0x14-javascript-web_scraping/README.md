@@ -6,7 +6,7 @@ This project contains some tasks for learning how to perform web scraping with *
 
 ## Tasks To Complete
 
-+ [ ] 0. Readme<br/>_**[0-readme.js](0-readme.js)**_ contains a script that reads and prints the content of a file.
++ [x] 0. Readme<br/>_**[0-readme.js](0-readme.js)**_ contains a script that reads and prints the content of a file.
   + Requirements:
     + The first argument is the file path.
     + The content of the file must be read in `utf-8`.
