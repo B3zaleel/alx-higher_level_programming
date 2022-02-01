@@ -57,7 +57,7 @@ This project contains some tasks for learning how to perform web scraping with *
     + You must use the [Star wars API](https://swapi-api.hbtn.io/).
     + You must use the module `request`.
 
-+ [ ] 8. Right order<br/>_**[101-starwars_characters.js](101-starwars_characters.js)**_ contains a script that prints all characters of a Star Wars movie.
++ [x] 8. Right order<br/>_**[101-starwars_characters.js](101-starwars_characters.js)**_ contains a script that prints all characters of a Star Wars movie.
   + Requirements:
     + The first argument is the Movie ID - example: `3` = "Return of the Jedi".
     + Display one character name by line **in the same order of the list "characters" in the /`films/` response**.
