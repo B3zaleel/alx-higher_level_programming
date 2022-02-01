@@ -37,7 +37,7 @@ This project contains some tasks for learning how to perform web scraping with *
     + Wedge Antilles is character ID `18` - your script **must** use this ID for filtering the result of the API.
     + You must use the module `request`.
 
-+ [ ] 5. Loripsum<br/>_**[5-request_store.js](5-request_store.js)**_ contains a script that gets the contents of a webpage and stores it in a file.
++ [x] 5. Loripsum<br/>_**[5-request_store.js](5-request_store.js)**_ contains a script that gets the contents of a webpage and stores it in a file.
   + Requirements:
     + The first argument is the URL to request.
     + The second argument the file path to store the body response.
