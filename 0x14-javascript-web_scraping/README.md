@@ -44,7 +44,7 @@ This project contains some tasks for learning how to perform web scraping with *
     + The file must be UTF-8 encoded.
     + You must use the module `request`.
 
-+ [ ] 6. How many completed?<br/>_**[6-completed_tasks.js](6-completed_tasks.js)**_ contains a script that computes the number of tasks completed by user id.
++ [x] 6. How many completed?<br/>_**[6-completed_tasks.js](6-completed_tasks.js)**_ contains a script that computes the number of tasks completed by user id.
   + Requirements:
     + The first argument is the API URL: `https://jsonplaceholder.typicode.com/todos`.
     + Only print users with completed task.
