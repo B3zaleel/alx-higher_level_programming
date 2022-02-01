@@ -50,7 +50,7 @@ This project contains some tasks for learning how to perform web scraping with *
     + Only print users with completed task.
     + You must use the module `request`.
 
-+ [ ] 7. Who was playing in this movie?<br/>_**[100-starwars_characters.js](100-starwars_characters.js)**_ contains a script that prints all characters of a Star Wars movie.
++ [x] 7. Who was playing in this movie?<br/>_**[100-starwars_characters.js](100-starwars_characters.js)**_ contains a script that prints all characters of a Star Wars movie.
   + Requirements:
     + The first argument is the Movie ID - example: `3` = "Return of the Jedi".
     + Display one character name by line.
