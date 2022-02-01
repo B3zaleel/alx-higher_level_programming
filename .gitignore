@@ -10,3 +10,4 @@ __pycache__
 *.log
 prog.py
 main.c
+node_modules/
