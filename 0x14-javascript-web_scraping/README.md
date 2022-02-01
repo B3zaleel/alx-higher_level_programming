@@ -25,7 +25,7 @@ This project contains some tasks for learning how to perform web scraping with *
     + The status code must be printed like this: `code: <status code>`.
     + You must use the module `request`.
 
-+ [ ] 3. Star wars movie title<br/>_**[3-starwars_title.js](3-starwars_title.js)**_ contains a script that prints the title of a Star Wars movie where the episode number matches a given integer.
++ [x] 3. Star wars movie title<br/>_**[3-starwars_title.js](3-starwars_title.js)**_ contains a script that prints the title of a Star Wars movie where the episode number matches a given integer.
   + Requirements:
     + The first argument is the movie ID.
     + You must use the [Star wars API](https://swapi-api.hbtn.io/) with the endpoint `https://swapi-api.hbtn.io/api/films/:id`.
