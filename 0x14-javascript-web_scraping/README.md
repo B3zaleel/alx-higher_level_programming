@@ -12,7 +12,7 @@ This project contains some tasks for learning how to perform web scraping with *
     + The content of the file must be read in `utf-8`.
     + If an error occurred during the reading, print the error object.
 
-+ [ ] 1. Write me<br/>_**[1-writeme.js](1-writeme.js)**_ contains a script that writes a string to a file.
++ [x] 1. Write me<br/>_**[1-writeme.js](1-writeme.js)**_ contains a script that writes a string to a file.
   + Requirements:
     + The first argument is the file path.
     + The second argument is the string to write.
