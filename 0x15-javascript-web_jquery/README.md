@@ -138,7 +138,7 @@ This project contains some tasks for learning how to perform use jQuery in **Jav
   </html>
   ```
 
-+ [ ] 5. List of elements<br/>_**[5-script.js](5-script.js)**_ contains a JavaScript script that adds a `<li>` element to a list when the user clicks on the tag `DIV#add_item`.
++ [x] 5. List of elements<br/>_**[5-script.js](5-script.js)**_ contains a JavaScript script that adds a `<li>` element to a list when the user clicks on the tag `DIV#add_item`.
   + The new element must be: `<li>Item</li>`.
   + The new element must be added to `UL.my_list`.
   + You can't use `document.querySelector` to select the HTML tag.
