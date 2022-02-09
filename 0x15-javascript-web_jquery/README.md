@@ -51,7 +51,7 @@ This project contains some tasks for learning how to perform use jQuery in **Jav
   </html>
   ```
 
-+ [ ] 2. Click and turn red<br/>_**[2-script.js](2-script.js)**_ contains a JavaScript script that updates the text color of the `<header>` element to red (`#FF0000`) when the user clicks on the tag `DIV#red_header`.
++ [x] 2. Click and turn red<br/>_**[2-script.js](2-script.js)**_ contains a JavaScript script that updates the text color of the `<header>` element to red (`#FF0000`) when the user clicks on the tag `DIV#red_header`.
   + You can't use `document.querySelector` to select the HTML tag.
   + You must use the JQuery API.
   + You can test with the [file](pages/2-page.html) below in the browser:
