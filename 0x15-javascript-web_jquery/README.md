@@ -169,7 +169,7 @@ This project contains some tasks for learning how to perform use jQuery in **Jav
   </html>
   ```
 
-+ [ ] 6. Change the text<br/>_**[6-script.js](6-script.js)**_ contains a JavaScript script that updates the text of the `<header>` element to `New Header!!!` when the user clicks on `DIV#update_header`.
++ [x] 6. Change the text<br/>_**[6-script.js](6-script.js)**_ contains a JavaScript script that updates the text of the `<header>` element to `New Header!!!` when the user clicks on `DIV#update_header`.
   + You can't use `document.querySelector` to select the HTML tag.
   + You must use the JQuery API.
   + You can test with the [file](pages/6-page.html) below in the browser:
