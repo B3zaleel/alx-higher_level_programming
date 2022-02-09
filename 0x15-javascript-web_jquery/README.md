@@ -338,7 +338,7 @@ This project contains some tasks for learning how to perform use jQuery in **Jav
   </html>
   ```
 
-+ [ ] 12. Say hello to everybody!<br/>_**[102-script.js](102-script.js)**_ contains a JavaScript script that fetches and prints how to say "Hello" depending on the language.
++ [x] 12. Say hello to everybody!<br/>_**[102-script.js](102-script.js)**_ contains a JavaScript script that fetches and prints how to say "Hello" depending on the language.
   + You should use this API service: `https://www.fourtonfish.com/hellosalut/hello/`.
   + The language code will be the value entered in the tag `INPUT#language_code` (ex: `es`, `fr`, `en` etc.).
   + The translation must be fetched when the user clicks on `INPUT#btn_translate`.
