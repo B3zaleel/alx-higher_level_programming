@@ -75,7 +75,7 @@ This project contains some tasks for learning how to perform use jQuery in **Jav
   </html>
   ```
 
-+ [ ] 3. Add \`.red\` class<br/>_**[3-script.js](3-script.js)**_ contains a JavaScript script that adds the class `red` to the `<header>` element when the user clicks on the tag `DIV#red_header`.
++ [x] 3. Add \`.red\` class<br/>_**[3-script.js](3-script.js)**_ contains a JavaScript script that adds the class `red` to the `<header>` element when the user clicks on the tag `DIV#red_header`.
   + You can't use `document.querySelector` to select the HTML tag.
   + You must use the JQuery API.
   + You can test with the [file](pages/3-page.html) below in the browser:
