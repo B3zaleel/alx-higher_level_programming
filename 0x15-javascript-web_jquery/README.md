@@ -250,7 +250,7 @@ This project contains some tasks for learning how to perform use jQuery in **Jav
   </html>
   ```
 
-+ [ ] 9. Say Hello!<br/>_**[9-script.js](9-script.js)**_ contains a JavaScript script that fetches from `https://fourtonfish.com/hellosalut/?lang=fr` and displays the value of `hello` from that fetch in the HTML tag `DIV#hello`.
++ [x] 9. Say Hello!<br/>_**[9-script.js](9-script.js)**_ contains a JavaScript script that fetches from `https://fourtonfish.com/hellosalut/?lang=fr` and displays the value of `hello` from that fetch in the HTML tag `DIV#hello`.
   + The translation of "hello" must be displayed in the HTML tag `DIV#hello`.
   + You can't use `document.querySelector` to select the HTML tag.
   + You must use the JQuery API.
