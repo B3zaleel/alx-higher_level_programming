@@ -28,7 +28,7 @@ This project contains some tasks for learning how to perform use jQuery in **Jav
   </html>
   ```
 
-+ [ ] 1. With JQuery<br/>_**[1-script.js](1-script.js)**_ contains a JavaScript script that updates the text color of the `<header>` element to red (`#FF0000`).
++ [x] 1. With JQuery<br/>_**[1-script.js](1-script.js)**_ contains a JavaScript script that updates the text color of the `<header>` element to red (`#FF0000`).
   + You can't use `document.querySelector` to select the HTML tag.
   + You must use the JQuery API.
   + You can test with the [file](pages/1-page.html) below in the browser:
