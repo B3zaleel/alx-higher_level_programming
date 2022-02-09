@@ -301,7 +301,7 @@ This project contains some tasks for learning how to perform use jQuery in **Jav
   </html>
   ```
 
-+ [ ] 11. List, add, remove<br/>_**[101-script.js](101-script.js)**_ contains a JavaScript script that adds, removes and clears `LI` elements from a list when the user clicks.
++ [x] 11. List, add, remove<br/>_**[101-script.js](101-script.js)**_ contains a JavaScript script that adds, removes and clears `LI` elements from a list when the user clicks.
   + The new element must be: `<li>Item</li>`.
   + The new element must be added to `UL.my_list`.
   + When the user clicks on `DIV#add_item`: a new element is added to the list.
