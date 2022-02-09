@@ -2,11 +2,11 @@
 
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/standard/semistandard)
 
-This project contains some tasks for learning how to perform web scraping with **JavaScript**.
+This project contains some tasks for learning how to perform use jQuery in **JavaScript** to manipulate the DOM.
 
 ## Tasks To Complete
 
-+ [ ] 0. No JQuery<br/>_**[0-script.js](0-script.js)**_ contains a JavaScript script that updates the text color of the `<header>` element to red (`#FF0000`):.
++ [x] 0. No JQuery<br/>_**[0-script.js](0-script.js)**_ contains a JavaScript script that updates the text color of the `<header>` element to red (`#FF0000`):.
   + You must use `document.querySelector` to select the HTML tag.
   + You can't use the JQuery API.
   + You can test with the [file](pages/0-page.html) below in the browser:
