@@ -278,7 +278,7 @@ This project contains some tasks for learning how to perform use jQuery in **Jav
   </html>
   ```
 
-+ [ ] 10. No jQuery - document loaded<br/>_**[100-script.js](100-script.js)**_ contains a JavaScript script that updates the text color of the `<header>` element to red (`#FF0000`).
++ [x] 10. No jQuery - document loaded<br/>_**[100-script.js](100-script.js)**_ contains a JavaScript script that updates the text color of the `<header>` element to red (`#FF0000`).
   + You can't use `document.querySelector` to select the HTML tag.
   + You must use the JQuery API.
   + Note: Your script will be imported from the `<head>` tag, not at the end of the HTML.
